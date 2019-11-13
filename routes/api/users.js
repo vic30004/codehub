@@ -1,6 +1,4 @@
 const express = require('express');
-const ErrorResponse = require('../../utils/errorResponse')
-const asyncHandler = require('../../middleware/async')
 const router = express.Router();
 
 // @route    POST api/users
