@@ -1,0 +1,34 @@
+{
+  "name": "codehub",
+  "version": "1.0.0",
+  "description": "An online community for developers",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vic30004/codehub.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vic30004/codehub/issues"
+  },
+  "homepage": "https://github.com/vic30004/codehub#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.2.4",
+    "express": "^4.17.1",
+    "express-validator": "^6.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.10",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.0.0",
+    "nodemon": "^1.19.4"
+  }
+}
