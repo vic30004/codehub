@@ -22,10 +22,12 @@
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
     "config": "^3.2.4",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-validator": "^6.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.7.10",
+    "morgan": "^1.9.1",
     "request": "^2.88.0"
   },
   "devDependencies": {
