@@ -29,7 +29,7 @@ app.use("/api/posts", require("./routes/api/posts"));
 // Dev logging middleware
 
 // dont put this before routes.
-// app.use(errorHandler);
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 

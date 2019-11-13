@@ -1,10 +1,12 @@
 const express = require('express');
+const ErrorResponse = require('../../utils/errorResponse')
+const asyncHandler = require('../../middleware/async')
 const router = express.Router();
 
-// @route    GET api/users
-// @des      Test route
+// @route    POST api/users
+// @des      register user
 // @ access  Public
-router.get('/', (req,res)=>res.send('User route'))
+router.post('/', (req,res,next)=>res.send('User route'))
 
 
 module.exports= router
