@@ -1,0 +1,102 @@
+.nav-wrapper {
+    display: grid;
+    /* grid-template-columns: repeat(5, 1fr); */
+    grid-template-columns: 1fr .5fr 1.5fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    background-color: aliceblue;
+    text-align: center;
+    border-bottom: 1px solid lightgray;
+}
+
+.nav-logo {
+    align-self: center;
+    padding: 0px 30px 0px 30px;
+}
+
+.nav-button {
+    width: 45px;
+    /* min-width: 60px; */
+    height: 50%;
+    justify-self: left;
+    align-self: center;
+    border-radius: 5px;
+    color: white;
+    background-color: forestgreen;
+    border: none;
+    font-size: 14px;
+    /* font-size: 1.5vw; */
+    cursor: pointer;
+}
+
+.nav-upload-btn {
+    width: 60px;
+    /* min-width: 40px; */
+    height: 50%;
+    justify-self: center;
+    align-self: center;
+    border-radius: 5px;
+    color: white;
+    background-color: deepskyblue;
+    border: none;
+    font-size: 14px;
+    text-align: center;
+    /* font-size: 1.5vw; */
+    cursor: pointer;
+}
+
+div.nav-list {
+    align-self: left;
+    text-align: left;
+}
+
+.nav-list-item {
+    display: inline;
+    list-style-type: none;
+    padding: 0px 15px 0px 0px;
+    align-self: left;
+    /* padding: 10px; */
+    /* text-decoration-style: none; */
+    /* text-decoration: none; */
+}
+
+.nav-ul {
+    padding: 0px;
+}
+
+.nav-input {
+    justify-self: center;
+    align-self: center;
+}
+
+div.nav-input {
+    width: 100%;
+    padding:15px;
+}
+
+.input {
+    width: 100%;
+}
+
+/* media queries */
+@media only screen and (max-width: 600px) {
+    div.nav-list {
+      display:none;
+    }
+
+    .nav-wrapper {
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .input,
+    .nav-button,
+    .nav-upload-btn,
+    .nav-input {
+        display:none;
+    }
+
+    .nav-logo {
+        padding: 15px;
+    }
+  }
