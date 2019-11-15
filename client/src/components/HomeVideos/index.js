@@ -11,10 +11,6 @@ const vid7 = 'NCwa_xi0Uuc';
 const vid8 = 'SWZ_4YBFBhs';
 
 class TopVideos extends Component {
-    constructor(props) {
-        super(props);
-
-    }
 
     render() {
         return (
