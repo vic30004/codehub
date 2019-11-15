@@ -1,7 +1,6 @@
 const ErrorResponse = require('../utils/errorResponse');
 const asyncHandler = require('../middleware/async');
 const User = require('../models/Users');
-const gravatar = require('gravatar')
 
 // @route    POST api/auth/login
 // @des      Login User

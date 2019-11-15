@@ -1,11 +1,13 @@
 const express = require('express');
-
-const router = express.Router();
+const {protect} = require('../../middleware/auth');
+const {getProfile, updateProfile} = require('../../controller/profile');
+const router =express.Router()
 
 // @route    GET api/profile
 // @des      Test route
 // @ access  Public
-router.get('/', (req,res)=>res.send('User route'))
+router.get('/me', protect,getProfile);
+router.post('/',protect,updateProfile)
 
 
 module.exports= router

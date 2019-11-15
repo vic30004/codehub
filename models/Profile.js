@@ -20,11 +20,11 @@ const ProfileSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    required: true
+    required: [true,'Status is required']
   },
   skills: {
     type: [String],
-    required: true
+    required: [true,'Skills is required']
   },
   bio: {
     type: String
