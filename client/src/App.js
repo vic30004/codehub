@@ -1,25 +1,29 @@
-import React, { Component } from 'react';
-import NavBar from './components/NavBar/index';
-import Hero from './components/Slider/index';
-import TopVideos from './components/TopVideos/index';
-import Events from './components/Events/index';
-import Footer from './components/Footer/index.js';
+import React from "react";
+import NavBar from './components/NavBar'
+import Footer from './components/Footer'
+import Home from './pages/Home'
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-  }
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import './index.css'
 
-  render() {
-    return (
-      <div>
-        <NavBar />
-        <Hero />
-        <TopVideos />
-        <Events />
+
+
+const App = () => {
+    return(
+        <Router>
+         <NavBar />
+
+        <Switch>
+        <Route exact path ="/" component={Home}/>
+      
+        </Switch>
+
+
         <Footer />
-      </div>
+        </Router>
     )
-  }
+
 }
-export default App;
+
+
+export default App

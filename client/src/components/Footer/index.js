@@ -4,9 +4,6 @@ import './style.css';
 const text = '/';
 
 class Footer extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return (

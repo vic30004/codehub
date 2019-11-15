@@ -9,7 +9,7 @@ const img1 = 'https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb
 const img2 = 'https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/37d3db7e-5762-4d22-974e-b9ca6bd1ee48/leaddevtx19.png';
 const img3 = 'https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/8fe47e61-afe9-43e9-8b23-41a053701cd9/agibri19.png';
 
-class Events extends Component {
+class HomeEvents extends Component {
     constructor(props) {
         super(props);
 
@@ -54,4 +54,4 @@ class Events extends Component {
     }
 }
 
-export default Events;
+export default HomeEvents;
