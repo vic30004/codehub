@@ -4,12 +4,22 @@ const connectDB = require("./config/db");
 const colors = require("colors");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
-
+const cookieParser = require('cookie-parser')
 // Load env vars
 dotenv.config({ path: "./config/config.env" });
 
+
+
+
 // initialize express
 const app = express();
+
+// Dev logging middleware
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Cookie parser
+app.use(cookieParser())
 
 // connect db
 connectDB();
@@ -26,7 +36,8 @@ app.use("/api/auth", require("./routes/api/auth"));
 app.use("/api/profile", require("./routes/api/profile"));
 app.use("/api/posts", require("./routes/api/posts"));
 
-// Dev logging middleware
+
+
 
 // dont put this before routes.
 app.use(errorHandler);
