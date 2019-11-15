@@ -3,16 +3,15 @@ const asyncHandler = require('../middleware/async');
 const User = require('../models/Users');
 const gravatar = require('gravatar')
 
-
-// @route    POST api/auth/register
+// @route    POST api/auth/login
 // @des      Login User
 // @ access  Public
 exports.login = asyncHandler(async (req, res, next) => {
-  const { username, email, password } = req.body;
+  const { username, password } = req.body;
 
   // validate email,username and password
 
-  if (!email || !username || !password) {
+  if (!username || !password) {
     return next(
       new ErrorResponse(
         'Please provide an email or a username and a passwrod',
@@ -40,6 +39,24 @@ sendTokenResponse(user,200,res)
 
 });
 
+
+// @route    get api/auth
+// @des      Get Single User
+// @ access  Public
+exports.getUser = asyncHandler(async (req,res,next)=>{
+  console.log(req.body)
+  const user = await User.findById(req.user.id).select('-password');
+  
+
+  res.status(200).json({
+    success: true,
+    data: user
+  });
+
+})
+
+
+
 // Get token from model, create cookie and send response 
 const sendTokenResponse = (user,statusCode, res)=>{
   const token = user.getSignedJwtToken();
@@ -59,3 +76,5 @@ const sendTokenResponse = (user,statusCode, res)=>{
     token
   })
 }
+
+
