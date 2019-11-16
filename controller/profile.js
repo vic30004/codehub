@@ -2,8 +2,8 @@ const asyncHandler = require('../middleware/async');
 const ErrorResponse = require('../utils/errorResponse');
 const Profile = require('../models/Profile');
 const User = require('../models/Users');
-const config = require("config");
-
+const config = require('config');
+const request = require('request');
 
 // @route    Get api/profile/me
 // @des      Retrieves logged in users profile
@@ -264,7 +264,6 @@ exports.addEducation = asyncHandler(async (req, res, next) => {
 
   const profile = await Profile.findOne({ user: req.user.id });
 
-
   profile.education.unshift(newEdu);
   profile.save();
 
@@ -289,3 +288,35 @@ exports.deleteEdu = asyncHandler(async (req, res, next) => {
 
   res.json({ success: true, data: profile });
 });
+
+// @route    GET api/profile/github/:username
+// @des      GET user repos from github
+// @ access  Public
+exports.getGithub = asyncHandler
+  (async (req, res, next) => {
+    try {
+      const options = {
+        uri: `https://api.github.com/users/${
+          req.params.username
+        }/repos?per_page=5&sort=created:asc&client_id=${config.get(
+          'GITHUB_CLIENT_ID'
+        )}$client_secret=${config.get('GITHUB_CLIENT_SECRET')}`,
+        method:'GET',
+        headers:{'user-agent':'node.js'}
+      };
+
+      request(options, (error,response,body)=>{
+          if(error) console.log(error);
+
+          if(response.statusCode!==200){
+            return next(
+                new ErrorResponse('No Github profile Found',404)
+            )
+          }
+          res.json(JSON.parse(body))
+      })
+    } catch (err) {
+      return new ErrorResponse(err.message, 500);
+    }
+  }
+);

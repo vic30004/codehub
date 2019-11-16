@@ -9,7 +9,8 @@ const {
   addExperience,
   deleteExp,
   addEducation,
-  deleteEdu
+  deleteEdu,
+  getGithub
 } = require('../../controller/profile');
 const router = express.Router();
 
@@ -22,5 +23,6 @@ router.put('/experience',protect, addExperience );
 router.delete('/experience/:exp_id',protect,deleteExp);
 router.put('/education',protect, addEducation );
 router.delete('/education/:edu_id',protect,deleteEdu);
+router.get('/github/:username',getGithub)
 
 module.exports = router;
