@@ -21,7 +21,6 @@ exports.getProfile = asyncHandler(async (req, res, next) => {
 // @route    POST api/profile
 // @des      Create or update a user profile
 // @ access  Private
-
 exports.updateProfile = asyncHandler(async (req, res, next) => {
   const {
     company,
@@ -79,3 +78,85 @@ exports.updateProfile = asyncHandler(async (req, res, next) => {
     return next(new ErrorResponse(err.message, 400));
   }
 });
+
+
+
+// @route    GET api/profile
+// @des      Get all profiles
+// @ access  Public
+
+exports.getAllProfiles = asyncHandler(async(req,res,next)=>{
+    let query;
+
+    // Copy query
+    const reqQuery = await { ...req.query };
+  
+    // Fields to exclude
+    const removeFields = ['select', 'sort', 'page', 'limit'];
+  
+    // Loop over removeFields and delete them from reqQuery
+    removeFields.forEach(param => delete reqQuery[param]);
+  
+    console.log(reqQuery);
+  
+    let queryStr = JSON.stringify(reqQuery);
+  
+    // create operators ($in)
+    queryStr = queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, match => `$${match}`);
+  
+    // Finding resource
+    query =  Profile.find(JSON.parse(queryStr)).populate('user',['name','avatar']);
+  
+    // Select Fields
+    if (req.query.select) {
+      const fields = req.query.select.split(',').join(' ');
+      query.select(fields);
+    }
+  
+    // Sort
+  
+    if (req.query.sort) {
+      const sortBy = req.query.sort.split(',').join(' ');
+      query.sort(sortBy);
+    } else {
+      query = query.sort('-addOn');
+    }
+  
+    // Pagination
+    const page = parseInt(req.query.page, 10) || 1;
+    const limit = parseInt(req.query.limit, 10) || 20;
+    const startIndex = (page - 1) * limit;
+    const endIndex = page * limit;
+    const total = await Profile.countDocuments();
+  
+    query = query.skip(startIndex).limit(limit);
+
+    // Executing query
+  const profile = await query;
+
+  // Pagination Result
+  const pagination = {};
+
+  if (endIndex < total) {
+    pagination.next = {
+      page: page + 1,
+      limit
+    };
+  }
+
+  if (startIndex > 0) {
+    pagination.prev = {
+      page: page - 1,
+      limit
+    };
+  }
+
+  res.status(200).json({
+    success: true,
+    count: profile.length,
+    pagination,
+    data: profile
+  });
+
+
+})
