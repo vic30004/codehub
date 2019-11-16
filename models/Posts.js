@@ -8,7 +8,7 @@ const PostSchema = new Schema({
   },
   text: {
     type: String,
-    required: true
+    required: [true,'Text is required']
   },
   name: {
     type: String
@@ -32,7 +32,7 @@ const PostSchema = new Schema({
       },
       text: {
         type: String,
-        required: true
+        required: [true,'Please add a text']
       },
       name: {
         type: String
