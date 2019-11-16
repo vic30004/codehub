@@ -10,6 +10,7 @@ const errorHandler = (err,req,res,next)=>{
     // Mongoose bad Object
     if(err.name === "CastError"){
         const message = `Resource not found with id of ${req.params.id}`;
+        console.log(req.params)
         error = new ErrorResponse(message,404)
     }
 
@@ -17,6 +18,11 @@ const errorHandler = (err,req,res,next)=>{
     if(err.code === 11000){
         const message =  'Duplicate field value entered'
         error = new ErrorResponse(message,400)
+    }
+
+    if(err.kind === 'ObjectId'){
+        const message = 'There is no profile for this user'
+        error = new ErrorResponse(message,500)
     }
 
     // Mongo validation error
