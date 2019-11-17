@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link } from 'react-router-dom'
 import './style.css';
 
 class NavBar extends Component {
@@ -6,13 +7,13 @@ class NavBar extends Component {
     render() {
         return (
             <div className='nav-wrapper'>
-                <div className='nav-logo'>codeHub
-           </div>
-                <button className='nav-button'>join</button>
+                <Link to='/' className='nav-logo'>codeHub
+           </Link>
+           <Link className="nav-button" to='/register'>Register</Link>
                 <div className='nav-list'>
                     <ul className='nav-ul'>
                         <li className='nav-list-item'>
-                            <a href>Videos</a>
+                            <Link to='/videos'>Videos</Link>
                         </li>
                         <li className='nav-list-item'>
                             <a href>Articles</a>
@@ -22,6 +23,10 @@ class NavBar extends Component {
                         </li>
                         <li className='nav-list-item'>
                             <a href>Forum</a>
+                        </li>
+
+                        <li className='nav-list-item'>
+                            <Link to='/login'>Login</Link>
                         </li>
                     </ul>
                 </div>
@@ -33,7 +38,7 @@ class NavBar extends Component {
                 placeholder="Search videos, content and more..."
                 />
                 </div>
-                <button className='nav-upload-btn'>upload</button>
+                <a className='nav-upload-btn'>upload</a>
                 <div>
                 </div>
             </div>
