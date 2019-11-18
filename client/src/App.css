@@ -12,6 +12,8 @@
     --light-color:ivory;
     --blue-color:aliceblue;
     --grey-color:azure;
+    --red-color:rgb(136, 12, 12);
+    --green-color: forestgreen;
     --main-font:'Roboto', sans-serif;
     --logo-font:'Comfortaa', cursive;
 }
@@ -60,4 +62,16 @@ a{
     text-align: center;
 }
 
+.alert{
+    padding: 0.8rem;
+    margin:1rem 0;
+    opacity: 0.9;
+    background: var(var(--light-color));
+    color: var(--dark-color);
+}
 
+
+.alert-danger{
+    background: var(--red-color);
+    color:var(--light-color);
+}
