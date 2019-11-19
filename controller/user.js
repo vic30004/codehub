@@ -1,4 +1,5 @@
 const asyncHandler = require('../middleware/async');
+const ErrorResponse = require('../utils/errorResponse');
 const User = require('../models/Users');
 const gravatar = require('gravatar')
 
@@ -14,7 +15,12 @@ exports.register = asyncHandler(async (req, res, next) => {
     r:'pg',//rating 
     d:'mm' //default picture
   })
-
+    if(username === '' || email === '' || password === ''){
+      return next(
+        res.status(404).json({error:'Please make sure username and email are added'})
+        
+      )
+    }
    // Create User
   const user = await User.create({
     name,
@@ -24,8 +30,11 @@ exports.register = asyncHandler(async (req, res, next) => {
     avatar,
     username
   });
-
   sendTokenResponse(user,200,res)
+
+  
+  
+
 
 });
 
@@ -46,6 +55,7 @@ const sendTokenResponse = (user,statusCode, res)=>{
     res.status(statusCode)
     .cookie('token', token, options)
     .json({
+      success:true,
       token
     })
   }
