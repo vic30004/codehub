@@ -3,12 +3,22 @@ import {
   SET_ALERT,
   REMOVE_ALERT,
   REGISTER_USER,
-  REGISTER_FAIL
+  REGISTER_FAIL,
+  USER_LOADED,
+  AUTH_ERROR
 } from '../types';
 
 export default (state, action) => {
   const { type, payload } = action;
   switch (type) {
+
+    case USER_LOADED: 
+      return{
+        ...state,
+        isAuthenticated:true,
+        loading:false,
+        user:payload
+      }
 
     case REGISTER_USER:
        localStorage.setItem('token',payload.token);
@@ -20,6 +30,7 @@ export default (state, action) => {
        }
 
     case REGISTER_FAIL:
+        case AUTH_ERROR:
        localStorage.removeItem('token');
        return{
         ...state,

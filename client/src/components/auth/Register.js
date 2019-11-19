@@ -4,7 +4,11 @@ import Alert from '../AlertComponent/Alert';
 
 import { Link } from 'react-router-dom';
 import './Register.css';
-const Register = () => {
+
+
+
+
+const Register = props => {
   const [formData, setFormData] = useState({
     name: '',
     username: '',
@@ -14,9 +18,22 @@ const Register = () => {
   });
   const authContext = useContext(AuthContext);
 
-  const { setAlert, errorState, removeAlert, registerUser } = authContext;
+  const {
+    setAlert,
+    errorState,
+    removeAlert,
+    registerUser,
+    isAuthenticated
+  } = authContext;
 
   const { name, username, email, password, password2 } = formData;
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      props.history.push('/');
+    }
+    //eslint-disable-next-line
+  }, [isAuthenticated, props]);
 
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });

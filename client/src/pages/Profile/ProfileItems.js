@@ -6,7 +6,6 @@ const ProfileItems = ({profiles}) => {
     const{company,
         website,
         location,
-        avatar,
         status,
         username,
         skills,
@@ -18,12 +17,14 @@ const ProfileItems = ({profiles}) => {
         facebook,
         youtube,
         instagram} =profiles
+        console.log(profiles)
     return (
         <div className='card'>
             <div className="profile-items text-center">
-            <img src={user.avatar} className="profile-pic" alt="proile-pic"/>
-            <div className="username">{user.name}</div>
-            <Link to='#' className="profileBtn">Visit Profile</Link>
+            {user|| user !== null ? <img src={user.avatar}/>:'' }
+            {user|| user !== null ? <div className="username">{user.name}</div>:'' }
+            {user|| user !== null ?<Link to='#' className="profileBtn">Visit Profile</Link>:'' }
+       
             </div>
         </div>
     )

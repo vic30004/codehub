@@ -2,12 +2,15 @@ import React, { useReducer } from 'react';
 import uuid from 'uuid';
 import AuthContext from './AuthContext';
 import axios from 'axios'
+import setAuthToken from '../../../utils/SetAuthToken'
 import AuthReducer from './AuthReducers';
 import {
   REGISTER_USER,
   REGISTER_FAIL,  
   SET_ALERT,
-  REMOVE_ALERT
+  REMOVE_ALERT,
+  USER_LOADED,
+  AUTH_ERROR
 } from '../types';
 
 const AuthState = props => {
@@ -21,6 +24,30 @@ const AuthState = props => {
   };
 
   const [state, dispatch] = useReducer(AuthReducer, initialState);
+
+
+  // Load user
+
+  const loadUser = async()=>{
+    if(localStorage.token){
+      setAuthToken(localStorage.token)
+    }
+
+    try{
+      const res = await axios.get('/api/auth');
+
+      dispatch({
+        type:USER_LOADED,
+        payload:res.data
+      })
+    }catch(err){
+      dispatch({
+        type:AUTH_ERROR
+      })
+    }
+
+  }
+
 
   //REGISTER USER,
   const registerUser = async({name,email,username,password})=>{
@@ -93,7 +120,9 @@ const removeAlert = () =>dispatch({ type:REMOVE_ALERT})
         errorState:state.errorState,
         setAlert,
         removeAlert,
-        registerUser
+        registerUser,
+        loadUser,
+        isAuthenticated: state.isAuthenticated
       }}
     >
       {props.children}
