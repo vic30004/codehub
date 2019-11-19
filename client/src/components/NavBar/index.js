@@ -26,12 +26,12 @@ class NavBar extends Component {
                     </ul>
                 </div>
                 <div className='nav-input'>
-                <input
+                {/*<input
                 type="text"
                 className="input"
                 id="addInput"
                 placeholder="Search videos, content and more..."
-                />
+                />*/}
                 </div>
                 <button className='nav-upload-btn'>upload</button>
                 <div>
