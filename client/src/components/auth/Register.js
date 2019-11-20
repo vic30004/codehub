@@ -58,6 +58,7 @@ const Register = props => {
   return (
     <section id='register'>
       <div className='form-container '>
+      {errorState.length > 0 || errorState !== null ? <Alert /> : ''}
         <h2>Sign Up</h2>
         <h4>Create Your Account</h4>
         <input
@@ -86,7 +87,7 @@ const Register = props => {
           required
         />
         <h4>Use gravatar email for a profile picture</h4>
-        {errorState.length > 0 || errorState !== null ? <Alert /> : ''}
+        
         <input
           type='password'
           name='password'
