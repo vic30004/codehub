@@ -13,8 +13,8 @@ exports.login = asyncHandler(async (req, res, next) => {
   if (!username || !password) {
     return next(
       new ErrorResponse(
-        'Please provide an email or a username and a passwrod',
-        400
+  
+        res.status(400).json({error:'Please provide an email or a username and a passwrod'})
       )
     );
   }
@@ -23,14 +23,16 @@ exports.login = asyncHandler(async (req, res, next) => {
   const user = await User.findOne({ username }).select('+password');
 
   if (!user) {
-    return next(new ErrorResponse('Invalid credentials', 401));
+    const message='Invalid credentials';
+    res.status(401).json({error:message})
   }
 
   // Check if password matches
   const isMatch = await user.matchPassword(password);
 
   if (!isMatch) {
-    return next(new ErrorResponse('Invalid credentials', 401));
+    const message='Invalid credentials';
+    res.status(401).json({error:message})
   }
 
 

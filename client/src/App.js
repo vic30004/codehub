@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment,useEffect,useContext } from 'react';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -10,12 +10,15 @@ import './App.css';
 import CreateProfile from './components/auth/CreateProfile';
 import Profile from './pages/Profile/Profile'
 
+
+
+
 const App = () => {
+ 
   return (
       <Router>
       <AuthState>
         <NavBar />
-
         <Switch>
           <Route exact path='/' component={Home} />
           <Switch>

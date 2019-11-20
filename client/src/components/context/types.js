@@ -9,6 +9,7 @@ export const LOGOUT ='LOGOUT';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 
+
 // PROFILE 
 export const GET_PROFILES = 'GET_PROFILES';
 export const GET_PROFILE ='GET_PROFILE';
