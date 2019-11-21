@@ -11,6 +11,7 @@
     font-family: var(--logo-font);
     font-weight: bold;
     font-size: 1.5rem;
+    padding: 0px 15px 0px 0px;
 }
 
 .nav-wrapper .nav-ul{
@@ -27,8 +28,7 @@
     background-color: forestgreen;
     border: none;
     cursor: pointer;
-    padding: 0.5rem 0.75rem;
-    
+    padding: 0.5rem 0.75rem;    
 }
 
 .nav-input {

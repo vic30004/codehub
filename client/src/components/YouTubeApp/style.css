@@ -40,7 +40,7 @@
 }
 
 .list-group-item:hover{
-  background-color: #eee;
+  background-color: aliceblue;
 }
 
 .you-tube-vid-container {
@@ -51,6 +51,7 @@
   align-self: center;
   justify-self: center;
   width: 85%;
+  min-width: 320px;
   height: auto;
   background-color:white;
   border-radius: 5px;
@@ -59,7 +60,7 @@
 }
 
 .youtube-iframe-container {
-    padding: 15px;
+    padding: 0px 15px 15px 15px;
 }
 
 .youtube-iframe {
@@ -119,3 +120,35 @@
   height: 300px;
 }
 
+@media only screen and (max-width: 600px) {
+  .youtube-list-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    list-style-type: none;
+    padding: 0px 15px 0px 0px;
+    grid-gap: 5px;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .youtube-list-group {
+    display: none;
+  }
+  .you-tube-vid-container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-self: center;
+    justify-self: center;
+    width: 85%;
+    min-width: 320px;
+    height: auto;
+    background-color:white;
+    border-radius: 5px;
+    border-bottom: .5px solid lightgray;
+    padding-bottom: 50px;
+  }
+
+}
