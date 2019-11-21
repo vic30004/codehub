@@ -20,6 +20,7 @@ const AuthState = props => {
   const initialState = {
     profiles: [],
     errorState: [],
+    auth:null,
     token: localStorage.getItem('token'),
     isAuthenticated: null,
     loading:true,

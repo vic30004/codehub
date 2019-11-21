@@ -17,6 +17,10 @@ const NavBar = () => {
         <Fragment>
             <li>Hello {user && user.data.name}</li>
             <li>
+            <Link to='/dashboard'> Dashboard</Link>
+            
+            </li>
+            <li>
                 <a href="#!" onClick={onLogout}>
                 <i className="fas fa-sign-out-alt"></i><span className="hide-sm">Logout</span>
                 </a>
@@ -60,7 +64,6 @@ const NavBar = () => {
           <li className='nav-list-item'>
             <a href>Forum</a>
           </li>
-        
       
         </ul>
       </div>
