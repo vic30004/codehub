@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import Videos from './pages/Videos';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -18,6 +19,7 @@ const App = () => {
 
         <Switch>
           <Route exact path='/' component={Home} />
+          <Route exact path='/videos' component={Videos}/>
           <Switch>
             <Fragment>
               <Route exact path='/register' component={Register} />

@@ -4,7 +4,7 @@ import YTSearch from 'youtube-api-search';
 import VideoList from './video_list';
 import VideoDetail from './video_detail';
 const API_KEY = 'AIzaSyBdVut9QCzqAHBzfDEh30yUp4E529som6s';
-
+// import API from '../../api'
 
 // function AddVid(props) {
 //   if (!props.warn) {
@@ -28,9 +28,14 @@ class YouTubeApp extends Component {
       // addVideo: true
     };
     
-    this.videoSearch('React Tutorials');
     // this.handleToggleClick = this.handleToggleClick.bind(this);
   }
+
+  componentDidMount(){
+    this.videoSearch('React Tutorials');
+
+  }
+  
 
   // handleToggleClick() {
   //   this.setState(state => ({
