@@ -13,6 +13,7 @@ import Dashboard from './pages/Dashboard/Dashboard'
 import Profile from './pages/Profile/Profile'
 import PrivateRoute from './components/Routing/PrivateRoute'
 import ProfileState from './components/context/profile/ProfileState'
+import ProfilePage from './pages/ProfilePage/ProfilePage'
 
 
 
@@ -33,6 +34,7 @@ const App = () => {
               <Route exact path='/login' component={Login} />
               <Route exact path='/create-profile' component={CreateProfile} />
               <Route exact path='/profile' component={Profile}/>
+              <Route exact path='/profile-page' component={ProfilePage}/>
               <PrivateRoute exact path='/dashboard' component={Dashboard}/>
             </Fragment>
           </Switch>

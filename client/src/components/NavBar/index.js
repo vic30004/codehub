@@ -2,15 +2,20 @@ import React, { Fragment, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './style.css';
 import AuthContext from '../context/auth/AuthContext';
+import ProfileContext from '../context/profile/ProfileContext'
 
 const NavBar = () => {
   const authContext = useContext(AuthContext);
+  const profileContext = useContext(ProfileContext);
 
   const {isAuthenticated,logout,user} = authContext
+  const {clearProfile} = profileContext
   
 
     const onLogout=()=>{
+      clearProfile();
         logout();
+        
     }
 
     const authLinks = (

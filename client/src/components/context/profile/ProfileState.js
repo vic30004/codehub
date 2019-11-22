@@ -16,7 +16,9 @@ SET_ALERT,
 REMOVE_ALERT,
 SET_CURRENT,
 CLEAR_CURRENT,
-PROFILE_ERROR
+PROFILE_ERROR,
+CLEAR_PROFILE
+
 } from '../types';
 
 const ProfileState = props =>{
@@ -44,6 +46,7 @@ const getCurrentProfile = async() =>{
             payload: res.data
         })
     } catch (err) {
+      console.log(err.response)
         dispatch({
             type:PROFILE_ERROR,
             payload: {msg: err.response.statusText, status: err.response.status}
@@ -52,7 +55,11 @@ const getCurrentProfile = async() =>{
    
 }
 
-
+const clearProfile = ()=>{
+  dispatch({
+    type:CLEAR_PROFILE
+  })
+}
 return (
     <ProfileContext.Provider
       value={{
@@ -61,7 +68,8 @@ return (
         repos: state.repos,
         loading:state.loading,
         error:state.error,
-        getCurrentProfile
+        getCurrentProfile,
+        clearProfile
       }}
     >
       {props.children}

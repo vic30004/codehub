@@ -10,7 +10,8 @@ import {
     SET_ALERT,
     REMOVE_ALERT,
     CLEAR_CURRENT,
-    PROFILE_ERROR
+    PROFILE_ERROR,
+    CLEAR_PROFILE
     } from '../types';
 
 
@@ -30,6 +31,14 @@ import {
                     error:payload,
                     loading:false
                 }
+                case CLEAR_PROFILE:
+                        return {
+                          ...state,
+                          profile:null,
+                          repos: [],
+                          loading: false
+                        }
+               
         
             default:
              return state;

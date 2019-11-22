@@ -13,7 +13,8 @@ import {
   AUTH_ERROR,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
-  LOGOUT
+  LOGOUT,
+  
 } from '../types';
 
 const AuthState = props => {
@@ -128,9 +129,11 @@ if(errors){
 
   // Logout
   const logout = ()=>{
+
     dispatch({
       type:LOGOUT
     })
+   
   }
 
   // REGISTER_FAIL

@@ -55,8 +55,6 @@ export default (state, action) => {
         user:null,
        }
 
-
-
     case SET_ALERT:
       return {
         ...state,
