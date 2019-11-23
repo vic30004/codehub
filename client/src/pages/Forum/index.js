@@ -6,9 +6,6 @@ import api from '../../api'
 
 class Forum extends Component {
 
-    
-
-
     state = {
         name: "",
         post: "",
