@@ -1,13 +1,15 @@
-import React, {useState} from 'react'
+import React, {useEffect,useState,useContext} from 'react'
 import {Link} from 'react-router-dom'
+import ProfileContext from '../context/profile/ProfileContext'
+import Profile from '../../pages/Profile/Profile'
+import Alert from '../AlertComponent/Alert'
 
-const CreateProfile = () => {
+const CreateProfile = (props) => {
     const [formData, setFormData]=useState({
         company:'',
         website:'',
         location:'',
         status:'',
-        username:'',
         skills:'',
         bio: '',
         githubusername:'',
@@ -18,6 +20,9 @@ const CreateProfile = () => {
         instagram:''
 
     })
+
+    const profileContext = useContext(ProfileContext);
+    const {createProfile,profile}=profileContext
 
     const {company,
         website,
@@ -32,26 +37,46 @@ const CreateProfile = () => {
         youtube,
         instagram} = formData
 
+        useEffect(() => {
+            if (profile !==null) {
+              props.history.push('/dashboard');
+            }
+            //eslint-disable-next-line
+          }, [profile, props]);
+
     const onChange = (e) => setFormData({...formData,[e.target.name]:e.target.value})
 
     const onClick = async(e) =>{
         e.preventDefault();
-        console.log('Profile Created')
+        createProfile({
+            website,
+            location,
+            status,
+            skills,
+            bio,
+            githubusername,
+            experience,
+            twitter,
+            facebook,
+            youtube,
+            instagram
+        })
     }
         
     
     return (
         <div>
+        <Alert/>
         <section id="register" >
         <div className="form-container ">
         <h2>Create Your Profile</h2>
         <h4>Lets Get Started !</h4>
-        <select name="" id="">
+        <select name="status" id="status" value={status} onChange={e=>onChange(e)}>
         <option value="">Selete Professional Status</option>
-        <option value="">Developer</option>
-        <option value="">Student</option>
-        <option value="">Teacher</option>
-        <option value="">Other</option>
+        <option value="Developer">Developer</option>
+        <option value="Student">Student</option>
+        <option value="Teacher">Teacher</option>
+        <option value="Other">Other</option>
         </select>
         
         <input type="text" name="company" value={company} id="company" onChange={e=>onChange(e)} placeholder="Company"/>
@@ -64,8 +89,8 @@ const CreateProfile = () => {
 
         <input type="text" name="twitter" value={twitter} id="twitter" onChange={e=>onChange(e)} placeholder="Twitter"/>
         <input type="text" name="facebook" value={facebook} id="facebook" onChange={e=>onChange(e)} placeholder="facebook"/>
-        <input type="text" name="youtube" value={website} id="youtube" onChange={e=>onChange(e)} placeholder="Youtube"/>
-        <input type="text" name="instagram" value={website} id="instagram" onChange={e=>onChange(e)} placeholder="Instagram"/>
+        <input type="text" name="youtube" value={youtube} id="youtube" onChange={e=>onChange(e)} placeholder="Youtube"/>
+        <input type="text" name="instagram" value={instagram} id="instagram" onChange={e=>onChange(e)} placeholder="Instagram"/>
         <a className="btn-register" onClick={e =>onClick(e)}>Creat Profile</a>
         </div>
     </section>

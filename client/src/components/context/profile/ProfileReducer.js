@@ -38,6 +38,11 @@ import {
                           repos: [],
                           loading: false
                         }
+            case CREATE_PROFILE:
+                return{
+                    ...state,
+                    profile:payload
+                }
                
         
             default:
