@@ -6,9 +6,6 @@ import api from '../../api'
 
 class Forum extends Component {
 
-    
-
-
     state = {
         name: "",
         post: "",
@@ -22,7 +19,7 @@ class Forum extends Component {
     getForms = async () => {
 
         const { data: savedPosts } = await api.getForms()
-        this.setState({ posts: savedPosts, name: "", post: "" }, () => console.log(this.state.posts))
+        this.setState({ posts: savedPosts.data, name: "", post: "" }, () => console.log(this.state.posts))
         
     }
 
