@@ -4,8 +4,10 @@ import Forums from '../../components/FSearchResults/index'
 import api from '../../api'
 
 
-
 class Forum extends Component {
+
+    
+
 
     state = {
         name: "",
@@ -51,7 +53,6 @@ class Forum extends Component {
                     onClick={this.handleFormSubmit}
                     state={this.state}
                 />
-
                 <Forums
                     getForms={this.getForms}
                     posts={this.state.posts} />
