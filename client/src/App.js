@@ -18,8 +18,10 @@ import ProfilePage from './pages/ProfilePage/ProfilePage'
 
 
 
+
 const App = () => {
- 
+
+
   return (
       <Router>
       <AuthState>

@@ -54,7 +54,54 @@ const getCurrentProfile = async() =>{
     }
    
 }
+// Create Profile 
 
+const createProfile = async({website,
+  location,
+  status,
+  skills,
+  bio,
+  githubusername,
+  experience,
+  twitter,
+  facebook,
+  youtube,
+  instagram}) =>{
+  const config ={
+    headers:{
+      'Content-Type': 'application/json'
+    }
+  }
+
+  const body = JSON.stringify({
+
+    website,
+        location,
+        status,
+        skills,
+        bio,
+        githubusername,
+        experience,
+        twitter,
+        facebook,
+        youtube,
+        instagram
+  });
+
+  try {
+    const res = await axios.post('/api/profile',body,config);
+    dispatch({
+      type:CREATE_PROFILE,
+      payload:res.data
+    })
+  } catch (err) {
+    console.log(err)
+    dispatch({
+      type:PROFILE_ERROR,
+      payload: {msg: err.response.statusText, status: err.response.status}
+  })
+}
+}
 const clearProfile = ()=>{
   dispatch({
     type:CLEAR_PROFILE
@@ -69,7 +116,8 @@ return (
         loading:state.loading,
         error:state.error,
         getCurrentProfile,
-        clearProfile
+        clearProfile,
+        createProfile
       }}
     >
       {props.children}

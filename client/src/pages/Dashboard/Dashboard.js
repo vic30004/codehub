@@ -23,7 +23,7 @@ const Dashboard = (props) => {
             <p>
        <i className="fas fa-user"></i>Welcome{user && user.data.name} </p>
 
-        {profile !== null ? <Fragment><ProfilePage/></Fragment>: <Fragment>
+        {profile !== null  ? <Fragment><ProfilePage/></Fragment>: <Fragment>
             <p>Welcome to codehub! We are so happy you decided to join. Please follow this link to set up your profile!</p>
             <Link to="/create-profile">Create Profile </Link>
             </Fragment>}
