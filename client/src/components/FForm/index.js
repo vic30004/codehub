@@ -13,12 +13,12 @@ const Form = ({ state, onChange, onClick }) => {
                     placeholder="Name Here"
                 >
                 </input>
-                <label>Post</label>
+                <label>Create a Forum Post Here</label>
                 <input
                     value={state.post}
                     name="post"
                     onChange={onChange}
-                    placeholder="Post Here"
+                    placeholder="Create a Forum Here"
                 >
                 </input>
                 <button
