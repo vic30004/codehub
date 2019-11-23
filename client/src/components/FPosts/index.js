@@ -5,11 +5,6 @@ import CommentLabel from '../FCommentLabels'
 
 class Post extends Component {
 
-    constructor(props){
-        super(props)
-     
-
-    }
 
     state = {
         comment: "",
@@ -51,9 +46,10 @@ class Post extends Component {
 
       
         return (<div>
-            <h1>Written By : {name} <img src={avatar}></img></h1>
+            <h1><img src={avatar}></img></h1>
+            <h1>Written By : {name} </h1>
             <h1>The Post is : {post}</h1>
-            <h2>Total Likes : {likes}</h2>
+            <h2>Total Likes : {likes.length}</h2>
             <h2>Posted On : {date}</h2>
             <button onClick={() => this.addLike(_id)}>Upvote</button>
 
