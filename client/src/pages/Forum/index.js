@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
-import Form from '../components/FForm'
-import Forums from '../components/FSearchResults/index'
-import api from '../api'
-
+import Form from '../../components/FForm'
+import Forums from '../../components/FSearchResults/index'
+import api from '../../api'
 
 
 class Forum extends Component {
+
+    
+
 
     state = {
         name: "",
@@ -49,7 +51,6 @@ class Forum extends Component {
                     onClick={this.handleFormSubmit}
                     state={this.state}
                 />
-
                 <Forums
                     getForms={this.getForms}
                     posts={this.state.posts} />

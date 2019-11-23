@@ -4,26 +4,26 @@ export default {
 
     submitForm: form => {
         
-        return axios.post("/api/form", form)
+        return axios.post("/api/forum", form)
     },
 
     getForms: () => {
-        return axios.get("/api/form")
+        return axios.get("/api/forum")
     },
 
     addComment : (id,comment) => {
 
-        return axios.post(`/api/form/${id}`,comment)
+        return axios.post(`/api/forum/${id}`,comment)
     },
 
     deleteComment : id => {
     
     
-        return axios.delete(`/api/form/${id}`)
+        return axios.delete(`/api/forum/${id}`)
     },
 
     addLike : id => {
-        return axios.put(`/api/form/${id}`)
+        return axios.put(`/api/forum/${id}`)
     }
     
 }
