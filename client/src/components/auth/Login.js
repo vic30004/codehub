@@ -14,13 +14,20 @@ const Login = (props) => {
         errorState,
         removeAlert,
         login,
-        isAuthenticated
+        isAuthenticated,
+        loadUser,
+        token
       } = authContext;
 
       useEffect(() => {
         if (isAuthenticated) {
           props.history.push('/dashboard');
+          
         }
+        if(token){
+            loadUser() 
+        }
+       
         //eslint-disable-next-line
       }, [isAuthenticated, props]);
     

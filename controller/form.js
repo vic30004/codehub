@@ -1,7 +1,7 @@
 const asyncHandler = require('../middleware/async');
 const ErrorResponse = require('../utils/errorResponse');
 const User = require('../models/Users');
-const ForumPosts = require('../models/ForumPosts')
+const Forum = require ('../models/ForumPosts')
 
 
 //@desc  get all posts
@@ -28,7 +28,7 @@ exports.getAllForums = asyncHandler(async (req, res, next) => {
     queryStr = queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, match => `$${match}`);
   
     // Finding resource
-    query = ForumPosts.find(JSON.parse(queryStr)).populate('user', [
+    query = Forum.find(JSON.parse(queryStr)).populate('user', [
       'name',
       'avatar'
     ]);
@@ -53,7 +53,7 @@ exports.getAllForums = asyncHandler(async (req, res, next) => {
     const limit = parseInt(req.query.limit, 10) || 20;
     const startIndex = (page - 1) * limit;
     const endIndex = page * limit;
-    const total = await ForumPosts.countDocuments();
+    const total = await Forum.countDocuments();
   
     query = query.skip(startIndex).limit(limit);
   
@@ -90,11 +90,12 @@ exports.getAllForums = asyncHandler(async (req, res, next) => {
 // @Route   POST api/form
 // @Aceess  Private
 
-exports.createForum = async function (req, res) {
+exports.createForum = async function (req, res,next) {
     const user = await User.findById(req.user.id).select('-password')
      const {post,date}=req.body
+     console.log(req.body)
     try {
-        const dbModel = await Post
+        const dbModel = await Forum
             .create({
                 author: req.user.id,
                 post: post,
@@ -105,7 +106,10 @@ exports.createForum = async function (req, res) {
 
         res.json(dbModel)
     } catch (error) {
-        res.status(422).json(error)
+      console.log(error)
+      next(
+      )
+        res.status(422).json(error.message)
     }
 }
 
