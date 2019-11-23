@@ -4,11 +4,14 @@ import Comments from '../FComments'
 import CommentLabel from '../FCommentLabels'
 
 class Post extends Component {
-
+        
+    
     state = {
         comment: "",
         displayInput: false
+    
     }
+    
 
     addComment = async (id, comment) => {
         await api.addComment(id, comment)

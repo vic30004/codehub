@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Form from '../components/FForm'
-import Forums from '../components/FSearchResults/index'
-import api from '../api'
+import Form from '../../components/FForm'
+import Forums from '../../components/FSearchResults/index'
+import api from '../../api'
 
 
 
@@ -13,6 +13,8 @@ class Forum extends Component {
         posts: []
     }
 
+    
+
     componentDidMount() {
         this.getForms()
     }
@@ -20,7 +22,7 @@ class Forum extends Component {
     getForms = async () => {
 
         const { data: savedPosts } = await api.getForms()
-        this.setState({ posts: savedPosts, name: "", post: "" }, () => console.log(this.state.posts))
+        this.setState({ posts: savedPosts.data, name: "", post: "" }, () => console.log(this.state.posts))
         
     }
 
