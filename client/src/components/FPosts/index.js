@@ -5,6 +5,12 @@ import CommentLabel from '../FCommentLabels'
 
 class Post extends Component {
 
+    constructor(props){
+        super(props)
+     
+
+    }
+
     state = {
         comment: "",
         displayInput: false
@@ -40,16 +46,19 @@ class Post extends Component {
     }
 
     render() {
-        const { author, body, comments, id,likes } = this.props;
+        console.log(this.props)
+        const {_id,avatar,comments,date,likes,name,post} = this.props.posts
 
+      
         return (<div>
-            <h1>Written By : {author}</h1>
-            <h1>The Post is : {body}</h1>
+            <h1>Written By : {name} <img src={avatar}></img></h1>
+            <h1>The Post is : {post}</h1>
             <h2>Total Likes : {likes}</h2>
-            <button onClick={() => this.addLike(id)}>Upvote</button>
+            <h2>Posted On : {date}</h2>
+            <button onClick={() => this.addLike(_id)}>Upvote</button>
 
             <hr></hr>
-            <h2>Comments</h2>
+            {/* <h2>Comments</h2>
             {comments && comments.length > 0 ?
                 comments.map(({ comment, _id }) => (
                <Comments 
@@ -65,7 +74,7 @@ class Post extends Component {
             onChange={this.commentUpdate}
             submitComment={this.addComment}
             id={id}
-            />
+            /> */}
         </div>
         )
 
