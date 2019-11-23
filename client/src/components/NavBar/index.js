@@ -67,7 +67,7 @@ const NavBar = () => {
             <a href>Events</a>
           </li>
           <li className='nav-list-item'>
-            <a href>Forum</a>
+            <a href='/forum'>Forum</a>
           </li>
       
         </ul>
