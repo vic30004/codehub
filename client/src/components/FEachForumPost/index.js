@@ -3,7 +3,7 @@ import api from '../../api'
 import Comments from '../FComments'
 import CommentLabel from '../FCommentLabels'
 
-class Post extends Component {
+class FEachForumPost extends Component {
 
 
     state = {
@@ -13,7 +13,7 @@ class Post extends Component {
 
     addComment = async (id, comment) => {
         await api.addComment(id, comment)
-        this.props.getForms()
+        this.props.refresh()
         this.setState({ comment: "" })
     }
 
@@ -24,7 +24,7 @@ class Post extends Component {
     deleteComment = async id => {
         try {
             await api.deleteComment(id)
-            this.props.getForms()
+            this.props.refresh()
         } catch (error) {
             console.warn(error)
         }
@@ -42,7 +42,7 @@ class Post extends Component {
 
     render() {
         console.log(this.props)
-        const {_id,avatar,comments,date,likes,name,post} = this.props.posts
+        const {_id,avatar,refresh,comments,date,likes,name,post} = this.props.posts
 
       
         return (<div>
@@ -56,15 +56,18 @@ class Post extends Component {
             <hr></hr>
             <h2>Comments</h2>
             {comments && comments.length > 0 ?
-                comments.map(({ comment, _id }) => (
+                comments.map(({ post,name,date,avatar }) => (
                <Comments 
-               key={_id}
-               comment={comment}
+               commentName={name}
+               commentBody={post}
+               commentAvatar={avatar}
+               commentDate={date}
                id={_id}
                deleteComment={this.deleteComment}
                />)) : <h5>"No Comments"</h5>}
 
             <CommentLabel 
+            refresh={refresh}
             activeComment={this.handleCommentToggle}
             state={this.state}
             onChange={this.commentUpdate}
@@ -78,4 +81,4 @@ class Post extends Component {
 }
 
 
-export default Post;
+export default FEachForumPost;

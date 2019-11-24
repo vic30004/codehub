@@ -145,21 +145,20 @@ exports.addComment=async function (req, res) {
       const forum = await Forum.findById(req.params.id);
 
       
-        const dbComment = await Comment.create({
-            post: req.body.post,
-            name: user.name,
-            avatar: user.avatar,
-            date:date,
-            user: req.user.id
-        });
-        post.comments.unshift(dbComment);
-    await forum.save();
-            
-        res.json(forum.comments)
-    } catch (error) {
-        res.status(500).json(error.message)
-       
-    }
+      const newComment=({
+        post: req.body.post,
+        name: user.name,
+        avatar: user.avatar,
+        date:req.body.date,
+        user: req.user.id
+    });
+    forum.comments.unshift(newComment);
+await forum.save();
+        
+    res.json(forum.comments)
+} catch (error) {
+    res.status(500).json(error.message)
+}
 
   }
 
