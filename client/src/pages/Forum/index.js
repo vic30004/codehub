@@ -12,6 +12,8 @@ class Forum extends Component {
         posts: []
     }
 
+    
+
     componentDidMount() {
         this.getForms()
     }
