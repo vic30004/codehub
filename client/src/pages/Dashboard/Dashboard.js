@@ -13,10 +13,11 @@ const Dashboard = props => {
   const { user, loadUser, token } = authContext;
 
   useEffect(() => {
-    if (token) {
+    if (localStorage.token) {
       loadUser();
+      getCurrentProfile();
     }
-    getCurrentProfile();
+    
   }, []);
 
   return (
