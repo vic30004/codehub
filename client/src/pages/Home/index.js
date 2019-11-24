@@ -12,8 +12,11 @@ const Home = () => {
     const {loadUser} = authContext
 
     useEffect(()=>{
-        // loadUser()
+        if(localStorage.token){
+              loadUser()
         //eslint-disabled-next-line
+        }
+      
     },[])
 
         return(<div className="home-wrapper">

@@ -9,8 +9,11 @@ const Forums = ({getForms,posts }) => {
     const {isAuthenticated,loadUser}=authContext;
 
     useEffect(()=>{
-        loadUser()
-        //eslint-disabled-next-line
+        if(localStorage.token){
+             loadUser()
+        //eslint-disabled-next-line 
+        }
+      
     },[])
 
     const forum =

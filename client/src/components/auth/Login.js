@@ -20,15 +20,18 @@ const Login = (props) => {
       } = authContext;
 
       useEffect(() => {
-        if (isAuthenticated) {
-          props.history.push('/dashboard');
-          
+        if (localStorage.token) {
+                       loadUser()
+          //eslint-disable-next-line
+            if(isAuthenticated){
+                props.history.push('/dashboard');
+      
+            }
+         
         }
-        if(token){
-            loadUser() 
-        }
+        
        
-        //eslint-disable-next-line
+        
       }, [isAuthenticated, props]);
     
 
