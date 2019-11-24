@@ -118,27 +118,28 @@ exports.createForum = async function (req, res,next) {
 // @ access  Private
 
 exports.addComment=async function (req, res) {
+  console.log(req.body)
   try {
     const user = await User.findById(req.user.id).select('-password')
     const forum = await Forum.findById(req.params.id);
 
     
-      const dbComment = await Comment.create({
+      const newComment=({
           post: req.body.post,
           name: user.name,
           avatar: user.avatar,
-          date:date,
+          date:req.body.date,
           user: req.user.id
       });
-      post.comments.unshift(dbComment);
+      forum.comments.unshift(newComment);
   await forum.save();
           
       res.json(forum.comments)
   } catch (error) {
-      res.status(500).res.json(error.message)
+      res.status(500).json(error.message)
   }
 
-
+}
 
 
 
