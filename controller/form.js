@@ -113,6 +113,7 @@ exports.createForum = async function (req, res,next) {
     }
 }
 
+
 exports.addLike = asyncHandler(async (req, res, next) => {
   try {
     const form = await Forum.findById(req.params.id);
@@ -138,6 +139,7 @@ exports.addLike = asyncHandler(async (req, res, next) => {
 // @route    POST api/forum/comment/:id
 // @des      Comment on a forum
 // @ access  Private
+
 
 exports.addComment=async function (req, res) {
     try {
@@ -192,17 +194,17 @@ await forum.save();
 //         }
 //     },
 
-//     addComment: async function (req, res) {
-//         try {
-//             const dbComment = await Comment.create(req.body);
-//             const dbPost = await Post.findOneAndUpdate({ _id: req.params.id },
-//                 { $push: { comments: dbComment._id } },
-//                 { new: true });
+    // addComment: async function (req, res) {
+    //     try {
+    //         const dbComment = await Comment.create(req.body);
+    //         const dbPost = await Post.findOneAndUpdate({ _id: req.params.id },
+    //             { $push: { comments: dbComment._id } },
+    //             { new: true });
                 
-//             res.json(dbPost)
-//         } catch (error) {
-//             res.send(error)
-//         }
+    //         res.json(dbPost)
+    //     } catch (error) {
+    //         res.send(error)
+    //     }
 
 
 //     },

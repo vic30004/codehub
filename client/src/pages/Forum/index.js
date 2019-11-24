@@ -12,6 +12,8 @@ class Forum extends Component {
         posts: []
     }
 
+    
+
     componentDidMount() {
         this.getForms()
     }
@@ -19,6 +21,7 @@ class Forum extends Component {
     getForms = async () => {
 
         const { data: savedPosts } = await api.getForms()
+        console.log(savedPosts)
         this.setState({ posts: savedPosts.data, name: "", post: "" }, () => console.log(this.state.posts))
         
     }
