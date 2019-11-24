@@ -157,7 +157,7 @@ exports.likePost = asyncHandler(async (req, res, next) => {
   try {
     const post = await Posts.findById(req.params.id);
 
-    // Check if posthas already been liked by user
+    // Check if posts already been liked by user
     if (
       post.likes.filter(like => like.user.toString() === req.user.id).length > 0
     ) {
