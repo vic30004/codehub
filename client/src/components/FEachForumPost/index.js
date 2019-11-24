@@ -3,13 +3,8 @@ import api from '../../api'
 import Comments from '../FComments'
 import CommentLabel from '../FCommentLabels'
 
-class Post extends Component {
+class FEachForumPost extends Component {
 
-    constructor(props){
-        super(props)
-     
-
-    }
 
     state = {
         comment: "",
@@ -18,7 +13,7 @@ class Post extends Component {
 
     addComment = async (id, comment) => {
         await api.addComment(id, comment)
-        this.props.getForms()
+        this.props.refresh()
         this.setState({ comment: "" })
     }
 
@@ -29,7 +24,7 @@ class Post extends Component {
     deleteComment = async id => {
         try {
             await api.deleteComment(id)
-            this.props.getForms()
+            this.props.refresh()
         } catch (error) {
             console.warn(error)
         }
@@ -38,7 +33,7 @@ class Post extends Component {
     addLike = async id=> {
         try {
             await api.addLike(id)   
-            this.props.getForms()
+            this.props.refresh()
         } catch(err){
             console.warn(err)
         }
@@ -47,34 +42,38 @@ class Post extends Component {
 
     render() {
         console.log(this.props)
-        const {_id,avatar,comments,date,likes,name,post} = this.props.posts
+        const {_id,avatar,refresh,comments,date,likes,name,post} = this.props.posts
 
       
         return (<div>
-            <h1>Written By : {name} <img src={avatar}></img></h1>
+            <h1><img src={avatar}></img></h1>
+            <h1>Written By : {name} </h1>
             <h1>The Post is : {post}</h1>
-            <h2>Total Likes : {likes}</h2>
+            <h2>Total Likes : {likes.length}</h2>
             <h2>Posted On : {date}</h2>
             <button onClick={() => this.addLike(_id)}>Upvote</button>
 
             <hr></hr>
-            {/* <h2>Comments</h2>
+            <h2>Comments</h2>
             {comments && comments.length > 0 ?
-                comments.map(({ comment, _id }) => (
+                comments.map(({ post,name,date,avatar }) => (
                <Comments 
-               key={_id}
-               comment={comment}
+               commentName={name}
+               commentBody={post}
+               commentAvatar={avatar}
+               commentDate={date}
                id={_id}
                deleteComment={this.deleteComment}
                />)) : <h5>"No Comments"</h5>}
 
             <CommentLabel 
+            refresh={refresh}
             activeComment={this.handleCommentToggle}
             state={this.state}
             onChange={this.commentUpdate}
             submitComment={this.addComment}
-            id={id}
-            /> */}
+            id={_id}
+            />
         </div>
         )
 
@@ -82,4 +81,4 @@ class Post extends Component {
 }
 
 
-export default Post;
+export default FEachForumPost;

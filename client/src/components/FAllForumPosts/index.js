@@ -1,10 +1,10 @@
 import React, {useContext,useEffect} from 'react'
-import Posts from '../FPosts'
-import AuthContext from '../../components/context/auth/AuthContext'
+import FEachForumPost from '../FEachForumPost'
+import AuthContext from '../context/auth/AuthContext'
 
 
 
-const Forums = ({ posts }) => {
+const Forums = ({getForms,posts }) => {
     const authContext = useContext(AuthContext);
     const {isAuthenticated,loadUser}=authContext;
 
@@ -15,8 +15,9 @@ const Forums = ({ posts }) => {
 
     const forum =
         posts && posts.length > 0 ? posts.map(post => (
-            <Posts
+            <FEachForumPost
             posts={post}
+            refresh={getForms}
        
             />
          
