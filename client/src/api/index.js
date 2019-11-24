@@ -13,7 +13,7 @@ export default {
 
     addComment : (id,comment) => {
 
-        return axios.post(`/api/forum/${id}`,comment)
+        return axios.post(`/api/forum/comment/${id}`,comment)
     },
 
     deleteComment : id => {

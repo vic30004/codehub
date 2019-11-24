@@ -15,7 +15,7 @@ const CommentLabel = ({activeComment,onChange,submitComment,state,id}) => {
                     </input>
                     <br/>
                     <button
-                        onClick={() => submitComment(id, {comment:state.comment})}>Submit</button>
+                        onClick={() => submitComment(id, {post:state.comment})}>Submit</button>
                     <hr></hr>
                 </div>
             }
