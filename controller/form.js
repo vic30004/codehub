@@ -128,14 +128,40 @@ exports.addLike = asyncHandler(async (req, res, next) => {
 
     await form.save();
 
-    res.json(form.likes);
+    res.send(true)
   } catch (err) {
     return next(new ErrorResponse(err.message, 500));
   }
 });
 
 
+// @route    POST api/forum/comment/:id
+// @des      Comment on a forum
+// @ access  Private
 
+exports.addComment=async function (req, res) {
+    try {
+      const user = await User.findById(req.user.id).select('-password')
+      const forum = await Forum.findById(req.params.id);
+
+      
+        const dbComment = await Comment.create({
+            post: req.body.post,
+            name: user.name,
+            avatar: user.avatar,
+            date:date,
+            user: req.user.id
+        });
+        post.comments.unshift(dbComment);
+    await forum.save();
+            
+        res.json(forum.comments)
+    } catch (error) {
+        res.status(500).json(error.message)
+       
+    }
+
+  }
 
 
 

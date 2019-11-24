@@ -33,7 +33,7 @@ class Post extends Component {
     addLike = async id=> {
         try {
             await api.addLike(id)   
-            this.props.getForms()
+            this.props.refresh()
         } catch(err){
             console.warn(err)
         }
@@ -54,7 +54,7 @@ class Post extends Component {
             <button onClick={() => this.addLike(_id)}>Upvote</button>
 
             <hr></hr>
-            {/* <h2>Comments</h2>
+            <h2>Comments</h2>
             {comments && comments.length > 0 ?
                 comments.map(({ comment, _id }) => (
                <Comments 
@@ -69,8 +69,8 @@ class Post extends Component {
             state={this.state}
             onChange={this.commentUpdate}
             submitComment={this.addComment}
-            id={id}
-            /> */}
+            id={_id}
+            />
         </div>
         )
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Form from '../../components/FForm'
-import Forums from '../../components/FSearchResults/index'
+import FCreateForumPost from '../../components/FCreateForumPost'
+import FAllForumPosts from '../../components/FAllForumPosts/index'
 import api from '../../api'
 
 
@@ -43,12 +43,12 @@ class Forum extends Component {
     render() {
         return (
             <div>
-                <Form
+                <FCreateForumPost
                     onChange={this.handleFormChange}
                     onClick={this.handleFormSubmit}
                     state={this.state}
                 />
-                <Forums
+                <FAllForumPosts
                     getForms={this.getForms}
                     posts={this.state.posts} />
             </div>
