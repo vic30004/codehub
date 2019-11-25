@@ -8,12 +8,15 @@ import {
   REGISTER_USER,
   REGISTER_FAIL,  
   SET_ALERT,
+  CLEAR_PROFILE,
+  PROFILE_ERROR,
   REMOVE_ALERT,
   USER_LOADED,
   AUTH_ERROR,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT,
+  DELETE
   
 } from '../types';
 
@@ -136,21 +139,30 @@ if(errors){
    
   }
 
-  // REGISTER_FAIL
+  // Delete Account
+  const deleteAccount = async () => {
+    if (
+      window.confirm(
+        `Are you sure you want to delete your account? We won't be able to restore it.`
+      )
+    ) {
+      try {
+        const res = await axios.delete(`/api/profile`);
+        dispatch({
+          type: CLEAR_PROFILE
+        });
+        dispatch({
+          type: DELETE
+        });
+      } catch (err) {
+        dispatch({
+          type: PROFILE_ERROR,
+          payload: { msg: err.response, status: err.response }
+        });
+      }
+    }
+  };
 
-  // REGISTER_FAIL
-
-  // ADD EDU
-
-  // ADD EXP
-
-  // SET STATE
-
-  // CLEAR STATE
-
-  // DELETE PROGILE
-
-  // SET ALERT
 
   const setAlert = (msg,alertType) =>{
     const id =uuid.v4();
@@ -178,7 +190,8 @@ const removeAlert = () =>dispatch({ type:REMOVE_ALERT})
         login,
         logout,
         user:state.user,
-        isAuthenticated: state.isAuthenticated
+        isAuthenticated: state.isAuthenticated,
+        deleteAccount
       }}
     >
       {props.children}

@@ -16,8 +16,9 @@ import ProfileState from './components/context/profile/ProfileState'
 import ProfilePage from './pages/ProfilePage/ProfilePage'
 import Forum from './pages/Forum'
 import Forums from './pages/Forum';
-
-
+import EduForm from './pages/EduForm/EduForm'
+import EditProfile from './components/auth/EditProfile';
+import ExpFrom from './pages/ExpForm/ExpForm'
 
 const App = () => {
 
@@ -37,8 +38,11 @@ const App = () => {
               <Route exact path='/register' component={Register} />
               <Route exact path='/login' component={Login} />
               <Route exact path='/create-profile' component={CreateProfile} />
-              <Route exact path='/profile' component={Profile}/>
-              <Route exact path='/profile-page' component={ProfilePage}/>
+              <PrivateRoute exact path='/profile' component={Profile}/>
+              <PrivateRoute exact path='/profile-page' component={ProfilePage}/>
+              <PrivateRoute exact path='/education' component={EduForm}/>
+              <PrivateRoute exact path='/experience' component={ExpFrom}/>
+              <PrivateRoute exact path='/edit-profile' component={EditProfile}/>
               <PrivateRoute exact path='/dashboard' component={Dashboard}/>
             </Fragment>
           </Switch>

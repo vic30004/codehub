@@ -4,6 +4,7 @@ import AuthProfileContext from '../../components/context/auth/AuthContext';
 import AuthContext from '../../components/context/auth/AuthContext';
 import { Link } from 'react-router-dom';
 import ProfilePage from '../ProfilePage/ProfilePage';
+import DashboardActions from './DashboardActions'
 
 const Dashboard = props => {
   const profileContext = useContext(ProfileContext);
@@ -27,8 +28,9 @@ const Dashboard = props => {
         <i className='fas fa-user'></i>Welcome{user && user.data.name}{' '}
       </p>
 
-      {profile !== null ? (
+      {profile !== null && profile &&profile.user ?  (
         <Fragment>
+        <DashboardActions/>
           <ProfilePage />
         </Fragment>
       ) : (
