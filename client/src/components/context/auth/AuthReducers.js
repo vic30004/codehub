@@ -9,6 +9,7 @@ import {
   LOGIN_FAIL,
   LOGIN_SUCCESS,
   LOGOUT,
+  DELETE,
 } from '../types';
 
 export default (state, action) => {
@@ -35,6 +36,7 @@ export default (state, action) => {
 
     case REGISTER_FAIL:
       case LOGIN_FAIL:
+        case DELETE:
        localStorage.removeItem('token');
        return{
         ...state,

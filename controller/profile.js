@@ -77,7 +77,7 @@ exports.updateProfile = asyncHandler(async (req, res, next) => {
     await profile.save();
     res.json(profile);
   } catch (err) {
-    return next(new ErrorResponse(err.message, 400));
+    return res.status(400).json(err);
   }
 });
 
