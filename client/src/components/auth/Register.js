@@ -56,8 +56,10 @@ const Register = props => {
   };
 
   return (
+
+    <div className='register-wrapper'>
     <section id='register'>
-      <div className='form-container '>
+      <div className='form-register-container '>
       {errorState.length > 0 || errorState !== null ? <Alert /> : ''}
         <h2>Sign Up</h2>
         <h4>Create Your Account</h4>
@@ -107,11 +109,12 @@ const Register = props => {
         <a className='btn-register' onClick={e => onClick(e)}>
           Register
         </a>
-        <h5>
-          Already a member? <Link to='/login'>Login in</Link>
+        <h5 className='form-register-header'>
+          Already a member? <Link to='/login'>Login</Link>
         </h5>
       </div>
     </section>
+    </div>
   );
 };
 

@@ -1,28 +1,55 @@
-#register, #login{
-height: 100vh;
-background: var(--grey-color);
-padding: 2rem 0;
+#login {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: #71eeb892;
+    opacity: .8;
 }
 
+.register-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: #71eeb892;
+    opacity: .8;
+}
 
-#register .form-container, #login .form-container{
+.form-container, #login .form-container {
+    display: grid;
+    grid-template-columns: 1fr;
     max-width: var(--max-width);
     margin:1rem auto;
     padding: 3rem 2rem;
-    display: flex;
-    flex-flow: column wrap;
     border-radius: 10px;
     background:aliceblue;
-    box-shadow: 0 5px 10px;
+    border: .5px solid lightgray;
 }
 
-#register .form-container h2, #login .form-container h2 {
+.form-register-container {
+    display: grid;
+    grid-column: 2/4;
+    max-width: var(--max-width);
+    width: 50%;
+    margin:1rem auto;
+    padding: 3rem 2rem;
+    border-radius: 10px;
+    background:aliceblue;
+    border: .5px solid lightgray;
+}
+
+.form-register-container h4 {
+    margin: 5px 0px 0px 0px;
+}
+
+.form-register-container input {
     margin: 1rem 0;
-    font-size: 2rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 5px;
+    font-family: var(--main-font);
+    border:none;
 }
 
-#register .form-container h4, #login .form-container h4{
-    margin-bottom: 1rem;
+.form-container h2, #login .form-container h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 
 #register .form-container input, #login .form-container input{
@@ -33,13 +60,11 @@ padding: 2rem 0;
     border:none;
 }
 
-
-
 #register .form-container a, #login .form-container a{
     color:var(--light-color);
 }
 
-#register .form-container .btn-register, #login .form-container .btn-register{
+/* #register .form-container .btn-register, #login .form-container .btn-register{
     display: inline-block;
     margin:0 auto;
     color:var(--grey-color);
@@ -48,9 +73,29 @@ padding: 2rem 0;
     border-radius: 5px;
     font-weight: bold;
     letter-spacing: 1.5px;
-}
+} */
 
-#register .form-container h5 a, #login .form-container h5 a{
+#register .form-container h5 a, #login .form-container h5 a, #register .form-register-container h5 a {
     color:rgb(64, 64, 175);
     font-size: .9rem;
 }
+
+.btn-register {
+    display: grid;
+    background:var(--dark-color);
+    width: 75px;
+    height: 25px;
+    text-align: center;
+    font-size: 14px;
+    font-size: 1.5vw;
+    border-radius: 5px;
+    align-items: center;
+    margin-top: 10px;
+    color: white;
+}
+
+.register-header,
+.form-register-header {
+    margin-top: 30px;
+}
+
