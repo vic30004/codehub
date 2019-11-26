@@ -52,7 +52,7 @@ const Login = (props) => {
         <input type="text" name="username" value={username} id="username" onChange={e=>onChange(e)} placeholder="Username" required/>
         <input type="password" name="password" value={password} onChange={e=>onChange(e)} placeholder="Password" minLength='6' required/>
         <a className="btn-register" onClick={e =>onClick(e)}>Login</a>
-        <h5>Don't have an account? <Link to="/register">Register</Link></h5>
+        <h5 className='register-header'>Don't have an account? <Link to="/register">Register</Link></h5>
 
         </div>
     </section>
