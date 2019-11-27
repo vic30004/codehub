@@ -11,7 +11,8 @@ import {
   REMOVE_ALERT,
   CLEAR_CURRENT,
   PROFILE_ERROR,
-  CLEAR_PROFILE
+  CLEAR_PROFILE,
+  GET_GITHUB
 } from '../types';
 
 export default (state, action) => {
@@ -25,6 +26,12 @@ export default (state, action) => {
         profile: payload,
         loading: false
       };
+      case GET_PROFILES:
+        return {
+          ...state,
+          profiles:payload,
+          loading: false
+        }
     case PROFILE_ERROR:
       return {
         ...state,
@@ -61,6 +68,12 @@ export default (state, action) => {
         profile: payload,
         loading: false
       };
+      case GET_GITHUB:
+        return {
+          ...state,
+          repo: payload,
+          loading:false
+        }
 
     default:
       return state;

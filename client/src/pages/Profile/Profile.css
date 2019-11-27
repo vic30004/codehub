@@ -1,5 +1,5 @@
 #profiles{
-height: 100vh;
+height: 100%;
 padding: 3rem 0;
 background: var(--grey-color);
 }
@@ -7,7 +7,7 @@ background: var(--grey-color);
 
 #profiles .profiles-container{
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
     justify-content: center;
     max-width: var(--max-width);
     margin: 0 auto;

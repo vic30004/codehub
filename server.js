@@ -14,7 +14,7 @@ dotenv.config({ path: "./config/config.env" });
 // initialize express
 const app = express();
 
-// Dev logging middleware
+// Dev logging middleware n 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 

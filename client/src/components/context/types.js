@@ -23,7 +23,7 @@ export const REMOVE_ALERT ='REMOVE_ALERT'
 export const SET_CURRENT='SET_CURRENT';
 export const CLEAR_CURRENT ='CLEAR_CURRENT';
 export const PROFILE_ERROR ='PROFILE_ERROR'
-
+export const GET_GITHUB = 'GET_GITHUB';
 
 
 // POSTS & COMMENTS
