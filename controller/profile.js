@@ -107,6 +107,7 @@ exports.getAllProfiles = asyncHandler(async (req, res, next) => {
   // Finding resource
   query = Profile.find(JSON.parse(queryStr)).populate('user', [
     'name',
+    'username',
     'avatar'
   ]);
 

@@ -15,6 +15,7 @@ import {
   SET_ALERT,
   REMOVE_ALERT,
   SET_CURRENT,
+  GET_GITHUB,
   CLEAR_CURRENT,
   PROFILE_ERROR,
   CLEAR_PROFILE
@@ -38,7 +39,7 @@ const ProfileState = props => {
       const res = await axios.get('/api/profile/me');
       dispatch({
         type: GET_PROFILE,
-        payload: res.data
+        payload: res.data.data
       });
     } catch (err) {
       console.log(err.response);
@@ -48,6 +49,46 @@ const ProfileState = props => {
       });
     }
   };
+
+
+  // Get All Profiles
+  const getProfiles = async()=>{
+    dispatch({type:CLEAR_PROFILE});
+
+    try {
+      const res= await axios.get('/api/profile')
+
+      dispatch({
+        type: GET_PROFILES,
+        payload:res.data.data
+      })
+
+    } catch (err) {
+      dispatch({
+        type:PROFILE_ERROR,
+        payload: {msg:err.response}
+      })
+    }
+  }
+
+// Get profile by id
+const getProfileById = async (userId) =>{
+  try {
+    const res = await axios.get(`/api/profile?_id=${userId}`)
+    dispatch({
+      type: GET_PROFILE,
+      payload: res.data.data
+    });
+  } catch (err) {
+    console.log(err.response);
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: { msg: err.response, status: err.response }
+    });
+  }
+}
+
+
   // Create Profile
 
   const createProfile = async ({
@@ -195,6 +236,23 @@ const ProfileState = props => {
     }
   };
   
+  // Github repo 
+  const getGithub = async(username)=>{
+ 
+
+    try {
+      const res = await axios.get(`/api/profile/github/${username}`)
+      dispatch({
+        type:GET_GITHUB,
+        payload:res.data
+      })
+    } catch (err) {
+      dispatch({
+        type: PROFILE_ERROR,
+        payload: { msg: err.response, status: err.response }
+      });
+    }
+  }
 
   return (
     <ProfileContext.Provider
@@ -210,7 +268,10 @@ const ProfileState = props => {
         addEdu,
         addExp,
         deleteEdu,
-        deleteExp
+        deleteExp,
+        getGithub,
+        getProfiles,
+        getProfileById
       }}
     >
       {props.children}
