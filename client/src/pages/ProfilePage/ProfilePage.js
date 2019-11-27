@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import './ProfilePage.css';
 import moment from 'moment'
 import AuthContext from '../../components/context/auth/AuthContext';
-const ProfilePage = () => {
+const ProfilePage = ({profile}) => {
   const profileContext = useContext(ProfileContext);
   const authContext = useContext(AuthContext)
 
   const {isAuthenticated} =authContext
-  const { profile,deleteExp,deleteEdu } = profileContext;
+  const {deleteExp,deleteEdu } = profileContext;
   const {
     company,
     website,
@@ -27,7 +27,7 @@ const ProfilePage = () => {
     instagram,
     education
   } = profile;
-
+console.log(profile)
   
 
   return (

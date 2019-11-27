@@ -9,6 +9,7 @@ const Profile = () => {
   const profileContext = useContext(ProfileContext);
 
   const {getProfiles,profiles} = profileContext;
+  console.log(profiles)
 
     useEffect(()=>{
         getProfiles()
@@ -17,9 +18,9 @@ const Profile = () => {
   return (
     <div id='profiles'>
       <div className='profiles-container'>
-        {profiles.map(profile => (
+        {profiles.length>0?profiles.map(profile => (
           <ProfileItems profiles={profile} />
-        ))}
+        )):<h4>No Profiles Yet</h4>}
       </div>
     </div>
   );

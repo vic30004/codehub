@@ -19,7 +19,7 @@ import Forums from './pages/Forum';
 import EduForm from './pages/EduForm/EduForm'
 import EditProfile from './components/auth/EditProfile';
 import ExpFrom from './pages/ExpForm/ExpForm'
-
+import SingleProfile from './pages/ProfilePage/SingleProfile'
 const App = () => {
 
 
@@ -39,6 +39,7 @@ const App = () => {
               <Route exact path='/login' component={Login} />
               <Route exact path='/create-profile' component={CreateProfile} />
               <Route exact path='/profile' component={Profile}/>
+              <Route exact path='/profile/:id' component={SingleProfile}/>
               <PrivateRoute exact path='/profile-page' component={ProfilePage}/>
               <PrivateRoute exact path='/education' component={EduForm}/>
               <PrivateRoute exact path='/experience' component={ExpFrom}/>
