@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import './ProfilePage.css';
 import moment from 'moment'
 import AuthContext from '../../components/context/auth/AuthContext';
+import ProfileGithub from './ProfileGithub'
+
 const ProfilePage = ({profile}) => {
   const profileContext = useContext(ProfileContext);
   const authContext = useContext(AuthContext)
@@ -139,6 +141,10 @@ console.log(profile)
       </div>
     </div>
   </section> 
+
+  {profile.githubusername &&(
+    <ProfileGithub username={githubusername}/>
+  )}
   </section>
   :<h1>Loading</h1>}
   </Fragment>

@@ -71,7 +71,7 @@ export default (state, action) => {
       case GET_GITHUB:
         return {
           ...state,
-          repo: payload,
+          repos: payload,
           loading:false
         }
 
