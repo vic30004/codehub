@@ -36,6 +36,7 @@ app.use("/api/auth", require("./routes/api/auth"));
 app.use("/api/profile", require("./routes/api/profile"));
 app.use("/api/posts", require("./routes/api/posts"));
 app.use("/api/forum",require('./routes/api/form'));
+app.use("/api/articles",require("./routes/api/articles"))
 
 
 
