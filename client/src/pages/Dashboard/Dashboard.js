@@ -10,16 +10,23 @@ const Dashboard = props => {
   const profileContext = useContext(ProfileContext);
   const authContext = useContext(AuthContext);
 
-  const { getCurrentProfile, profile } = profileContext;
-  const { user, loadUser, token } = authContext;
+  const { getCurrentProfile, profile,getGithub  } = profileContext;
+  const { user, loadUser, token} = authContext;
+
 
   useEffect(() => {
     if (localStorage.token) {
       loadUser();
       getCurrentProfile();
+      
     }
     
   }, []);
+
+
+  // if(profile && profile!==null){
+  //   // getGithub(profile.githubusername)
+  // }
 
   return (
     <div>
