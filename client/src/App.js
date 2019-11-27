@@ -19,6 +19,7 @@ import Forums from './pages/Forum';
 import EduForm from './pages/EduForm/EduForm'
 import EditProfile from './components/auth/EditProfile';
 import ExpFrom from './pages/ExpForm/ExpForm'
+import Articles from './pages/Articles';
 
 const App = () => {
 
@@ -32,6 +33,7 @@ const App = () => {
           <Route exact path='/' component={Home} />
           <Route exact path='/videos' component={Videos}/>
           <Route exact path='/forum' component={Forums}/>
+          <Route exact path ='/articles' component={Articles}/>
           
           <Switch>
             <Fragment>

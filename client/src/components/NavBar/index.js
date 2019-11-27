@@ -61,7 +61,7 @@ const NavBar = () => {
             <Link to='/videos'>Videos</Link>
           </li>
           <li className='nav-list-item'>
-            <a href>Articles</a>
+            <a href='/articles'>Articles</a>
           </li>
           <li className='nav-list-item'>
             <a href>Events</a>
@@ -73,12 +73,7 @@ const NavBar = () => {
         </ul>
       </div>
       <div className='nav-input'>
-        {/*<input
-                type="text"
-                className="input"
-                id="addInput"
-                placeholder="Search videos, content and more..."
-                />*/}
+
       </div>
       {isAuthenticated ? authLinks: guestLinks}
       <div>

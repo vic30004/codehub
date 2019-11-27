@@ -2,6 +2,7 @@ import axios from 'axios'
 
 export default {
 
+    // Forum Api Calls
     submitForm: form => {
         
         return axios.post("/api/forum", form)
@@ -24,6 +25,13 @@ export default {
 
     addLike : id => {
         return axios.put(`/api/forum/${id}`)
+    },
+
+    // Articles Api Calls
+    searchArticles : () => {
+        return axios.get('/api/articles')
     }
+
+
     
 }
