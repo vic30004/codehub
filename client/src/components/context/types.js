@@ -28,10 +28,12 @@ export const GET_GITHUB = 'GET_GITHUB';
 
 // POSTS & COMMENTS
 export const CREATE_POST = 'CREATE_POST';
+export const GET_USER_POSTS = 'GET_USER_POSTS'
 export const LIKE_POST ='LIKE_POST';
 export const UNLIKE_POST ='UNLIKE_POST';
 export const DELETE_POST ='DELETE_POST';
 export const GET_POSTS ='GET_POSTS';
+export const POST_ERROR ='POST_ERROR';
 export const GET_POST = 'GET_POST';
 export const ADD_COMMENT ='ADD_COMMENT';
 export const DELETE_COMMENT = 'DELETE_COMMENT'

@@ -14,13 +14,16 @@ import Profile from './pages/Profile/Profile'
 import PrivateRoute from './components/Routing/PrivateRoute'
 import ProfileState from './components/context/profile/ProfileState'
 import ProfilePage from './pages/ProfilePage/ProfilePage'
+import Posts from './components/Posts/Posts'
 import Forum from './pages/Forum'
 import Forums from './pages/Forum';
 import EduForm from './pages/EduForm/EduForm'
 import EditProfile from './components/auth/EditProfile';
 import ExpFrom from './pages/ExpForm/ExpForm'
 import Articles from './pages/Articles';
+import PostsState from './components/context/posts/PostsState'
 import SingleProfile from './pages/ProfilePage/SingleProfile'
+
 const App = () => {
 
 
@@ -28,6 +31,7 @@ const App = () => {
       <Router>
       <AuthState>
       <ProfileState>
+      <PostsState>
         <NavBar />
         <Switch>
           <Route exact path='/' component={Home} />
@@ -42,6 +46,7 @@ const App = () => {
               <Route exact path='/create-profile' component={CreateProfile} />
               <Route exact path='/profile' component={Profile}/>
               <Route exact path='/profile/:id' component={SingleProfile}/>
+              <PrivateRoute exact path = '/posts' component={Posts}/>
               <PrivateRoute exact path='/profile-page' component={ProfilePage}/>
               <PrivateRoute exact path='/education' component={EduForm}/>
               <PrivateRoute exact path='/experience' component={ExpFrom}/>
@@ -51,6 +56,7 @@ const App = () => {
           </Switch>
         </Switch>
         <Footer />
+        </PostsState>
         </ProfileState>
         </AuthState>
       </Router>

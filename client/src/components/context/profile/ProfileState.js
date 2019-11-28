@@ -39,7 +39,7 @@ const ProfileState = props => {
       const res = await axios.get('/api/profile/me');
       dispatch({
         type: GET_PROFILE,
-        payload: res.data.data
+        payload: res.data
       });
     } catch (err) {
       console.log(err.response);
@@ -278,5 +278,6 @@ const getProfileById = async (userId) =>{
     </ProfileContext.Provider>
   );
 };
+
 
 export default ProfileState;
