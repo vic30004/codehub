@@ -8,15 +8,17 @@ module.exports = {
        let response = await axios.get("https://hackernoon.com/tagged/programming")
        let $ = cheerio.load(response.data)
             let data = []
-
+       
             $(".story-card").each(function(i,element){
                 let article = {}
-                if(i<15 && i>1){
+                if(data.length<20){
                
-
                 article.title = $(this).children(".excerpt").children(".title").find("a").text()
                 article.img = $(this).children("div").children("a").children(".img").attr("style")
                 article.img = article.img.split("").slice(23,article.img.length-2).join("")
+                if(article.img.includes("http")){
+                    return
+                }
                 article.img = `https://hackernoon.com${article.img}`
                 article.authorlink = $(this).children(".bio").children(".flex").children("div").find("a").attr("href")
                 article.authorlink = `https://hackernoon.com${article.authorlink}`
@@ -24,12 +26,12 @@ module.exports = {
                 article.date = $(this).children(".bio").children(".flex").children("div").children(".published").text()
                 article.link = $(this).children(".excerpt").children(".title").find("a").attr("href")
                 article.link = `https://hackernoon.com${article.link}`
-                
                 data.push(article)
                 }
                
             
             })
+
             res.send(data)
          
     }
