@@ -6,12 +6,11 @@ import setAuthToken from '../../../utils/SetAuthToken';
 import PostsReducer from './PostsReducer';
 import {
   ADD_COMMENT,
+  REMOVE_COMMENT,
   SET_ALERT,
   REMOVE_ALERT,
   POST_ERROR,
   CREATE_POST,
-  LIKE_POST,
-  UNLIKE_POST,
   DELETE_POST,
   GET_POSTS,
   GET_POST,
@@ -57,6 +56,45 @@ const PostsState = props => {
         type:GET_USER_POSTS,
         payload: res.data.data
       })
+    } catch (err) {
+      dispatch({
+        type: POST_ERROR,
+        payload: { msg: err.response, status: err.response }
+      });
+    }
+  }
+
+  const addComment = async (formData,postId) =>{
+    const config = {
+      header: {
+        'Content-Type': 'application/json'
+      }
+    };
+
+    try {
+      const res = await axios.post(`/api/posts/comment/${postId}`,formData,config);
+      dispatch({
+        type:ADD_COMMENT,
+        payload: res.data
+      });
+      setAlert('Comment Added','success')
+    } catch (err) {
+      dispatch({
+        type: POST_ERROR,
+        payload: { msg: err.response, status: err.response }
+      });
+    }
+  }
+
+  // Delete Comment
+  const deleteComment = async (postId,commentId) =>{
+    try {
+      const res = await axios.delete(`/api/posts/comment/${postId}/${commentId}`);
+      dispatch({
+        type:REMOVE_COMMENT,
+        payload: commentId
+      });
+      setAlert('Comment Removed','success')
     } catch (err) {
       dispatch({
         type: POST_ERROR,
@@ -185,7 +223,9 @@ const PostsState = props => {
         addLikes,
         deletePost,
         addPost,
-        getPost
+        getPost,
+        addComment,
+        deleteComment
       }}
       
     >
