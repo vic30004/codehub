@@ -15,7 +15,8 @@ import {
   DELETE_POST,
   GET_POSTS,
   GET_POST,
-  GET_USER_POSTS
+  GET_USER_POSTS,
+  UPDATE_LIKES
 } from '../types';
 import ProfileContext from '../profile/ProfileContext';
 
@@ -64,6 +65,79 @@ const PostsState = props => {
     }
   }
 
+    //Delete Posts
+
+    const deletePost = async (id)=>{
+      try {
+        const res = await axios.delete(`/api/posts/${id}`)
+        dispatch({
+          type:DELETE_POST,
+          payload: id
+        })
+        setAlert('Post Removed', 'success')
+      } catch (err) {
+        dispatch({
+          type: POST_ERROR,
+          payload: { msg: err.response, status: err.response }
+        });
+      }
+    }
+
+    // Add a post 
+
+    const addPost = async (formData)=>{
+      const config = {
+        headers:{
+          'Content-Type':"application/json"
+        }
+      }
+      try {
+        const res = await axios.post(`/api/posts`,formData,config);
+        dispatch({
+          type:CREATE_POST,
+          payload: res.data
+        })
+      } catch (err) {
+        dispatch({
+          type: POST_ERROR,
+          payload: { msg: err.response, status: err.response }
+        });
+      }
+    }
+
+
+  // Add Likes 
+
+  const addLikes = async (postId)=>{
+    try {
+      const res = await axios.put(`/api/posts/like/${postId}`)
+      dispatch({
+        type:UPDATE_LIKES,
+        payload:{postId, likes:res.data}
+      })
+    } catch (err) {
+      dispatch({
+        type: POST_ERROR,
+        payload: { msg: err.response, status: err.response }
+      });
+    }
+  }
+  // Remove Likes 
+
+  const removeLikes = async (postId)=>{
+    try {
+      const res = await axios.put(`/api/posts/unlike/${postId}`)
+      dispatch({
+        type:UPDATE_LIKES,
+        payload:{postId, likes:res.data}
+      })
+    } catch (err) {
+      dispatch({
+        type: POST_ERROR,
+        payload: { msg: err.response, status: err.response }
+      });
+    }
+  }
 
 
   const setAlert = (msg, alertType) => {
@@ -91,7 +165,11 @@ const PostsState = props => {
         setAlert,
         removeAlert,
         getPosts,
-        getUserPosts
+        getUserPosts,
+        removeLikes,
+        addLikes,
+        deletePost,
+        addPost
       }}
       
     >

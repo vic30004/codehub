@@ -19,7 +19,7 @@ const ProfileItems = ({ profiles }) => {
         <p>{status} {company && <span> at {company}</span>}</p>
         <p className="my-1"> {location && <span> at {location}</span>}</p>
         {profiles.user || user !== null ? (
-          <Link to={`/profile/${_id}`} className='profileBtn'>
+          <Link to={`/profile/${user._id}`} className='profileBtn'>
             Visit Profile
           </Link>
         ) : (

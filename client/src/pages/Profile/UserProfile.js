@@ -33,7 +33,6 @@ const ProfilePage = () => {
     education
   } = profile;
 console.log(profile)
-  
 
   return (
     <Fragment>

@@ -1,17 +1,22 @@
-import React, { useContext, Fragment, useEffect } from 'react';
+import React, { useState,useContext, Fragment, useEffect } from 'react';
 import ProfileContext from '../../components/context/profile/ProfileContext';
 import { Link } from 'react-router-dom';
 import './ProfilePage.css';
 import moment from 'moment'
 import AuthContext from '../../components/context/auth/AuthContext';
 import ProfileGithub from './ProfileGithub'
+import PostsContext from '../../components/context/posts/PostsContext';
 
 const ProfilePage = ({profile}) => {
+  const [text,setText] =useState('')
   const profileContext = useContext(ProfileContext);
   const authContext = useContext(AuthContext)
+  const postsContext = useContext(PostsContext)
 
   const {isAuthenticated,user,loadUser} =authContext
   const {deleteExp,deleteEdu,loading } = profileContext;
+  const {addPost} = postsContext
+  
   const {
     company,
     website,
@@ -35,7 +40,8 @@ useEffect(() => {
   }
   
 }, []);
-  
+
+
 if(user){
   console.log(user.data._id)
 }
@@ -119,15 +125,22 @@ if(user){
   <section className='posts-container'>
     <div className='post-comment'>
       <h1>Add A Posts</h1>
-
+<form action="" onSubmit={e=>{
+  e.preventDefault();
+  addPost({text});
+  setText('')
+}}>
       <textarea
-        name=''
+        name='text'
         placeholder='Share Something'
         id=''
+        value={text}
         cols='100'
         rows='5'
+        onChange={e => setText(e.target.value)}
       ></textarea>
       <button>Post</button>
+      </form>
     </div>
 
     <div className='comments'>

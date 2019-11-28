@@ -25,9 +25,9 @@ const Posts = () => {
         <i className="fas fa-user"></i>Welcome to the Developer Community!
         </p>
         {/*PostForm*/}
-        {posts.map(post => (
+        {posts!==null ?posts.map(post => (
             <PostItem key={post._id} post ={post}/>
-        ))}
+        )):''}
         </Fragment>
     )
 }

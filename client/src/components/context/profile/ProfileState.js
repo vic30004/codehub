@@ -74,7 +74,7 @@ const ProfileState = props => {
 // Get profile by id
 const getProfileById = async (userId) =>{
   try {
-    const res = await axios.get(`/api/profile?_id=${userId}`)
+    const res = await axios.get(`/api/profile/user/${userId}`)
     dispatch({
       type: GET_PROFILE,
       payload: res.data.data

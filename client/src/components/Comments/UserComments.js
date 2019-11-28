@@ -8,7 +8,7 @@ const UserComments = ({userId}) => {
     useEffect(()=>{
         getUserPosts(userId)
     },[])
-    console.log(posts)
+    console.log(userId)
     return (
         <div>
         {posts ? posts.map(data=>(
