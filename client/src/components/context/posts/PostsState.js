@@ -105,6 +105,21 @@ const PostsState = props => {
       }
     }
 
+    // Get Post
+    const getPost = async (id)=>{
+      try {
+        const res = await axios.get(`/api/posts/${id}`)
+        dispatch({
+          type:GET_POST,
+          payload :res.data.data
+        })
+      } catch (err) {
+        dispatch({
+          type: POST_ERROR,
+          payload: { msg: err.response, status: err.response }
+        });
+      }
+    }
 
   // Add Likes 
 
@@ -169,7 +184,8 @@ const PostsState = props => {
         removeLikes,
         addLikes,
         deletePost,
-        addPost
+        addPost,
+        getPost
       }}
       
     >

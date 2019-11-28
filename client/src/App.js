@@ -23,6 +23,7 @@ import ExpFrom from './pages/ExpForm/ExpForm'
 import Articles from './pages/Articles';
 import PostsState from './components/context/posts/PostsState'
 import SingleProfile from './pages/ProfilePage/SingleProfile'
+import SinglePost from './components/SinglePost/SinglePost'
 
 const App = () => {
 
@@ -46,6 +47,7 @@ const App = () => {
               <Route exact path='/create-profile' component={CreateProfile} />
               <Route exact path='/profile' component={Profile}/>
               <Route exact path='/profile/:id' component={SingleProfile}/>
+              <PrivateRoute exact path = '/post/:id' component={SinglePost}/>
               <PrivateRoute exact path = '/posts' component={Posts}/>
               <PrivateRoute exact path='/profile-page' component={ProfilePage}/>
               <PrivateRoute exact path='/education' component={EduForm}/>
