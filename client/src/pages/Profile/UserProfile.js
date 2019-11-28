@@ -1,22 +1,20 @@
-import React, { useState,useContext, Fragment, useEffect } from 'react';
+import React, { useContext, Fragment } from 'react';
 import ProfileContext from '../../components/context/profile/ProfileContext';
 import { Link } from 'react-router-dom';
-import './ProfilePage.css';
+import '../ProfilePage/ProfilePage.css';
 import moment from 'moment'
 import AuthContext from '../../components/context/auth/AuthContext';
-import ProfileGithub from './ProfileGithub'
+import ProfileGithub from '../ProfilePage/ProfileGithub'
 import PostsContext from '../../components/context/posts/PostsContext';
+import UserComments from '../../components/Comments/UserComments';
 
-const ProfilePage = ({profile}) => {
-  const [text,setText] =useState('')
+const ProfilePage = () => {
   const profileContext = useContext(ProfileContext);
   const authContext = useContext(AuthContext)
   const postsContext = useContext(PostsContext)
-
-  const {isAuthenticated,user,loadUser} =authContext
-  const {deleteExp,deleteEdu,loading } = profileContext;
-  const {addPost} = postsContext
-  
+  const {isAuthenticated} =authContext
+  const {deleteExp,deleteEdu,profile } = profileContext;
+  const {getUserPosts, posts} = postsContext
   const {
     company,
     website,
@@ -24,6 +22,7 @@ const ProfilePage = ({profile}) => {
     status,
     username,
     skills,
+    user,
     bio,
     githubusername,
     experience,
@@ -33,18 +32,8 @@ const ProfilePage = ({profile}) => {
     instagram,
     education
   } = profile;
+console.log(profile)
 
-useEffect(() => {
-  if (localStorage.token) {
-    loadUser();    
-  }
-  
-}, []);
-
-
-if(user){
-  console.log(user.data._id)
-}
   return (
     <Fragment>
     {profile!==null ?
@@ -53,8 +42,8 @@ if(user){
       <div className='profile-container'>
     <div className='profile-head'>
     
-      <img src={profile.user.avatar} alt='' className="profile-pic" />
-      <h1>{profile.user.name}</h1> <p>{bio}</p>
+      <img src={user.avatar} alt='' className="profile-pic" />
+      <h1>{user.name}</h1> <p>{bio}</p>
       <ul>
         <li>
           <h4>{skills}</h4>
@@ -93,7 +82,7 @@ if(user){
                   <li>From:{moment(data.from).format('MM/DD/YYYY')}</li>
                   <li>To:{moment(data.to).format('MM/DD/YYYY')}</li>
                   <li>Job Description:{data.description}</li>
-                  {isAuthenticated && loading === false && user.data._id===profile.user._id? <button onClick={e =>deleteExp(data._id)}>Delete</button> :''}
+                  {isAuthenticated? <button onClick={e =>deleteExp(data._id)}>Delete</button> :''}
 
                 </ul>
               </Fragment>
@@ -111,7 +100,7 @@ if(user){
                   <li>From:{moment(data.from).format('MM/DD/YYYY')}</li>
                   <li>To:{moment(data.to).format('MM/DD/YYYY')}</li>
                   <li>Description:{data.description}</li>
-                  {isAuthenticated && loading === false && user.data._id===profile.user._id? <button onClick={e =>deleteEdu(data._id)}>Delete</button> :''}
+                  {isAuthenticated? <button onClick={e =>deleteEdu(data._id)}>Delete</button> :''}
 
                 </ul>
               </div>
@@ -125,40 +114,21 @@ if(user){
   <section className='posts-container'>
     <div className='post-comment'>
       <h1>Add A Posts</h1>
-<form action="" onSubmit={e=>{
-  e.preventDefault();
-  addPost({text});
-  setText('')
-}}>
+
       <textarea
-        name='text'
+        name=''
         placeholder='Share Something'
         id=''
-        value={text}
         cols='100'
         rows='5'
-        onChange={e => setText(e.target.value)}
       ></textarea>
       <button>Post</button>
-      </form>
     </div>
 
     <div className='comments'>
+          
       <h2>Comments</h2>
-      <div className='comment-container'>
-      <div className="user-pic">
-      <img src={profile.user.avatar} alt='' />
-      </div>
-        <div className="content">
-               <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-          voluptatem accusamus earum quibusdam! Repellat libero possimus
-          earum mollitia sint id!
-        </p>
-        <h6>Added on: 11/22/2019</h6>
-        </div>
- 
-      </div>
+      <UserComments userId ={user._id}/>  
     </div>
   </section> 
 

@@ -39,7 +39,7 @@ const ProfileState = props => {
       const res = await axios.get('/api/profile/me');
       dispatch({
         type: GET_PROFILE,
-        payload: res.data.data
+        payload: res.data
       });
     } catch (err) {
       console.log(err.response);
@@ -74,7 +74,7 @@ const ProfileState = props => {
 // Get profile by id
 const getProfileById = async (userId) =>{
   try {
-    const res = await axios.get(`/api/profile?_id=${userId}`)
+    const res = await axios.get(`/api/profile/user/${userId}`)
     dispatch({
       type: GET_PROFILE,
       payload: res.data.data
@@ -278,5 +278,6 @@ const getProfileById = async (userId) =>{
     </ProfileContext.Provider>
   );
 };
+
 
 export default ProfileState;

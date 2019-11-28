@@ -14,8 +14,8 @@ const Profile = ({ match }) => {
   }, []);
   console.log(profile)
   return <Fragment>
-  {profile !== null && profile  ?  
-  profile.map(data=><ProfilePage profile={data}/>):''}
+  {profile !== null && profile?<ProfilePage profile={profile}/>:''}
+ 
   </Fragment>;
 };
 
