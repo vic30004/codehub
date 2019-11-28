@@ -3,16 +3,16 @@ import ProfileContext from '../../components/context/profile/ProfileContext';
 import AuthProfileContext from '../../components/context/auth/AuthContext';
 import AuthContext from '../../components/context/auth/AuthContext';
 import { Link } from 'react-router-dom';
-import ProfilePage from '../ProfilePage/ProfilePage';
+import UserProfile from '../Profile/UserProfile';
 import DashboardActions from './DashboardActions'
 
 const Dashboard = props => {
   const profileContext = useContext(ProfileContext);
   const authContext = useContext(AuthContext);
 
-  const { getCurrentProfile, profile,getGithub  } = profileContext;
+  const { getCurrentProfile, profile,getGithub,loading  } = profileContext;
   const { user, loadUser, token} = authContext;
-
+ 
 
   useEffect(() => {
     if (localStorage.token) {
@@ -22,7 +22,7 @@ const Dashboard = props => {
     }
     
   }, []);
-
+ console.log(profile)
 
   // if(profile && profile!==null){
   //   // getGithub(profile.githubusername)
@@ -35,10 +35,10 @@ const Dashboard = props => {
         <i className='fas fa-user'></i>Welcome{user && user.data.name}{' '}
       </p>
 
-      {profile !== null && profile &&profile.user ?  (
+      {profile !== null && !loading && profile?  (
         <Fragment>
         <DashboardActions/>
-          <ProfilePage />
+          <UserProfile />
         </Fragment>
       ) : (
         <Fragment>
