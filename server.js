@@ -51,7 +51,6 @@ if(process.env.NODE_ENV === 'production'){
 }
 
 // dont put this before routes.
-app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
