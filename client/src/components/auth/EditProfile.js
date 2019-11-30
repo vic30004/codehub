@@ -47,7 +47,6 @@ const EditProfile = (props) => {
                 loadUser()
                 getCurrentProfile()
             
-            console.log(profile)
             setFormData({
                 company: loading || !profile.company ? '' : profile.company,
                 website: loading || !profile.website ? '' : profile.website,
