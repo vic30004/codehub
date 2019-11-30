@@ -1,0 +1,3 @@
+{
+    "mongoURI": "mongodb+srv://project3:project3@codehub-lutjr.mongodb.net/codehub?retryWrites=true&w=majority"
+}
