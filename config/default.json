@@ -1,3 +1,7 @@
 {
-    "mongoURI": "mongodb+srv://project3:project3@codehub-lutjr.mongodb.net/codehub?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://project3:project3@codehub-lutjr.mongodb.net/codehub?retryWrites=true&w=majority",
+  "GITHUB_CLIENT_ID": "dd402e26d6ded3d0f2c7",
+  "GITHUB_CLIENT_SECRET": "71b9e772c4b1e434b034e3aa06649dc65b839553",
+  "JWT_SECRET":"asasf12312asfas"
+
 }
