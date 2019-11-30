@@ -1,22 +1,29 @@
-#login {
+.login-wrapper {
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    height: 100vh;
+    /* grid-template-rows: auto; */
     background-color: #71eeb892;
-    opacity: .8;
+    opacity: .8; 
 }
 
 .register-wrapper {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
     background-color: #71eeb892;
     opacity: .8;
+    height: 125vh;
+    overflow:hidden;
 }
 
-.form-container, #login .form-container {
+.form-container {
     display: grid;
     grid-template-columns: 1fr;
     max-width: var(--max-width);
-    margin:1rem auto;
+    width: 30%;
+    margin: 2rem auto;
     padding: 3rem 2rem;
     border-radius: 10px;
     background:aliceblue;
@@ -25,44 +32,116 @@
 
 .form-register-container {
     display: grid;
-    grid-column: 2/4;
+    /* grid-column: 2/4; */
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8,1fr);
     max-width: var(--max-width);
-    width: 50%;
-    margin:1rem auto;
+    /* max-height: 500px; */
+    width: 30%;
+    height: auto;
+    margin:2rem auto;
+    margin-bottom: 20px;
+    padding: 3rem 2rem;
+    border-radius: 10px;
+    background:aliceblue;
+    border: .5px solid lightgray;
+    /* margin: 50px 0px 50px 0px; */
+    padding-bottom: 20px;
+}
+
+.error-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.sign-up,
+.login-h2 {
+   align-self: center;
+}
+
+.login-container {
+    display: grid;
+    /* grid-column: 2/4; */
+    max-width: var(--max-width);
+    width: 30%;
+    max-height: 400px;
+    margin:2rem auto;
     padding: 3rem 2rem;
     border-radius: 10px;
     background:aliceblue;
     border: .5px solid lightgray;
 }
 
-.form-register-container h4 {
-    margin: 5px 0px 0px 0px;
+#login {
+    display: grid;
+    grid-template-columns: 1fr;
 }
+
+
+
+/* .form-register-container h4,
+#login h4 {
+    margin: 5px 0px 0px 0px;
+} */
+
+.login-container input {
+    margin: 1rem 0;
+    padding: 0.3rem 0.5rem;
+    border-radius: 5px;
+    font-family: var(--main-font);
+    border:.5px solid lightgray;
+}
+
+/* .login-h2,
+.login-header,
+#password,
+.form-btn-register,
+.register-header {
+    margin: 0px;
+} */
 
 .form-register-container input {
     margin: 1rem 0;
-    padding: 0.3rem 0.5rem;
+    /* padding: 0.3rem 0.5rem; */
+    padding: 15px;
+    border-radius: 5px;
+    font-family: var(--main-font);
+    border:.5px solid lightgray;
+}
+
+/* #login input {
     border-radius: 5px;
     font-family: var(--main-font);
     border:none;
-}
+    height: 25%;
+    align-self: center;
+    background-color: white;   
+} */
 
-.form-container h2, #login .form-container h2 {
+/* .form-container h2, #login .form-container h2 {
     font-size: 2rem;
     margin-bottom: 10px;
-}
+} */
 
-#register .form-container input, #login .form-container input{
+/* .form-container input {
     margin: 1rem 0;
     padding: 0.3rem 0.5rem;
     border-radius: 5px;
     font-family: var(--main-font);
     border:none;
-}
+} */
 
-#register .form-container a, #login .form-container a{
+/* #login input {
+    margin: 1rem 0;
+    padding: 0.3rem 0.5rem;
+    border-radius: 5px;
+    font-family: var(--main-font);
+    border:none;
+} */
+
+/* #register .form-container a, #login .form-container a{
     color:var(--light-color);
-}
+} */
 
 /* #register .form-container .btn-register, #login .form-container .btn-register{
     display: inline-block;
@@ -75,23 +154,18 @@
     letter-spacing: 1.5px;
 } */
 
-#register .form-container h5 a, #login .form-container h5 a, #register .form-register-container h5 a {
-    color:rgb(64, 64, 175);
-    font-size: .9rem;
+#password,
+#username {
+    background-color: white;
 }
 
-.btn-register {
-    display: grid;
-    background:var(--dark-color);
-    width: 75px;
-    height: 25px;
-    text-align: center;
-    font-size: 14px;
-    font-size: 1.5vw;
-    border-radius: 5px;
-    align-items: center;
-    margin-top: 10px;
-    color: white;
+.login-container input {
+    background-color: white;
+}
+
+#register .form-container h5 a, #login .login-container h5 a, #register .form-register-container h5 a {
+    color:rgb(64, 64, 175);
+    font-size: .9rem;
 }
 
 .register-header,
@@ -99,3 +173,16 @@
     margin-top: 30px;
 }
 
+.form-btn-register {
+    display: grid;
+    background:var(--dark-color);
+    width: 100%;
+    /* height: 100%; */
+    text-align: center;
+    font-size: 14px;
+    font-size: 1vw;
+    border-radius: 5px;
+    align-items: center;
+    margin-top: 10px;
+    color: white;
+}

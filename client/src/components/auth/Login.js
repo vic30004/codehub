@@ -54,18 +54,22 @@ const Login = (props) => {
         }
     }
     return (
+      
+        <div className='login-wrapper'>
         <section id="login" >
-        <div className="form-container ">
+        <div className='login-container'>
+        <div className='error-wrapper'>
+        <h2 className='login-h2'>Login</h2>
         <Alert/>
-        <h2>Login</h2>
-        <h4>Sign Into Your Account</h4>
-        <input type="text" name="username" value={username} id="username" onChange={e=>onChange(e)} placeholder="Username" required/>
-        <input type="password" name="password" value={password} onChange={e=>onChange(e)} placeholder="Password" minLength='6' required/>
-        <a className="btn-register" onClick={e =>onClick(e)}>Login</a>
-        <h5 className='register-header'>Don't have an account? <Link to="/register">Register</Link></h5>
-
         </div>
-    </section>
+        <input type="text" name="username" value={username} id="username" onChange={e=>onChange(e)} placeholder="Username" required/>
+        <input id='password' type="password" name="password" value={password} onChange={e=>onChange(e)} placeholder="Password" minLength='6' required/>
+        <a className="form-btn-register" onClick={e =>onClick(e)}>sign in</a>
+        <h5 className='register-header'>Don't have an account? <Link to="/register">Register</Link></h5>
+        </div>
+        </section>
+      
+    </div>
     )
     }
 export default Login

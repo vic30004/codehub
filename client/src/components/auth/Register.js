@@ -60,9 +60,12 @@ const Register = props => {
     <div className='register-wrapper'>
     <section id='register'>
       <div className='form-register-container '>
+      <div className='error-wrapper'>
+      <h2 className='sign-up'>
+      Sign Up
       {errorState.length > 0 || errorState !== null ? <Alert /> : ''}
-        <h2>Sign Up</h2>
-        <h4>Create Your Account</h4>
+      </h2>
+      </div>
         <input
           type='text'
           name='name'
@@ -88,8 +91,6 @@ const Register = props => {
           placeholder='Email'
           required
         />
-        <h4>Use gravatar email for a profile picture</h4>
-        
         <input
           type='password'
           name='password'
@@ -106,7 +107,7 @@ const Register = props => {
           placeholder='Confirm Password'
           minLength='6'
         />
-        <a className='btn-register' onClick={e => onClick(e)}>
+        <a className='form-btn-register' onClick={e => onClick(e)}>
           Register
         </a>
         <h5 className='form-register-header'>
