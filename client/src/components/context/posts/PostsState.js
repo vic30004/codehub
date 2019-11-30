@@ -72,7 +72,7 @@ const PostsState = props => {
     };
 
     try {
-      const res = await axios.post(`/api/posts/comment/${postId}`,formData,config);
+      const res = await axios.post(`/api/posts/comments/${postId}`,formData,config);
       dispatch({
         type:ADD_COMMENT,
         payload: res.data
