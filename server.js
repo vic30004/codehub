@@ -31,12 +31,7 @@ if (process.env.NODE_ENV === "development") {
 }
 
 // Routes
-app.use("/api/users", require("./routes/api/users"));
-app.use("/api/auth", require("./routes/api/auth"));
-app.use("/api/profile", require("./routes/api/profile"));
-app.use("/api/posts", require("./routes/api/posts"));
-app.use("/api/forum",require('./routes/api/form'));
-app.use("/api/articles",require("./routes/api/articles"))
+
 
 
 // Server the build folder
