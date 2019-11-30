@@ -1,10 +1,10 @@
 const express = require('express');
+const {register} = require('../../controller/user')
 const router = express.Router();
 
-// @route    POST api/users
-// @des      register user
-// @ access  Public
-router.post('/', (req,res,next)=>res.send('User route'))
+
+router.post('/register', register);
+
 
 
 module.exports= router

@@ -1,0 +1,10 @@
+.articles-container{
+    display:grid;
+    width: 80%;
+    margin: 50px auto;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+}

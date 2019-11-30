@@ -1,20 +1,31 @@
-import React from 'react'
+import React,{useContext,useEffect} from 'react'
 import HomeVideos from '../../components/HomeVideos'
 import HomeSlider from '../../components/HomeSlider'
 import HomeEvents from '../../components/HomeEvents'
+import YouTubeApp from '../../components/YouTubeApp/YouTubeApp'
+import AuthContext from '../../components/context/auth/AuthContext'
 import './style.css'
 
 
-class Home extends React.Component {
+const Home = () => {
+    const authContext = useContext(AuthContext);
+    const {loadUser} = authContext
 
-    render() {
+    useEffect(()=>{
+        if(localStorage.token){
+              loadUser()
+        //eslint-disabled-next-line
+        }
+      
+    },[])
+
         return(<div className="home-wrapper">
             <HomeSlider />
-            <HomeVideos />
+            <YouTubeApp />
+            {/*<HomeVideos />*/}
             <HomeEvents />
-      
+
         </div>)
-    }
 
 }
 

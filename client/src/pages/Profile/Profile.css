@@ -1,0 +1,46 @@
+#profiles{
+height: 100%;
+padding: 3rem 0;
+background: var(--grey-color);
+}
+
+
+#profiles .profiles-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+
+}
+
+
+
+.card{
+background: var(--blue-color);
+width: 500px;
+height: 300px;
+margin: 2rem auto;
+display: flex;
+flex-flow: column wrap;
+align-items: center;
+justify-content: center;
+padding: 2rem 0;
+}
+
+.card img{
+    border-radius: 50%;
+}
+
+.card .username{
+    padding:1rem 0;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.profileBtn{
+    background: var(--green-color);
+    padding: 0.5rem 0.75rem;
+    border-radius: 5px;
+    color: var(--light-color);
+}

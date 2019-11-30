@@ -1,45 +1,93 @@
-import React, { Component } from 'react';
+import React, { Fragment, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
+import AuthContext from '../context/auth/AuthContext';
+import ProfileContext from '../context/profile/ProfileContext'
 
-class NavBar extends Component {
+const NavBar = () => {
+  const authContext = useContext(AuthContext);
+  const profileContext = useContext(ProfileContext);
 
-    render() {
-        return (
-            <div className='nav-wrapper'>
-                <div className='nav-logo'>codeHub
-           </div>
-                <button className='nav-button'>join</button>
-                <div className='nav-list'>
-                    <ul className='nav-ul'>
-                        <li className='nav-list-item'>
-                            <a href>Videos</a>
-                        </li>
-                        <li className='nav-list-item'>
-                            <a href>Articles</a>
-                        </li>
-                        <li className='nav-list-item'>
-                            <a href>Events</a>
-                        </li>
-                        <li className='nav-list-item'>
-                            <a href>Forum</a>
-                        </li>
-                    </ul>
-                </div>
-                <div className='nav-input'>
-                <input
-                type="text"
-                className="input"
-                id="addInput"
-                placeholder="Search videos, content and more..."
-                />
-                </div>
-                <button className='nav-upload-btn'>upload</button>
-                <div>
-                </div>
-            </div>
-        )
+  const {isAuthenticated,logout,user} = authContext
+  const {clearProfile} = profileContext
+  
+
+    const onLogout=()=>{
+      clearProfile();
+        logout();
+        
     }
-}
+
+    const authLinks = (
+        <Fragment>
+            <li>Hello {user && user.data.name}</li>
+            <li>
+            <Link to='/dashboard'> Dashboard</Link>
+            
+            </li>
+            <li>
+            <Link to='/posts'> Posts</Link>
+            
+            </li>
+            <li>
+                <a href="#!" onClick={onLogout}>
+                <i className="fas fa-sign-out-alt"></i><span className="hide-sm">Logout</span>
+                </a>
+            </li>
+        </Fragment>
+
+    );
+
+
+
+    const guestLinks = (
+        <Fragment>
+            
+        <li>
+        <Link className='nav-button' to='/register'>
+        Register
+      </Link>
+        </li>
+        <li className='nav-list-item'>
+        <Link to='/login'>Login</Link>
+      </li>
+        </Fragment>
+    )
+
+  return (
+    <div className='nav-wrapper'>
+      <Link to='/' className='nav-logo'>
+        codeHub
+      </Link>
+      <div className='nav-list'>
+        <ul className='nav-ul'>
+          <li className='nav-list-item'>
+            <Link to='/videos'>Videos</Link>
+          </li>
+          <li className='nav-list-item'>
+            <a href='/articles'>Articles</a>
+          </li>
+          <li className='nav-list-item'>
+            <a href>Events</a>
+          </li>
+          <li className='nav-list-item'>
+            <a href='/forum'>Forum</a>
+          </li>
+          <li className='nav-list-item'>
+          <Link to='/profile'>Profiles</Link>
+          </li>
+      
+        </ul>
+      </div>
+      <div className='nav-input'>
+
+      </div>
+      {isAuthenticated ? authLinks: guestLinks}
+      <div>
+      
+      </div>
+    </div>
+  );
+};
 
 export default NavBar;
-
