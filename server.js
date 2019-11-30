@@ -37,9 +37,14 @@ app.use("/api/posts", require("./routes/api/posts"));
 app.use("/api/forum",require('./routes/api/form'));
 app.use("/api/articles",require("./routes/api/articles"))
 
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-});
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static('client/build'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 
 
 
