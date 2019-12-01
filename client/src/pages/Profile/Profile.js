@@ -7,11 +7,15 @@ import './Profile.css'
 const Profile = () => {
   const authContext = useContext(AuthContext);
   const profileContext = useContext(ProfileContext);
+  const {isAuthenticated,user,loadUser} =authContext
 
   const {getProfiles,profiles} = profileContext;
   console.log(profiles)
 
     useEffect(()=>{
+      if (localStorage.token) {
+        loadUser();   
+      }
         getProfiles()
     },[])
 

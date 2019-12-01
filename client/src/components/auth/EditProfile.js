@@ -26,7 +26,7 @@ const EditProfile = (props) => {
 
     const profileContext = useContext(ProfileContext);
     const authContext = useContext(AuthContext);
-    const{isAuthenticated,loadUser} = authContext
+    const{isAuthenticated,loadUser,user} = authContext
     const {createProfile,profile,getCurrentProfile,loading,history,edit}=profileContext
 
     const {company,
@@ -93,6 +93,7 @@ const EditProfile = (props) => {
             youtube,
             instagram
         },history,edit)
+        props.history.push(`profile/${user.data._id}`);
     }
         
     

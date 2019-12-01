@@ -1,36 +1,34 @@
-const express = require("express");
-const errorHandler = require("./middleware/error");
-const connectDB = require("./config/db");
-const colors = require("colors");
-const dotenv = require("dotenv");
-const morgan = require("morgan");
-const path = require('path')
-const cookieParser = require('cookie-parser')
+const express = require('express');
+const errorHandler = require('./middleware/error');
+const connectDB = require('./config/db');
+const colors = require('colors');
+const dotenv = require('dotenv');
+const morgan = require('morgan');
+const path = require('path');
+const cookieParser = require('cookie-parser');
 // Load env vars
-dotenv.config({ path: "./config/config.env" });
-
-
-
+dotenv.config({ path: './config/config.env' });
 
 // initialize express
 const app = express();
 
-// Dev logging middleware n 
+// Dev logging middleware n
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Cookie parser
-app.use(cookieParser())
+app.use(cookieParser());
 
 // connect db
 connectDB();
 
-// Log routes 
-if (process.env.NODE_ENV === "development") {
-  app.use(morgan("dev"));
+// Log routes
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
 }
 
 // Routes
+<<<<<<< HEAD
 app.use("/api/users", require("./routes/api/users"));
 app.use("/api/auth", require("./routes/api/auth"));
 app.use("/api/profile", require("./routes/api/profile"));
@@ -46,16 +44,24 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
+=======
+app.use('/api/users', require('./routes/api/users'));
+app.use('/api/auth', require('./routes/api/auth'));
+app.use('/api/profile', require('./routes/api/profile'));
+app.use('/api/posts', require('./routes/api/posts'));
+app.use('/api/forum', require('./routes/api/form'));
+app.use('/api/articles', require('./routes/api/articles'));
+>>>>>>> d5a4228eb94263864bae0d8d582a6d4368815308
 
 // Server the build folder
 
-if(process.env.NODE_ENV === 'production'){
+if (process.env.NODE_ENV === 'production') {
   // set static folder
   app.use(express.static('client/build'));
 
-  app.get('*', (req,res)=>{
-    res.sendFile(path.resolve(__dirname,'client','build', 'index.html'))
-  })
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
 }
 
 // dont put this before routes.
