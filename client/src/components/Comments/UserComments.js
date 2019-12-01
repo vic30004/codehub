@@ -9,6 +9,7 @@ const UserComments = ({userId}) => {
         getUserPosts(userId)
     },[])
     console.log(userId)
+    console.log(posts)
     return (
         <div>
         {posts ? posts.map(data=>(

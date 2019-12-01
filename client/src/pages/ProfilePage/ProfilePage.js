@@ -6,6 +6,7 @@ import moment from 'moment'
 import AuthContext from '../../components/context/auth/AuthContext';
 import ProfileGithub from './ProfileGithub'
 import PostsContext from '../../components/context/posts/PostsContext';
+import UserComments from '../../components/Comments/UserComments';
 
 const ProfilePage = ({profile}) => {
   const [text,setText] =useState('')
@@ -143,22 +144,11 @@ if(user){
       </form>
     </div>
 
+   
     <div className='comments'>
+          
       <h2>Comments</h2>
-      <div className='comment-container'>
-      <div className="user-pic">
-      <img src={profile.user.avatar} alt='' />
-      </div>
-        <div className="content">
-               <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-          voluptatem accusamus earum quibusdam! Repellat libero possimus
-          earum mollitia sint id!
-        </p>
-        <h6>Added on: 11/22/2019</h6>
-        </div>
- 
-      </div>
+      <UserComments userId ={profile.user._id}/>  
     </div>
   </section> 
 

@@ -22,7 +22,6 @@ const Dashboard = props => {
     }
     
   }, []);
- console.log(profile)
 
   // if(profile && profile!==null){
   //   // getGithub(profile.githubusername)
@@ -38,7 +37,9 @@ const Dashboard = props => {
       {profile !== null && !loading && profile?  (
         <Fragment>
         <DashboardActions/>
-          <UserProfile />
+        <Link to={`/profile/${user.data._id}`} className='profileBtn'>
+        Visit Profile
+      </Link>
         </Fragment>
       ) : (
         <Fragment>
