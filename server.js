@@ -28,7 +28,6 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // Routes
-<<<<<<< HEAD
 app.use("/api/users", require("./routes/api/users"));
 app.use("/api/auth", require("./routes/api/auth"));
 app.use("/api/profile", require("./routes/api/profile"));
@@ -44,14 +43,6 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
-=======
-app.use('/api/users', require('./routes/api/users'));
-app.use('/api/auth', require('./routes/api/auth'));
-app.use('/api/profile', require('./routes/api/profile'));
-app.use('/api/posts', require('./routes/api/posts'));
-app.use('/api/forum', require('./routes/api/form'));
-app.use('/api/articles', require('./routes/api/articles'));
->>>>>>> d5a4228eb94263864bae0d8d582a6d4368815308
 
 // Server the build folder
 
