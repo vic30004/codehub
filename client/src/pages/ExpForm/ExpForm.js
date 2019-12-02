@@ -1,4 +1,4 @@
-import React,{Fragment,useContext,useState} from 'react'
+import React,{Fragment,useContext,useState,useEffect} from 'react'
 import AuthContext from '../../components/context/auth/AuthContext' 
 import Calendar from 'react-calendar';
 import moment from 'moment';
@@ -13,11 +13,20 @@ const ExpForm = (props) => {
         to:'',
         description:''
     })
+
+  
+
     const authContext = useContext(AuthContext);
     const profileContext = useContext(ProfileContext)
 
-    const {setAlert,isAuthenticated, errorState,removeAlert} = authContext
+    const {user,loadUser} = authContext
     const {addExp,getCurrentProfile}=profileContext
+
+    useEffect(()=>{
+        if(localStorage.token){
+            loadUser()
+        }
+    })
 
     const {title,company,location,from,to,description} = formData
 
@@ -36,7 +45,7 @@ const ExpForm = (props) => {
         e.preventDefault()
         try {
             addExp(formData)
-            props.history.push('/dashboard');
+            props.history.push(`profile/${user.data._id}`);
         } catch (error) {
             console.log(error)
         }

@@ -1,10 +1,18 @@
-import React from 'react'
-import './style.css'
+import React, { useContext, useEffect } from 'react';
+import './style.css';
+import AuthContext from '../context/auth/AuthContext';
 
-const ArtContainer = props =>{
-    return(<div className="articles-container" {...props}>
+const ArtContainer = props => {
+  const authContext = useContext(AuthContext);
+  const {isAuthenticated,user,loadUser} =authContext
 
-    </div>)
-}
+  useEffect(() => {
+    if (localStorage.token) {
+      loadUser();
+    }
+  }, []);
 
-export default ArtContainer
+  return <div className='articles-container' {...props}></div>;
+};
+
+export default ArtContainer;
