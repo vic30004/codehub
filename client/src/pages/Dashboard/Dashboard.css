@@ -92,3 +92,19 @@ transition: all .3s ease-in-out;
 .profileBtn:hover{
     box-shadow: 0px 5px 10px;
 }
+
+@media only screen and (min-width: 375px) and (max-width: 767px){
+    #dashboard{
+        font-size: 1rem;
+    }
+
+    .dash-button{
+        display: flex;
+        flex-flow: column wrap;
+        font-size: 1rem;
+    }
+
+    #quote{
+        height: 20%;
+    }
+}
