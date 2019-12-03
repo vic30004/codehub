@@ -59,7 +59,7 @@ class YouTubeApp extends Component {
       <div className='you-tube-wrapper'>
         <div className='header-wrapper'>
           <h1 className='container-header'>Search Videos</h1>
-          <button type="button" onClick={this.handleToggleClick} className='more-btn'>+ more</button>
+          {/* <button type="button" onClick={this.handleToggleClick} className='more-btn'>+ more</button>*/}
           </div>
         <div className='you-tube-vid-container'>
           <SearchBar className='search-bar' onSearchTermChange={searchTerm => this.videoSearch(searchTerm)} />

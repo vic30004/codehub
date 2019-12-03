@@ -12,7 +12,7 @@ const Dashboard = props => {
   const profileContext = useContext(ProfileContext);
   const authContext = useContext(AuthContext);
 
-  const {getCurrentProfile, profile, getGithub, loading } = profileContext;
+  const { getCurrentProfile,profile, getGithub, loading } = profileContext;
   const { user, loadUser, token } = authContext;
 
   useEffect(() => {
@@ -25,6 +25,8 @@ const Dashboard = props => {
   let randomQuote = Quote.getRandomQuote;
   console.log(randomQuote);
   return (
+    <div className='dashboard-wrapper'>
+    <div className='dashboard-container'>
     <section id='dashboard'>
     <div className="main-info">
     <h1>Dashboard </h1>
@@ -59,13 +61,13 @@ const Dashboard = props => {
         ''
       ) : (
         <div id='quote'>
-          <h2>Some Random Qutoe</h2>
+          <h2>Some Random Quote</h2>
           <p>{randomQuote()}</p>
         </div>
       )}
     </section>
-
-    
+    </div>
+    </div>
   );
 };
 

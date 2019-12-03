@@ -4,7 +4,9 @@
     grid-template-rows: 1fr;
     height: 100vh;
     /* grid-template-rows: auto; */
-    background-color: #71eeb892;
+    /* background-color: #71eeb892; */
+    /* background: linear-gradient(to right bottom, #71eeb892, #71eeb892 65%, #eee 55%, #71eeb8 75%); */
+    background: linear-gradient(to left top, #71eeb892, #71eeb892 65%, #eee 55%);
     opacity: .8; 
     padding: 50px;
 }
@@ -23,7 +25,8 @@
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
-    background-color: #71eeb892;
+    /* background-color: #71eeb892; */
+    background: linear-gradient(to left top, #71eeb892, #71eeb892 65%, #eee 55%);
     opacity: .8;
     height: 125vh;
     overflow:hidden;
@@ -137,21 +140,9 @@
     margin-top: 30px;
 }
 
-.form-btn-register {
-    display: grid;
-    background:var(--dark-color);
-    width: 100%;
-    /* height: 100%; */
-    text-align: center;
-    font-size: 14px;
-    font-size: 1vw;
-    border-radius: 5px;
-    align-items: center;
-    margin-top: 10px;
-    color: white;
-}
 
-.btn-register {
+
+/* .btn-register {
     display: grid;
     background:var(--dark-color);
     width: 100%;
@@ -163,4 +154,114 @@
     align-items: center;
     margin-top: 10px;
     color: white;
+} */
+
+.btn-register {
+    display: grid;
+    background:var(--dark-color);
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    align-items: center;
+    background:var(--background-green);
+    font-weight: bolder;
+    letter-spacing: 1.2px;
+    position: relative;
+    transition: all .5s ease-in-out;
+    z-index: 1;
+    overflow: hidden;
+    color:var(--dark-color);
+    border: none;
+    font-size: 14px;
+    font-size: 1vw;
+    border-radius: 5px;
+    margin-top: 10px;
 }
+
+.btn-register:before{
+    position: absolute;
+    content:'';
+    width:100%;
+    height:100%;
+    background: var(--background-green2);
+    top: 0;
+    left: -120%;
+    transform: skew(45deg);
+    z-index: -1;
+    transition: all .3s ease-in-out;
+    }
+    
+    .btn-register:after{
+    position: absolute;
+    content:'';
+    width:100%;
+    height:100%;
+    background: var(--light-color);
+    top: 0;
+    left: 120%;
+    transform: skew(45deg);
+    z-index: -1;
+    transition: all .3s ease-in-out;
+    }
+    
+    .btn-register:hover:before{
+        left:-51%;
+    }
+    .btn-register:hover:after{
+        left:49%;
+    }
+
+    .form-btn-register {
+        display: grid;
+        background:var(--dark-color);
+        width: 100%;
+        height: 50px;
+        text-align: center;
+        align-items: center;
+        background:var(--background-green);
+        font-weight: bolder;
+        letter-spacing: 1.2px;
+        position: relative;
+        transition: all .5s ease-in-out;
+        z-index: 1;
+        overflow: hidden;
+        color:var(--dark-color);
+        border: none;
+        font-size: 14px;
+        font-size: 1vw;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+    
+    .form-btn-register:before{
+        position: absolute;
+        content:'';
+        width:100%;
+        height:100%;
+        background: var(--background-green2);
+        top: 0;
+        left: -120%;
+        transform: skew(45deg);
+        z-index: -1;
+        transition: all .3s ease-in-out;
+        }
+        
+        .form-btn-register:after{
+        position: absolute;
+        content:'';
+        width:100%;
+        height:100%;
+        background: var(--light-color);
+        top: 0;
+        left: 120%;
+        transform: skew(45deg);
+        z-index: -1;
+        transition: all .3s ease-in-out;
+        }
+        
+        .form-btn-register:hover:before{
+            left:-51%;
+        }
+        .form-btn-register:hover:after{
+            left:49%;
+        }

@@ -3,6 +3,7 @@ import AuthContext from '../../components/context/auth/AuthContext'
 import Calendar from 'react-calendar';
 import moment from 'moment';
 import ProfileContext from '../../components/context/profile/ProfileContext';
+import './ExpForm.css';
 
 const ExpForm = (props) => {
     const [formData,setFormData] = useState({
@@ -52,7 +53,9 @@ const ExpForm = (props) => {
     }
     return (
         <Fragment>
-            <form onSubmit={e=>onSubmit(e)}>
+        <div className='experience-wrapper'>
+            <form className='experience-form-container' onSubmit={e=>onSubmit(e)}>
+            <h1>Experience</h1>
                 <input type="text" name='title' id='title' placeholder="title" value={title} onChange={e => onChange(e)}/>
                 <input type="text" name='company' value ={company} onChange={e => onChange(e)} id='company' placeholder="company" />
                 <input type="text" name='location' value={location}id='location' placeholder="Location" onChange={e => onChange(e)} />
@@ -62,9 +65,10 @@ const ExpForm = (props) => {
                 <Calendar onChange={e => toDate(e)} value={to}/>
 
                 <input type="text" name='description' id='description' value={description} placeholder="Description"  onChange={e => onChange(e)}/>
-                <button>Add Education</button>
+                <button className='experience-btn'>submit</button>
 
             </form>
+            </div>
         </Fragment>
     )
 }
