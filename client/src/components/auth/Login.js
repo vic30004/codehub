@@ -11,12 +11,9 @@ const Login = (props) => {
 
     const {
         setAlert,
-        errorState,
-        removeAlert,
         login,
         isAuthenticated,
         loadUser,
-        token
       } = authContext;
 
       useEffect(() => {
