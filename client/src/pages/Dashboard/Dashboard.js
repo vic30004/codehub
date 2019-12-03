@@ -12,12 +12,13 @@ const Dashboard = props => {
   const profileContext = useContext(ProfileContext);
   const authContext = useContext(AuthContext);
 
-  const { profile, getGithub, loading } = profileContext;
+  const {getCurrentProfile, profile, getGithub, loading } = profileContext;
   const { user, loadUser, token } = authContext;
 
   useEffect(() => {
     if (localStorage.token) {
       loadUser();
+      getCurrentProfile()
     }
   }, []);
 
