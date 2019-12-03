@@ -22,8 +22,6 @@ const EditProfile = (props) => {
 
     })
 
-
-
     const profileContext = useContext(ProfileContext);
     const authContext = useContext(AuthContext);
     const{isAuthenticated,loadUser,user} = authContext
@@ -98,12 +96,11 @@ const EditProfile = (props) => {
         
     
     return (
-        <div>
+        <div className='profile-wrapper'>
         <Alert/>
         <section id="register" >
-        <div className="form-container ">
+        <div className="form-container">
         <h2>Create Your Profile</h2>
-        <h4>Lets Get Started !</h4>
         <select name="status" id="status" value={status} onChange={e=>onChange(e)}>
         <option value="">Selete Professional Status</option>
         <option value="Developer">Developer</option>
@@ -124,7 +121,7 @@ const EditProfile = (props) => {
         <input type="text" name="facebook" value={facebook} id="facebook" onChange={e=>onChange(e)} placeholder="facebook"/>
         <input type="text" name="youtube" value={youtube} id="youtube" onChange={e=>onChange(e)} placeholder="Youtube"/>
         <input type="text" name="instagram" value={instagram} id="instagram" onChange={e=>onChange(e)} placeholder="Instagram"/>
-        <a className="btn-register" onClick={e =>onClick(e)}>Update Profile</a>
+        <a className="btn-register" onClick={e =>onClick(e)}>submit</a>
         </div>
     </section>
         </div>

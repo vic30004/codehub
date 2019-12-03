@@ -4,6 +4,7 @@
     justify-content: space-between;
     background: aliceblue;
     align-items: center;
+    border-bottom: .5px solid lightgrey;
     padding:0.75rem;
 }
 
@@ -29,10 +30,13 @@
 .nav-button {
     border-radius: 5px;
     color: var(--light-color);
-    background-color: forestgreen;
+    /* background-color: forestgreen; */
+    background:var(--dark-color);
+    /* background: var(--background-green2); */
     border: none;
     cursor: pointer;
-    padding: 0.5rem 0.75rem;    
+    padding: 0.5rem 0.75rem;
+    opacity: .8;    
 }
 
 .nav-input {

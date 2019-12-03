@@ -21,7 +21,7 @@ class HomeEvents extends Component {
 
                 <div className='header-wrapper'>
                     <h1 className='container-header'>Events</h1>
-                    <button className='more-btn'>+ more</button>
+                    {/*<button className='more-btn'>+ more</button>*/}
                 </div>
                 <div className='event-container'>
                 <Slider
