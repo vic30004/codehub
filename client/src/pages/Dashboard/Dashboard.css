@@ -1,6 +1,7 @@
 #dashboard{
     height:100vh;
-    background: var(--background-green);
+    /* background: var(--background-green); */
+    background: linear-gradient(to left top, #daffed, #daffed 65%, #eee 55%);
     display: flex;
     flex-flow: column wrap;
     padding: 3rem 1rem;
@@ -8,6 +9,10 @@
     align-items: center;
     flex: 1;
     text-align:center;  
+}
+
+.main-info {
+    box-shadow: -10px 10px rgba(0,0,0,.15);
 }
 
 #dashboard .main-info{
@@ -26,14 +31,15 @@
 .userName{
     font-weight: bolder;
     font-size:1.3rem;
-    color: var(--red-color);
+    /* color: var(--red-color); */
 }
 
 .dash-button a{
     margin:1rem;
     font-weight: bold;
 }
-.profileBtn{
+
+.profileBtn {
     margin: 2rem;
     display: block;
     background:var(--background-green);
@@ -54,13 +60,13 @@
     text-align: center;
 }
 
-
 .profileBtn:before{
 position: absolute;
 content:'';
 width:100%;
 height:100%;
-background: var(--background-green2);
+/* background: var(--background-green2); */
+background: var(--aqua);
 top: 0;
 left: -120%;
 transform: skew(45deg);

@@ -20,13 +20,14 @@ const NavBar = () => {
 
     const authLinks = (
         <Fragment>
-            <li>Hello {user && user.data.name}</li>
+        <div className='dashboard-ul-wrapper'>
+            <li className='nav-hello'>Hello {user && user.data.name}</li>
             <li>
-            <Link to='/dashboard'> Dashboard</Link>
+            <Link className='dashboard-link' to='/dashboard'> Dashboard</Link>
             
             </li>
             <li>
-            <Link to='/posts'> Posts</Link>
+            <Link className='posts' to='/posts'> Posts</Link>
             
             </li>
             <li>
@@ -34,6 +35,8 @@ const NavBar = () => {
                 <i className="fas fa-sign-out-alt"></i><span className="hide-sm">Logout</span>
                 </a>
             </li>
+
+            </div>
         </Fragment>
 
     );
@@ -62,19 +65,19 @@ const NavBar = () => {
       <div className='nav-list'>
         <ul className='nav-ul'>
           <li className='nav-list-item'>
-            <Link to='/videos'>Videos</Link>
+            <Link className='vid-link' to='/videos'>Videos</Link>
           </li>
           <li className='nav-list-item'>
-            <a href='/articles'>Articles</a>
+            <a className='article-link' href='/articles'>Articles</a>
           </li>
           <li className='nav-list-item'>
-            <a href>Events</a>
+            <a className='event-link' href>Events</a>
           </li>
           <li className='nav-list-item'>
-            <a href='/forum'>Forum</a>
+            <a className='forum-link' href='/forum'>Forum</a>
           </li>
           <li className='nav-list-item'>
-          <Link to='/profile'>Profiles</Link>
+          <Link className='profile-link' to='/profile'>Profiles</Link>
           </li>
       
         </ul>
