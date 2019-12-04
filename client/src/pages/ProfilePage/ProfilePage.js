@@ -15,7 +15,7 @@ const ProfilePage = ({profile}) => {
   const postsContext = useContext(PostsContext)
 
   const {isAuthenticated,user,loadUser} =authContext
-  const {deleteExp,deleteEdu,loading } = profileContext;
+  const {deleteExp,deleteEdu,loading,getCurrentProfile } = profileContext;
   const {addPost} = postsContext
   
   const {
@@ -42,10 +42,6 @@ useEffect(() => {
   
 }, []);
 
-
-if(user){
-  console.log(user.data._id)
-}
   return (
     <Fragment>
     {profile!==null ?
@@ -112,7 +108,10 @@ if(user){
                   <li>From:{moment(data.from).format('MM/DD/YYYY')}</li>
                   <li>To:{moment(data.to).format('MM/DD/YYYY')}</li>
                   <li>Description:{data.description}</li>
-                  {isAuthenticated && loading === false && user.data._id===profile.user._id? <button onClick={e =>deleteEdu(data._id)}>Delete</button> :''}
+                  {isAuthenticated && loading === false && user.data._id===profile.user._id? <button onClick={e =>{
+                    deleteEdu(data._id)
+                    getCurrentProfile(user.data._id)
+                    }}>Delete</button> :''}
 
                 </ul>
               </div>
@@ -124,30 +123,32 @@ if(user){
     </div>
   </div>
   <section className='posts-container'>
+  {isAuthenticated && loading === false && user.data._id===profile.user._id?
     <div className='post-comment'>
       <h1>Add A Posts</h1>
-<form action="" onSubmit={e=>{
+<form  className='comment-form-container' onSubmit={async(e)=>{
   e.preventDefault();
-  addPost({text});
+  await addPost({text});
+  await getCurrentProfile(profile.user._id)
   setText('')
 }}>
       <textarea
         name='text'
         placeholder='Share Something'
-        id=''
+        id='post'
         value={text}
         cols='100'
-        rows='5'
+        rows='2'
         onChange={e => setText(e.target.value)}
       ></textarea>
-      <button>Post</button>
+      <button className="experience-btn">Post</button>
       </form>
-    </div>
+    </div>:''}
 
    
     <div className='comments'>
           
-      <h2>Comments</h2>
+      <h2>Posts</h2>
       <UserComments userId ={profile.user._id}/>  
     </div>
   </section> 
