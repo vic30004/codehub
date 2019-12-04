@@ -37,6 +37,9 @@ a{
     font-size: 1.2rem;
 }
 
+button{
+    cursor: pointer;
+}
 
 /* Utility */
 /* 1rm = 16px */

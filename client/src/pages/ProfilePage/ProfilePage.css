@@ -1,9 +1,18 @@
 #profilePage{
+    --background-color: #f2f3f3;
+    --stone-color: #ffffff;
+    --shadow-color:rgb(56, 61, 61);
+    --autumn-color:#547cac;
+}
+
+#profilePage{
     padding: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background: var(--background-green);
+    background: var(--background-color);
     text-align: center;
+    color:var(--shadow-color);
+    font-size: 1.2rem;
 }
 
 #profilePage .profile-container{
@@ -14,22 +23,25 @@
 #profilePage .profile-container .profile-head{
     padding: 1rem;
     width: 50%;
-    background: var(--grey-color);
+    background: var(--stone-color);
     margin: 0 auto;
   
 }
 
 #profilePage .profile-container .profile-info{
-    background: var(--grey-color);
+    background: var(--stone-color);
     margin: 1rem 0;
     width: 50%;
     padding: 1rem;
     margin: 1rem auto;
+    display: flex;
+    flex-flow: row nowrap;
+    flex: 1 1;
+    justify-content: center;
 
 }
 
 #profilePage .profile-container .experience{
-    margin: 1rem 0;
 }
 #profilePage .profile-container .education{
     margin: 1rem 0;
@@ -54,25 +66,25 @@
     padding: 1rem 0;
 }
 
-#posts-container .post-comment .comment-form-container{
-    height: 300px;
+.posts-container .post-comment .comment-form-container{
     display:flex;
     flex-flow: column nowrap;
     align-items: center;
     padding: 1rem 0;
+    justify-content: center;
     /* width:var(--max-width); */
     margin: 0 auto;
 }
 
-#posts-container .post-comment .comment-form-container .post-container{
-    width: 100%;
+.posts-container .post-comment .comment-form-container .post-container{
 }
-#posts-container .post-comment .comment-form-container textarea{
-    width: 100%;
+.posts-container .post-comment .comment-form-container #post{
     border-radius: 5px;
     padding: 1rem;
     font-family: var(--main-font);
     font-size: 1.2rem;
+    border: none;
+
 }
 
 #posts-container .post-comment .comment-form-container button{
@@ -81,4 +93,8 @@
     width: 50%;
     font-size: 1.2rem;
     margin: 1rem 0;
+}
+
+.profile-info{
+    background: var(--stone-color);
 }
