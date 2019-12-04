@@ -1,7 +1,10 @@
 import React from "react";
 
 const EventsPageEventsItem = ({ events }) => {
-  return events.map(event => (
+  console.log(events)
+  return (
+    
+  events.map(event => (
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">{event.title}</h5>
@@ -21,7 +24,8 @@ const EventsPageEventsItem = ({ events }) => {
           </a>
         </p>
       </div>
-    </div>
+    </div>)
+
   ));
 };
 

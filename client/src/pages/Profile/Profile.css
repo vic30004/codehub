@@ -9,7 +9,7 @@ background: var(--grey-color);
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    max-width: var(--max-width);
+    max-width: 80%;
     margin: 0 auto;
 
 }

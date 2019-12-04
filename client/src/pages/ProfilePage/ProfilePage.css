@@ -1,7 +1,7 @@
 #profilePage{
     padding: 1rem;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
     background: var(--background-green);
     text-align: center;
     grid-gap: 1rem;
@@ -14,13 +14,19 @@
 
 #profilePage .profile-container .profile-head{
     padding: 1rem;
+    width: 50%;
     background: var(--grey-color);
+    margin: 0 auto;
   
 }
 
 #profilePage .profile-container .profile-info{
     background: var(--grey-color);
     margin: 1rem 0;
+    width: 50%;
+    padding: 1rem;
+    margin: 1rem auto;
+
 }
 
 #profilePage .profile-container .experience{
@@ -50,18 +56,17 @@
 }
 
 #posts-container .post-comment .comment-form-container{
-    background: var(--blue-color);
     height: 300px;
     display:flex;
     flex-flow: column nowrap;
     align-items: center;
     padding: 1rem 0;
-    width:var(--max-width);
+    /* width:var(--max-width); */
     margin: 0 auto;
 }
 
 #posts-container .post-comment .comment-form-container .post-container{
-    width: 700px;
+    width: 100%;
 }
 #posts-container .post-comment .comment-form-container textarea{
     width: 100%;

@@ -11,7 +11,7 @@ const UserComments = ({userId}) => {
     console.log(userId)
     console.log(posts)
     return (
-        <div>
+        <div id="comments">
         {posts ? posts.map(data=>(
             <UserCommentsItems posts ={data}/>
         )):''}
