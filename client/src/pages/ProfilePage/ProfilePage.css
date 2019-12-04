@@ -4,7 +4,6 @@
     grid-template-columns: 1fr 1fr;
     background: var(--background-green);
     text-align: center;
-    grid-gap: 1rem;
 }
 
 #profilePage .profile-container{

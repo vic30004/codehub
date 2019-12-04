@@ -25,6 +25,8 @@ const Dashboard = props => {
   let randomQuote = Quote.getRandomQuote;
   console.log(randomQuote);
   return (
+    <div className='dashboard-wrapper'>
+    <div className='dashboard-container'>
     <section id='dashboard'>
     <div className="main-info">
     <h1>Dashboard </h1>
@@ -67,8 +69,8 @@ const Dashboard = props => {
         </div>
       )}
     </section>
-
-    
+    </div>
+    </div>
   );
 };
 

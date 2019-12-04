@@ -3,6 +3,7 @@ import AuthContext from '../../components/context/auth/AuthContext'
 import Calendar from 'react-calendar';
 import moment from 'moment';
 import ProfileContext from '../../components/context/profile/ProfileContext';
+import './EduFrom.css';
 
 const EduForm = (props) => {
     const [formData,setFormData] = useState({
@@ -50,7 +51,9 @@ const EduForm = (props) => {
     }
     return (
         <Fragment>
-            <form onSubmit={e=>onSubmit(e)}>
+        <div className='education-wrapper'>
+            <form  className='education-form-container' onSubmit={e=>onSubmit(e)}>
+            <h1>Education</h1>
                 <input type="text" name='school' id='school' placeholder="School" value={school} onChange={e => onChange(e)}/>
                 <input type="text" name='degree' value ={degree} onChange={e => onChange(e)} id='degree' placeholder="Degree" />
                 <input type="text" name='fieldofstudy' value={fieldofstudy}id='school' placeholder="Major" onChange={e => onChange(e)} />
@@ -60,9 +63,10 @@ const EduForm = (props) => {
                 <Calendar onChange={e => toDate(e)} value={to}/>
 
                 <input type="text" name='description' id='description' value={description} placeholder="Description"  onChange={e => onChange(e)}/>
-                <button>Add Education</button>
+                <button className='education-btn'>submit</button>
 
             </form>
+            </div>
         </Fragment>
     )
 }

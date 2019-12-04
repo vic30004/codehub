@@ -1,9 +1,6 @@
-import React, { Component,useState,useEffect,useContext } from "react";
+import React, { Component } from "react";
 import EventPageEventsList from "../../components/EventPageEventsList";
-
-
 class EventPage extends Component {
-  
   state = {
     events: []
   };
