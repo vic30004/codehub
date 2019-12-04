@@ -1,0 +1,45 @@
+#comments{
+}
+
+.post{
+   display: flex;
+   justify-content: center;
+   align-items: center; 
+}
+
+.post-card{
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    flex:1 1;
+    background: var(--blue-color);
+    padding: 1rem 0;
+    margin: 1rem 0;
+}
+
+
+.post .user-info{
+    display: flex;
+    flex-flow: column wrap;
+    width: 20%;
+    margin: 1rem;
+}
+
+.post .user-info  a img{
+    width:100px;
+    height:80px;
+    border-radius: 50%;
+}
+
+.comments-content{
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    align-items: center;
+    width: 70%;
+    margin-right:1rem;
+}
+
+.comments-content p{
+    margin: 0.5rem 0;
+}
