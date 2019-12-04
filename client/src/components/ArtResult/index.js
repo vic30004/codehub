@@ -1,17 +1,24 @@
 import React from 'react'
 import './style.css'
 
+const ArtResults = ({ link, title, date, author, authorlink, img }) => {
+    return (
+        <div className='article-container'>
 
-const ArtResults = ({link,title,date,author,authorlink,img}) => {
-    return(
-        <div>
-            
-            <a href={link} target="_blank">
-            <h5>{title}</h5>
-            <img src={img}></img>
+            <a className='article-link-wrapper' href={link} target="_blank">
+                <div className='article-header-wrapper'>
+                    <h4>{title}</h4>
+                </div>
+                <div className='article-image-wrapper'>
+                    <img className ='article-img'src={img}></img>
+                </div>
             </a>
-            <h6><a target="_blank" href={authorlink}>Written By : {author}</a></h6>
-            <h5>Posted : {date}</h5>
+
+            <div className='article-author-date-wrapper'>
+                <a target="_blank" href={authorlink}><h5>Written By : {author}</h5>
+                <h5>Posted : {date}</h5>
+                </a>
+            </div>
         </div>
     )
 }
