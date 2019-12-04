@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ArtResults from '../../components/ArtResult'
 import api from '../../api'
 import ArtContainer from '../../components/ArtContainer'
+import Spinner from '../../components/Spinner'
 
 class Articles extends Component {
 
@@ -23,8 +24,9 @@ searchArticles = async () =>{
     render() {
         return (
             <div>
-                <ArtContainer>
-                {this.state.articles.map(article=>(
+               
+                {this.state.articles.length > 1 ? <ArtContainer> 
+                    {this.state.articles.map(article=>(
                     <ArtResults 
                     key={article.title}
                     title={article.title}
@@ -35,8 +37,12 @@ searchArticles = async () =>{
                     link = {article.link}
 
                     />
-                ))}
-                </ArtContainer>
+                ))}  </ArtContainer> : 
+                <h1 className='loading-data-header'><h3>Loading Articles</h3><Spinner />
+                </h1>
+
+                 }
+               
             </div>
         )
     }

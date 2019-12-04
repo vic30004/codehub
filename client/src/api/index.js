@@ -31,7 +31,5 @@ export default {
     searchArticles : () => {
         return axios.get('/api/articles')
     }
-
-
     
 }
