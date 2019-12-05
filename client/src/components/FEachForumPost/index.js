@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import api from '../../api'
 import Comments from '../FComments'
 import CommentLabel from '../FCommentLabels'
+import moment from 'moment'
+
 
 class FEachForumPost extends Component {
 
@@ -50,7 +52,7 @@ class FEachForumPost extends Component {
             <h1>Written By : {name} </h1>
             <h1>The Post is : {post}</h1>
             <h2>Total Likes : {likes.length}</h2>
-            <h2>Posted On : {date}</h2>
+            <h2>Posted On : {moment(date).format('MM/DD/YYYY')}</h2>
             <button onClick={() => this.addLike(_id)}>Upvote</button>
 
             <hr></hr>
