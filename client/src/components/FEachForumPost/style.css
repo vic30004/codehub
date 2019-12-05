@@ -1,0 +1,110 @@
+.forum-user-post-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    grid-gap: 10px;
+    margin-bottom:20px;
+}
+
+.each-forum-post-wrapper{
+    border: 1px solid lightgray;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding:10px;
+    margin-bottom: 25px;
+
+
+}
+
+.forum-post-pic{
+    height:60px;
+    width:60px;
+    border-radius: 20px;
+    box-shadow: -3px 3px rgba(0,0,0,.15);
+
+}
+.forum-user-info{
+    text-align: center;
+}
+
+.likes-date-like-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.forum-post-info{
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin-bottom:25px;
+}
+.forum-post-data{
+    margin-bottom: 15px;
+}
+
+.forum-like-btn{
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    background:var(--yellow);
+    font-weight: bolder;
+    letter-spacing: 1.2px;
+    position: relative;
+    transition: all .5s ease-in-out;
+    z-index: 1;
+    overflow: hidden;
+    margin: 0 auto;
+    border: none;
+    font-size: 14px;
+    border-radius: 5px;
+    line-height: 2.5;
+}
+
+.forum-like-btn:before{
+    position: absolute;
+    content:'';
+    width:100%;
+    height:100%;
+    background: var(--yellow);
+    top: 0;
+    left: -120%;
+    transform: skew(45deg);
+    z-index: -1;
+    transition: all .3s ease-in-out;
+    }
+    
+    .forum-like-btn:after{
+    position: absolute;
+    content:'';
+    width:100%;
+    height:100%;
+    background: var(--light-color);
+    top: 0;
+    left: 120%;
+    transform: skew(45deg);
+    z-index: -1;
+    transition: all .3s ease-in-out;
+    }
+    
+    .forum-like-btn:hover:before{
+        left:-51%;
+    }
+    .forum-like-btn:hover:after{
+        left:49%;
+    }
+
+    .no-comments-display{
+        text-align: center;
+        margin-bottom:30px;
+    }
+
+    @media only screen and (max-width: 620px) {
+        
+        .likes-date-like-grid {
+          grid-template-columns: 1fr;
+          
+        }
+      }

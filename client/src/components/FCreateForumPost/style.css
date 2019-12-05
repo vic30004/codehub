@@ -17,7 +17,7 @@
     margin: 0 auto;
     border: none;
     font-size: 14px;
-    font-size: 1vw;
+    
     border-radius: 5px;
     margin-top: 10px;
     line-height: 2.5;
@@ -59,6 +59,7 @@
 
     .form-field{
         margin-top: 20px;
+        margin-bottom:50px;
     }
 
     .textarea-field{

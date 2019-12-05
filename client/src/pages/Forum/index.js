@@ -55,6 +55,7 @@ class Forum extends Component {
                    
                 />
                  </div>
+             
                 <FAllForumPosts
                     getForms={this.getForms}
                     posts={this.state.posts} />

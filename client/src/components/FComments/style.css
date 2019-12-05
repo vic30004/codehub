@@ -1,0 +1,24 @@
+.each-comment-post-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    grid-gap: 10px;
+    align-items: center;
+    margin-bottom:25px;
+}
+.comment-user-info{
+    text-align: center;
+}
+.comment-post-pic{
+    height:60px;
+    width:60px;
+    border-radius: 20px;
+    box-shadow: -3px 3px rgba(0,0,0,.15);
+}
+
+.comment-post-info{
+    align-content: center;
+}
+
+.comment-header{
+    text-align: center;
+}

@@ -1,16 +1,17 @@
-.empty-forum-display{
+.comment-label{
+    color:purple;
     text-align: center;
-    padding:20px;
-    height: 100vh;
-    /* background: linear-gradient(to left top, #ff8552, #ff8552 65%, #eee 55%); */
-
 }
 
-.forum-login-btn {
-    height: 50px;
-    width: 200px;
+.entire-comment-form-wrapper{
     text-align: center;
-    background:var( --background-green);
+}
+
+.comment-toggle-btn{
+    height: 50px;
+    width: 260px;
+    text-align: center;
+    background:var(--yellow);
     font-weight: bolder;
     letter-spacing: 1.2px;
     position: relative;
@@ -19,14 +20,12 @@
     overflow: hidden;
     margin: 0 auto;
     border: none;
-    font-size: 14px;
-    font-size: 1vw;
+    font-size: 12px;
     border-radius: 5px;
-    margin-top: 10px;
-    line-height: 2.5;
-
+    line-height:2.75;
 }
-.forum-login-btn:before{
+
+.comment-toggle-btn:before{
     position: absolute;
     content:'';
     width:100%;
@@ -39,7 +38,7 @@
     transition: all .3s ease-in-out;
     }
     
-    .forum-login-btn:after{
+    .comment-toggle-btn:after{
     position: absolute;
     content:'';
     width:100%;
@@ -52,14 +51,9 @@
     transition: all .3s ease-in-out;
     }
     
-    .forum-login-btn:hover:before{
+    .comment-toggle-btn:hover:before{
         left:-51%;
     }
-    .forum-login-btn:hover:after{
+    .comment-toggle-btn:hover:after{
         left:49%;
-    }
-
-    .forum-display-header{
-        text-align: center;
-        margin-bottom:500px;
     }

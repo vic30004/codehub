@@ -12,7 +12,7 @@ const Form = ({ state, onChange, onClick }) => {
         <div className='forum-post-wrapper'>
             {isAuthenticated ?
             <div>
-                <h2>Have a Question? Looking for some help? Want to Share Something?</h2>
+                <h2>Have a question? Looking for some help? Want to share something?</h2>
                 <h2>Post below using the field!</h2> 
                 <form className='form-field'>
                     

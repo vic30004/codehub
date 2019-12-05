@@ -17,14 +17,15 @@ const Forums = ({getForms,posts }) => {
     },[])
 
     const forum =
-        posts && posts.length > 0 ? posts.map(post => (
+        posts && posts.length > 0 ? 
+        posts.map(post => (
             <FEachForumPost
             posts={post}
             refresh={getForms}
        
             />
          
-
+        
         )) : "no Data";
     
 

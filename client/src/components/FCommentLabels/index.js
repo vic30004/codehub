@@ -1,22 +1,25 @@
 import React from 'react'
+import './style.css'
 
 const CommentLabel = ({activeComment,onChange,submitComment,state,id}) => {
     return(
-        <div>
-            <label onClick={activeComment}>Click to Add Comment</label>
+        <div className='entire-comment-form-wrapper'>
+            <div className='comment-toggle-btn' onClick={activeComment}><h2>Click to add a comment</h2></div>
             {
                 state.displayInput && <div>
-                    <input
+                    <form className='form-field'>
+                    <textarea
                         name="comment"
                         value={state.comment}
-                        placeholder="Comment Here"
                         onChange={onChange}
+                        placeholder="...comment"
+                        cols="60" rows="5"
                     >
-                    </input>
+                    </textarea>
                     <br/>
                     <button
-                        onClick={() => submitComment(id, {post:state.comment})}>Submit</button>
-                    <hr></hr>
+                        className ='forum-post-btn' onClick={() => submitComment(id, {post:state.comment})}>Submit Comment</button>
+                  </form>
                 </div>
             }
         </div>
