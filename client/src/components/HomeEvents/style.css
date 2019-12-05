@@ -1,41 +1,100 @@
 .event-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
     width: 100%;
     height: 100%;
-    /* background-color: aliceblue; */
-    /* background: linear-gradient(to right top, #f7e151, #f7e151 65%, #eee 55%); */
     background:var(--cyan);
     opacity: .9;
 }
 
 .event-container {
-    align-self: center;
-    justify-self: center;
-    width: 85%;
-    margin: 0 auto;
+    /* align-self: center;
+    justify-self: center; */
+    width: 100%;
+    min-width: 300px;
+    max-width: 500px;
+    height: auto;
+    /* margin: 0 auto; */
+    border-radius: 5px;
 }
 
 .event-slider-page {
-    width: 85%;
+    width: 30%;
     height: auto;
     background-color:aliceblue;
-    align-self: center;
-    justify-self: center;
+    /* align-self: center; */
+    /* justify-self: center; */
     margin-bottom: 50px;
     border-bottom: .5px solid lightgray;
     border-radius: 5px;
     /* box-shadow: -10px 10px rgba(0,0,0,.15); */
+    border-radius: 5px;
 }
 
 .event-slider-img {
-    /* background-size: cover;
-    background-size: no-repeat; */
     object-fit: cover;
-    height: 150px;
+    max-height: 300px;
     width: 100%; 
     min-width: 320px;
     /* background-image: linear-gradient(to right,black, transparent);    */
+    border-radius: 5px;
 }
 
-.event-description-wrapper {
+.event-slider-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    width: auto;
+    padding: 50px;
+}
+
+.event-description-wrapper,
+.event-description,
+.event-title {
     padding: 15px;
+}
+
+.event-description {
+    min-height: 60px;
+}
+
+.founder-wrapper {
+    background: linear-gradient(to left top,aliceblue, aliceblue 65%, transparent 45%);
+    height: 90%;
+    border-radius: 5px;
+}
+
+.join {
+    text-align: center;
+    padding: 3rem;
+    margin-top: 5%;
+    font-size: 55px;
+    font-size: 4vw;
+    font-weight: lighter;
+
+}
+
+.invite {
+    font-size: 18px;
+    font-size: 1.5vw;
+    padding: 3rem;
+}
+
+.founder-hr {
+    display: grid;
+    border: 1px solid var(--yellow);
+    width: 90%;
+}
+
+@media only screen and (max-width: 768px) {
+    .founder-wrapper {
+        display: none;
+    }
+    .event-slider-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+        width: auto;
+        padding: 50px;
+    }
 }

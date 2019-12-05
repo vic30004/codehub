@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import FCreateForumPost from '../../components/FCreateForumPost'
 import FAllForumPosts from '../../components/FAllForumPosts/index'
 import api from '../../api'
+import './style.css'
 
 
 class Forum extends Component {
@@ -45,12 +46,16 @@ class Forum extends Component {
 
     render() {
         return (
-            <div>
+            <div className='all'>
+                <div>
                 <FCreateForumPost
                     onChange={this.handleFormChange}
                     onClick={this.handleFormSubmit}
                     state={this.state}
+                   
                 />
+                 </div>
+             
                 <FAllForumPosts
                     getForms={this.getForms}
                     posts={this.state.posts} />

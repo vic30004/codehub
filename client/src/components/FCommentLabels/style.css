@@ -1,0 +1,59 @@
+.comment-label{
+    color:purple;
+    text-align: center;
+}
+
+.entire-comment-form-wrapper{
+    text-align: center;
+}
+
+.comment-toggle-btn{
+    height: 50px;
+    width: 260px;
+    text-align: center;
+    background:var(--yellow);
+    font-weight: bolder;
+    letter-spacing: 1.2px;
+    position: relative;
+    transition: all .5s ease-in-out;
+    z-index: 1;
+    overflow: hidden;
+    margin: 0 auto;
+    border: none;
+    font-size: 12px;
+    border-radius: 5px;
+    line-height:2.75;
+}
+
+.comment-toggle-btn:before{
+    position: absolute;
+    content:'';
+    width:100%;
+    height:100%;
+    background: var(--yellow);
+    top: 0;
+    left: -120%;
+    transform: skew(45deg);
+    z-index: -1;
+    transition: all .3s ease-in-out;
+    }
+    
+    .comment-toggle-btn:after{
+    position: absolute;
+    content:'';
+    width:100%;
+    height:100%;
+    background: var(--light-color);
+    top: 0;
+    left: 120%;
+    transform: skew(45deg);
+    z-index: -1;
+    transition: all .3s ease-in-out;
+    }
+    
+    .comment-toggle-btn:hover:before{
+        left:-51%;
+    }
+    .comment-toggle-btn:hover:after{
+        left:49%;
+    }
