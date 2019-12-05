@@ -9,7 +9,7 @@ background: var(--grey-color);
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    max-width: var(--max-width);
+    max-width: 80%;
     margin: 0 auto;
 
 }
@@ -39,8 +39,9 @@ padding: 2rem 0;
 }
 
 .profileBtn{
-    background: var(--green-color);
-    padding: 0.5rem 0.75rem;
+    background: var(--aqua);
+    /* padding: 0.5rem 0.75rem; */
+    padding: 15px;
     border-radius: 5px;
     color: var(--light-color);
 }

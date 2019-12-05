@@ -1,4 +1,37 @@
-img {
+.article-container{
+    margin-top: 20px;
+    display:grid;
+    /* grid-template-columns: 1fr; */
+    justify-items: center;
+    overflow:hidden;
+    transition: transform 1s ease;
+
+
+ 
+}
+
+.article-header-wrapper{
+    text-align: center;
+    height:50px;
+}
+
+.article-img {
     height: 200px;
     width: 400px;
+    border-radius:5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom:20px;
+}
+
+
+.article-container:hover{
+    transform: scale(1.03);
+    opacity: .9
+}
+
+.article-author-date-wrapper:hover{
+    text-decoration: underline;
+}
+.article-link-wrapper:hover{
+    text-decoration: underline;
 }

@@ -4,6 +4,7 @@ import ProfileContext from '../context/profile/ProfileContext'
 import Profile from '../../pages/Profile/Profile'
 import Alert from '../AlertComponent/Alert'
 import AuthContext from '../context/auth/AuthContext'
+import {Animated} from "react-animated-css";
 
 const EditProfile = (props) => {
     const [formData, setFormData]=useState({
@@ -97,6 +98,7 @@ const EditProfile = (props) => {
     
     return (
         <div className='profile-wrapper'>
+        <Animated animationIn="fadeInDown" animationOut="fadeOut" isVisible={true}>
         <Alert/>
         <section id="register" >
         <div className="form-container">
@@ -124,6 +126,7 @@ const EditProfile = (props) => {
         <a className="btn-register" onClick={e =>onClick(e)}>submit</a>
         </div>
     </section>
+    </Animated>
         </div>
     )
 }

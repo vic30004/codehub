@@ -4,6 +4,7 @@ import Calendar from 'react-calendar';
 import moment from 'moment';
 import ProfileContext from '../../components/context/profile/ProfileContext';
 import './EduFrom.css';
+import {Animated} from "react-animated-css";
 
 const EduForm = (props) => {
     const [formData,setFormData] = useState({
@@ -52,6 +53,7 @@ const EduForm = (props) => {
     return (
         <Fragment>
         <div className='education-wrapper'>
+        <Animated animationIn="fadeInDown" animationOut="fadeOut" isVisible={true}>
             <form  className='education-form-container' onSubmit={e=>onSubmit(e)}>
             <h1>Education</h1>
                 <input type="text" name='school' id='school' placeholder="School" value={school} onChange={e => onChange(e)}/>
@@ -66,6 +68,7 @@ const EduForm = (props) => {
                 <button className='education-btn'>submit</button>
 
             </form>
+            </Animated>
             </div>
         </Fragment>
     )

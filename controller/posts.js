@@ -51,7 +51,7 @@ exports.getAllPosts = asyncHandler(async (req, res, next) => {
   queryStr = queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, match => `$${match}`);
 
   // Finding resource
-  query = Posts.find(JSON.parse(queryStr)).sort({ date: -1 });
+  query = Posts.find(JSON.parse(queryStr)).sort({ data: -1 });
 
   // Select Fields
   if (req.query.select) {
@@ -110,7 +110,7 @@ exports.getAllPosts = asyncHandler(async (req, res, next) => {
 // @ access  Public
 
 exports.getPost = asyncHandler(async (req, res, next) => {
-  const posts = await Posts.findById(req.params.id);
+  const posts = await Posts.findById(req.params.id).sort({ data: -1 });
   if (!posts) {
     return next(
       new ErrorResponse(`posts not found with id of ${req.params.id}`, 404)
@@ -213,7 +213,7 @@ exports.unlikePost = asyncHandler(async (req, res, next) => {
 
 exports.comment = asyncHandler(async (req, res, next) => {
   try {
-    const user = await User.findById(req.user.id).select('-password');
+    const user = await User.findById(req.user.id).select('-password').sort({ data: -1 });
 
     const post = await Post.findById(req.params.id);
 
@@ -274,3 +274,5 @@ exports.deleteComment = asyncHandler(async (req, res, next) => {
     return next(new ErrorResponse(err.message, 500));
   }
 });
+
+

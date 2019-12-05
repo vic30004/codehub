@@ -3,6 +3,7 @@ import AuthContext from '../../components/context/auth/AuthContext';
 import {Link} from 'react-router-dom'
 import './Register.css'
 import Alert from '../AlertComponent/Alert';
+import {Animated} from "react-animated-css";
 
 
 const Login = (props) => {
@@ -56,6 +57,7 @@ const Login = (props) => {
     return (
       
         <div className='login-wrapper'>
+        <Animated animationIn="fadeInDown" animationOut="fadeOut" isVisible={true}>
         <section id="login" >
         <div className='login-container'>
         <div className='error-wrapper'>
@@ -68,7 +70,7 @@ const Login = (props) => {
         <h5 className='register-header'>Don't have an account? <Link to="/register">Register</Link></h5>
         </div>
         </section>
-      
+        </Animated>
     </div>
     )
     }

@@ -3,9 +3,12 @@
     display: flex;
     justify-content: space-between;
     background: aliceblue;
+    /* background:var(--cyan); */
     align-items: center;
     border-bottom: .5px solid lightgrey;
-    padding:0.75rem;
+    /* padding:0.75rem; */
+    padding: 15px;
+    overflow: hidden;
 }
 
 .nav-wrapper .nav-logo{
@@ -23,8 +26,9 @@
     display: flex;
 }
 
-.nav-wrapper .nav-ul li{
+.nav-wrapper .nav-ul li, a {
     padding: 0 1rem;
+    /* padding: 15px; */
 }
 
 .nav-button {
@@ -53,26 +57,50 @@ div.nav-input {
     width: 100%;
 }
 
+.dashboard-ul-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* media queries */
+
+@media only screen and (max-width: 1200px) {
+    .profile-link,
+    .forum-link {
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width: 992px) {
+    .nav-list-item {
+        display: none;
+    }
+}
+
 /* media queries */
 @media only screen and (max-width: 600px) {
-    div.nav-list {
-      display:none;
-    }
+    .nav-hello, 
+    .dashboard-link,
+    .posts {
+        display: none;
+}
+.dashboard-ul-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+} 
+/* a, i, span {
+    display: grid;
+    grid-column: 2/3;
+    grid-row:2/3;
+} */
 
-    .nav-wrapper {
-        display:grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
-    }
 
-    .input,
-    .nav-button,
-    .nav-upload-btn,
-    .nav-input {
-        display:none;
-    }
+}
 
-    .nav-logo {
-        padding: 15px;
-    }
-  }
+
+/* .nav-hello,
+.dashboard-link,
+.posts {
+    display: none;
+} */

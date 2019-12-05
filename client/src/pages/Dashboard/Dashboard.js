@@ -46,14 +46,17 @@ const Dashboard = props => {
           <Link to={`/profile/${user.data._id}`} className='profileBtn'>
             Visit Profile
           </Link>
+
+          
         </Fragment>
+        
       ) : (
         <Fragment>
           <p>
             Welcome to codehub! We are so happy you decided to join. Please
             follow this link to set up your profile!
           </p>
-          <Link to='/create-profile'>Create Profile </Link>
+          <Link to='/create-profile' className='profileBtn'>Create Profile </Link>
         </Fragment>
       )}
 </div>

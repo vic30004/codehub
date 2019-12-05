@@ -13,22 +13,6 @@
     padding: 0% 7.5% 0% 3.5%;
 }
 
-.more-btn {
-    width: 65px;
-    /* min-width: 40px; */
-    height: 50%;
-    cursor: pointer;
-    justify-self: right;
-    align-self: center;
-    border-radius: 5px;
-    border: 1px solid deepskyblue;
-    color: deepskyblue;
-    background-color: transparent;
-    font-size: 14px;
-    text-align: center;
-    /* font-size: 1.5vw; */
-}
-
 .video-container {
     display: grid;
     grid-gap: 15px;

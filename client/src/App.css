@@ -18,6 +18,12 @@
     --background-green2:#5db89092;
     --main-font:'Roboto', sans-serif;
     --logo-font:'Comfortaa', cursive;
+    
+    --aqua:#81d2c7;
+    --coral:#ff8552;
+    --yellow:#f7e151;
+    --cyan:#daffed;
+    --grape:#a788b7;
 }
 
 body{
@@ -37,6 +43,9 @@ a{
     font-size: 1.2rem;
 }
 
+button{
+    cursor: pointer;
+}
 
 /* Utility */
 /* 1rm = 16px */
@@ -75,6 +84,6 @@ a{
 
 
 .alert-danger{
-    background: var(--red-color);
-    color:var(--light-color);
+    color: var(--red-color);
+    font-weight: bolder;
 }
