@@ -18,6 +18,7 @@
 #profilePage .profile-container {
   display: flex;
   flex-flow: column wrap;
+
 }
 
 #profilePage .profile-container .profile-head {
@@ -25,6 +26,7 @@
   width: 50%;
   background: var(--stone-color);
   margin: 0 auto;
+  border-radius: 5px;
 }
 
 #profilePage .profile-container .profile-info {
@@ -45,6 +47,26 @@
 
 #profilePage .profile-container .profile-head {
   padding: 1rem;
+}
+
+#profilePage .profile-container .profile-head h1,#profilePage .profile-container .profile-head p{
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+#profilePage .profile-container .profile-head h1{
+    color:var(--red-color);
+}
+
+#profilePage .profile-container .profile-head .skill-list{
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+#profilePage .profile-container .profile-head .skill-list li{
+    margin:0 0.5rem;
+    font-weight: bold;
 }
 
 .profile-pic {
@@ -92,4 +114,34 @@
 
 .profile-info {
   background: var(--stone-color);
+}
+
+
+.websiteBtn {
+ background: var(--shadow-color);   
+ color: var(--light-color);
+ padding: 0.5rem;
+ font-weight: bold;
+ letter-spacing: 2px;
+ border-radius: 5px;
+}
+
+
+#userInfo{
+    margin: 1rem auto;
+    background: var(--stone-color);
+    width:50%;
+    padding: 1rem;
+}
+
+#userInfo .list-items li{
+    margin: 1rem 0;
+    font-weight: bold;
+    font-size: 1.3rem;
+    
+}
+
+#userInfo .list-items h2{
+    margin: 0.2rem;
+    color:var(--red-color);
 }

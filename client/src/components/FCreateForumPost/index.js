@@ -1,9 +1,14 @@
-import React from 'react'
+import React,{useContext} from 'react'
+import AuthContext from '../context/auth/AuthContext'
 
 
 const Form = ({ state, onChange, onClick }) => {
+    const authContext = useContext(AuthContext);
+    const {isAuthenticated} = authContext
+
     return (
         <div>
+        {isAuthenticated ? 
             <form>
                 <label>Create a Forum Post Here</label>
                 <input
@@ -18,7 +23,7 @@ const Form = ({ state, onChange, onClick }) => {
                 </button>
 
             </form>
-
+: ''}
         </div>
     )
 }
