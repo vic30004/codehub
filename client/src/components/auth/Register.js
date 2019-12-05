@@ -1,7 +1,7 @@
 import React, { Fragment, useContext, useEffect, useState } from 'react';
 import AuthContext from '../../components/context/auth/AuthContext';
 import Alert from '../AlertComponent/Alert';
-
+import {Animated} from "react-animated-css";
 import { Link } from 'react-router-dom';
 import './Register.css';
 
@@ -58,6 +58,7 @@ const Register = props => {
   return (
 
     <div className='register-wrapper'>
+    <Animated animationIn="fadeInDown" animationOut="fadeOut" isVisible={true}>
     <section id='register'>
       <div className='form-register-container '>
       <div className='error-wrapper'>
@@ -115,6 +116,7 @@ const Register = props => {
         </h5>
       </div>
     </section>
+    </Animated>
     </div>
   );
 };

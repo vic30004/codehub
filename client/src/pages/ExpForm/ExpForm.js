@@ -4,6 +4,7 @@ import Calendar from 'react-calendar';
 import moment from 'moment';
 import ProfileContext from '../../components/context/profile/ProfileContext';
 import './ExpForm.css';
+import {Animated} from "react-animated-css";
 
 const ExpForm = (props) => {
     const [formData,setFormData] = useState({
@@ -54,6 +55,7 @@ const ExpForm = (props) => {
     return (
         <Fragment>
         <div className='experience-wrapper'>
+        <Animated animationIn="fadeInDown" animationOut="fadeOut" isVisible={true}>
             <form className='experience-form-container' onSubmit={e=>onSubmit(e)}>
             <h1>Experience</h1>
                 <input type="text" name='title' id='title' placeholder="title" value={title} onChange={e => onChange(e)}/>
@@ -68,6 +70,7 @@ const ExpForm = (props) => {
                 <button className='experience-btn'>submit</button>
 
             </form>
+            </Animated>
             </div>
         </Fragment>
     )

@@ -4,7 +4,7 @@ import AuthContext from '../context/auth/AuthContext';
 
 const ArtContainer = props => {
   const authContext = useContext(AuthContext);
-  const {isAuthenticated,user,loadUser} =authContext
+  const { isAuthenticated, user, loadUser } = authContext
 
   useEffect(() => {
     if (localStorage.token) {
@@ -12,7 +12,15 @@ const ArtContainer = props => {
     }
   }, []);
 
-  return <div className='articles-container' {...props}></div>;
+  return (
+    <div className='articles-body'>
+      <div className='articles-header'>
+      <h1>Top Trending Tech Articles</h1>
+      <h2>Powered By HackerNoon</h2>
+        </div>
+      <div className='articles-container' {...props}></div>;
+    </div>
+  )
 };
 
 export default ArtContainer;
