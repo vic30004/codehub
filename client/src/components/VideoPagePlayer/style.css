@@ -1,5 +1,5 @@
 .video-wrapper {
-    color: aliceblue;
+    background: linear-gradient(to left top, #81d2c7, #81d2c7 65%, #eee 55%);
 }
 
 .video-page-main-wrapper {
@@ -12,7 +12,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     /* background-color: rgb(22, 20, 20); */
-    background-color: lavender;
+    /* background-color: lavender; */
+    background:var(--cyan);
     border-top: .5px solid lightgray;
     height: 50px;
 }
@@ -29,7 +30,8 @@
 
 .video-page-search-bar > input {
     /* background-color: black; */
-    background-color: lavenderblush;
+    /* background-color: lavenderblush; */
+    background: var(--aqua);
     border: 1px solid thistle;
     color: black;
 }
@@ -56,7 +58,8 @@
 
 .video-page-details {
     width: 100%;
-    background-color: lavender;
+    /* background-color: lavender; */
+    background:var(--cyan);
     border-bottom: .5px solid lightgray;
 }
 
@@ -125,6 +128,7 @@
     overflow: scroll;
     max-height: 500px;
     margin-top: 30px;
+    box-shadow: -10px 10px rgba(0,0,0,.15);
 }
 
 @media only screen and (max-width: 720px) {
