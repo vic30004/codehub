@@ -35,3 +35,7 @@
     min-width: 320px;
     /* background-image: linear-gradient(to right,black, transparent);    */
 }
+
+.event-description-wrapper {
+    padding: 15px;
+}
