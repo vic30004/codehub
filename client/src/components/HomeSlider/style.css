@@ -25,3 +25,10 @@
     background-image: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,1)); 
 } */
 
+.event-slider-wrapper {
+    width: 100%;
+    background: var(--aqua);
+    margin: 0 auto;
+    padding: 50px 30px 30px 30px;
+}
+

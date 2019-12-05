@@ -69,10 +69,9 @@ class Footer extends Component {
                     </li>
                 </ul>
                 <div className='footer-aside'>
-                <h4>text</h4>
+                <h4 className='footer-logo'>codeHub</h4>
                     <p className='footer-text'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        codeHub is a place where web developer's can connect and share their knowldege and passion for making bad a** websites. 
                     </p>
                 </div>
             </div>
