@@ -23,26 +23,32 @@
 
 #profilePage .profile-container .profile-head {
   padding: 1rem;
-  width: 50%;
+  width: 60%;
   background: var(--stone-color);
   margin: 0 auto;
   border-radius: 5px;
 }
 
-#profilePage .profile-container .profile-info {
+#profilePage .profile-container #profile-info {
   background: var(--stone-color);
   margin: 1rem 0;
-  width: 50%;
+  width: 60%;
   padding: 1rem;
   margin: 1rem auto;
   display: flex;
   flex-flow: row nowrap;
   flex: 1 1;
-  justify-content: center;
+  justify-content: space-around;
+  border-radius: 5px;
+
 }
 
-#profilePage .profile-container .education {
-  margin: 1rem 0;
+#profilePage .profile-container .education,#profilePage .profile-container .experience {
+  padding: 1rem;
+}
+
+#profilePage .profile-container .education .h2{
+
 }
 
 #profilePage .profile-container .profile-head {
@@ -67,6 +73,7 @@
 #profilePage .profile-container .profile-head .skill-list li{
     margin:0 0.5rem;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 .profile-pic {
@@ -130,8 +137,10 @@
 #userInfo{
     margin: 1rem auto;
     background: var(--stone-color);
-    width:50%;
+    width:60%;
     padding: 1rem;
+    border-radius: 5px;
+
 }
 
 #userInfo .list-items li{
@@ -144,4 +153,18 @@
 #userInfo .list-items h2{
     margin: 0.2rem;
     color:var(--red-color);
+}
+
+
+#profile-info .education{
+    padding:0 1rem;
+}
+
+
+.addE{
+    background: var( --shadow-color);
+    padding: 0.5rem 0.75rem;
+    color:var(--light-color);
+    border: solid 2px var(--dark-color);
+    border-radius: 5px;
 }

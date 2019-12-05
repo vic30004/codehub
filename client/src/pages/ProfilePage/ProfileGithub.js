@@ -9,11 +9,15 @@ const ProfileGithub = ({ username }) => {
   }, []);
   return (
     <div className='github-profile'>
-      <h2>Github Repos</h2>
+      
 
-      {repos === null
+      {repos.length <=0
         ? ''
-        : repos.map(repo => (
+        : 
+        <Fragment>
+        <h2>Github Repos</h2>
+        <div>
+        {repos.map(repo => (
             <div key={repo._id}>
               <div>
                 <h4>
@@ -35,7 +39,12 @@ const ProfileGithub = ({ username }) => {
                 </ul>
               </div>
             </div>
-          ))}
+          )
+         
+          )}
+           </div>
+           </Fragment>
+        }
     </div>
   );
 };

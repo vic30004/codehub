@@ -8,7 +8,7 @@ import PostsContext from '../../components/context/posts/PostsContext';
 import UserComments from '../../components/Comments/UserComments';
 import './ProfilePage.css';
 
-const ProfilePage = ({ profile }) => {
+const ProfilePage = ({ profile },props) => {
   const [text, setText] = useState('');
   const profileContext = useContext(ProfileContext);
   const authContext = useContext(AuthContext);
@@ -64,21 +64,26 @@ const ProfilePage = ({ profile }) => {
             </div>
             <div id='userInfo'>
               <ul className='list-items'>
-                <h2 >Where I work:</h2>
+                <h2>Where I work:</h2>
                 <li>{company}</li>
-                <h2 > I am from:</h2>
+                <h2> I am from:</h2>
                 <li>{location}</li>
-                <h2 >My Github Username:</h2>
+                <h2>My Github Username:</h2>
                 <li> {githubusername}</li>
-                <h2 >Work Title</h2>
+                <h2>Work Title</h2>
                 <li>{status}</li>
               </ul>
             </div>
-            <div className='profile-info'>
+
+            <div id='profile-info'>
               <div className='experience'>
-                <h4>Experience</h4>
-                {experience
-                  ? experience.map(data => (
+                
+                {experience.length>0
+                  ? 
+                  <Fragment>
+                  <h4>Experience</h4>
+                  <div>
+                  {experience.map(data => (
                       <Fragment key={data._id}>
                         <h2>{data.title}</h2>
                         <ul>
@@ -87,24 +92,22 @@ const ProfilePage = ({ profile }) => {
                           <li>From:{moment(data.from).format('MM/DD/YYYY')}</li>
                           <li>To:{moment(data.to).format('MM/DD/YYYY')}</li>
                           <li>Job Description:{data.description}</li>
-                          {isAuthenticated &&
-                          loading === false &&
-                          user.data._id === profile.user._id ? (
-                            <button onClick={e => deleteExp(data._id)}>
-                              Delete
-                            </button>
-                          ) : (
-                            ''
-                          )}
+                          
                         </ul>
                       </Fragment>
-                    ))
-                  : ''}
+                    ))}
+                    </div>
+                    </Fragment>
+                  : <Link to='/experience' className="addE">Add Experience</Link>}
+                  </div>
                 <div className='education'>
-                  {education ? (
-                    education.map(data => (
-                      <div>
-                        <h4>Education</h4>
+                  {education.length>0 ? (
+                    <Fragment>
+                    <h2>Education</h2>
+                 <div>
+                    {education.map(data => (
+                     
+                        
                         <ul>
                           <li>School:{data.school}</li>
                           <li>Degree:{data.degree}</li>
@@ -112,30 +115,17 @@ const ProfilePage = ({ profile }) => {
                           <li>From:{moment(data.from).format('MM/DD/YYYY')}</li>
                           <li>To:{moment(data.to).format('MM/DD/YYYY')}</li>
                           <li>Description:{data.description}</li>
-                          {isAuthenticated &&
-                          loading === false &&
-                          user.data._id === profile.user._id ? (
-                            <button
-                              onClick={e => {
-                                deleteEdu(data._id);
-                                getCurrentProfile(user.data._id);
-                              }}
-                            >
-                              Delete
-                            </button>
-                          ) : (
-                            ''
-                          )}
                         </ul>
-                      </div>
-                    ))
+                      
+                    ))}
+                    </div>
+                    </Fragment>
                   ) : (
-                    <Link to='/education'>Add Education</Link>
+                    <Link to='/education' className="addE">Add Education</Link>
                   )}
                 </div>
               </div>
             </div>
-          </div>
           <section className='posts-container'>
             {isAuthenticated &&
             loading === false &&
