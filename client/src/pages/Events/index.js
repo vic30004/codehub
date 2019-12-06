@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import EventPageEventsList from "../../components/EventPageEventsList";
+import Spinner from "../../components/Spinner";
+import "./style.css";
 class EventPage extends Component {
   state = {
     events: []
@@ -29,7 +31,18 @@ class EventPage extends Component {
       });
   }
   render() {
-    return <EventPageEventsList events={this.state.events} />;
+    return (
+      <div>
+        {this.state.events.length > 1 ? (
+          <EventPageEventsList events={this.state.events} />
+        ) : (
+          <div className="loading-page">
+            <h3>Loading Events</h3>
+            <Spinner />
+          </div>
+        )}
+      </div>
+    );
   }
 }
 

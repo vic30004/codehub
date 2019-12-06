@@ -1,0 +1,10 @@
+.events-page-container {
+  width: 100%;
+  background: linear-gradient(to left top, #81d2c7, #81d2c7 65%, #eee 55%);
+  padding: 25px;
+}
+
+.events-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
