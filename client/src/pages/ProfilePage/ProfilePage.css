@@ -1,5 +1,10 @@
 #profilePage {
-  --background-color:linear-gradient(to left top, #eedcd4, var(--background-green) 60%, #f2f3f3 40%);;
+  --background-color: linear-gradient(
+    to left top,
+    #eedcd4,
+    var(--background-green) 60%,
+    #f2f3f3 40%
+  );
   --stone-color: #ffffff;
   --shadow-color: rgb(56, 61, 61);
   --autumn-color: #547cac;
@@ -13,12 +18,12 @@
   text-align: center;
   color: var(--shadow-color);
   font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 #profilePage .profile-container {
   display: flex;
   flex-flow: column wrap;
-
 }
 
 #profilePage .profile-container .profile-head {
@@ -27,6 +32,7 @@
   background: var(--stone-color);
   margin: 0 auto;
   border-radius: 5px;
+  margin-bottom: 1rem;
 }
 
 #profilePage .profile-container #profile-info {
@@ -40,41 +46,42 @@
   flex: 1 1;
   justify-content: space-around;
   border-radius: 5px;
-
+  min-width: 60%;
 }
 
-#profilePage .profile-container .education,#profilePage .profile-container .experience {
+#profilePage .profile-container .education,
+#profilePage .profile-container .experience {
   padding: 1rem;
   text-align: left;
 }
 
-#profilePage .profile-container .education .h2{
-
+#profilePage .profile-container .education .h2 {
 }
 
 #profilePage .profile-container .profile-head {
   padding: 1rem;
 }
 
-#profilePage .profile-container .profile-head h1,#profilePage .profile-container .profile-head p{
-    margin-bottom: 1rem;
-    font-weight: bold;
+#profilePage .profile-container .profile-head h1,
+#profilePage .profile-container .profile-head p {
+  margin-bottom: 1rem;
+  font-weight: bold;
 }
 
-#profilePage .profile-container .profile-head h1{
-    color:var(--red-color);
+#profilePage .profile-container .profile-head h1 {
+  color: var(--red-color);
 }
 
-#profilePage .profile-container .profile-head .skill-list{
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
+#profilePage .profile-container .profile-head .skill-list {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
-#profilePage .profile-container .profile-head .skill-list li{
-    margin:0 0.5rem;
-    font-weight: bold;
-    text-transform: uppercase;
+#profilePage .profile-container .profile-head .skill-list li {
+  margin: 0 0.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .profile-pic {
@@ -111,7 +118,6 @@
   font-size: 1.2rem;
   border: none;
   resize: none;
-
 }
 
 #posts-container .post-comment .comment-form-container button {
@@ -126,55 +132,49 @@
   background: var(--stone-color);
 }
 
-
 .websiteBtn {
- background: var(--shadow-color);   
- color: var(--light-color);
- padding: 0.5rem;
- font-weight: bold;
- letter-spacing: 2px;
- border-radius: 5px;
+  background: var(--shadow-color);
+  color: var(--light-color);
+  padding: 0.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border-radius: 5px;
 }
 
-
-#userInfo{
-    margin: 0rem auto;
-    background: var(--stone-color);
-    width:60%;
-    padding: 1rem;
-    border-radius: 5px;
-
+#userInfo {
+  margin: 0rem auto;
+  background: var(--stone-color);
+  width: 60%;
+  padding: 1rem;
+  border-radius: 5px;
 }
 
-#userInfo .list-items li{
-    margin: 1rem 0;
-    font-weight: bold;
-    font-size: 1.3rem;
-    
+#userInfo .list-items li {
+  margin: 1rem 0;
+  font-weight: bold;
+  font-size: 1.3rem;
 }
 
-#userInfo .list-items h2{
-    margin: 0.2rem;
-    color:var(--red-color);
+#userInfo .list-items h2 {
+  margin: 0.2rem;
+  color: var(--red-color);
 }
 
-
-#profile-info .education{
-    padding:0 1rem;
-    border-left: solid 3px #111;
-    text-align: left;
+#profile-info .education {
+  padding: 0 1rem;
+  border-left: solid 3px #111;
+  text-align: left;
 }
 
-
-.addE{
-    background: var( --shadow-color);
-    padding: 0.5rem 0.75rem;
-    color:var(--light-color);
-    border: solid 2px var(--dark-color);
-    border-radius: 5px;
+.addE {
+  background: var(--shadow-color);
+  padding: 0.5rem 0.75rem;
+  color: var(--light-color);
+  border: solid 2px var(--dark-color);
+  border-radius: 5px;
 }
 
-.e-list{
+.e-list {
   display: flex;
   flex-flow: column wrap;
   margin: 1rem 0;
@@ -182,43 +182,103 @@
   text-align: left;
 }
 
-.e-list li{
-  margin:0.3rem 0;
+.e-list li {
+  margin: 0.3rem 0;
 }
 
-.e-list li span{
-  color:var(--red-color);
+.e-list li span {
+  color: var(--red-color);
   font-size: 1.4rem;
 }
 
-
-#github-profile{
+#github-profile {
   background: var(--stone-color);
-  width:60%;
+  width: 60%;
   margin: 0 auto;
   padding: 1rem;
-} 
+}
 
-#github-profile h1{
+#github-profile h1 {
   margin-bottom: 1rem;
 }
 
-#github-profile h4{
+#github-profile h4 {
   margin-bottom: 0.5rem;
 }
 
-#github-profile h4 a{
+#github-profile h4 a {
   font-size: 1.4rem;
- text-transform: uppercase;
- color:var(--red-color);
+  text-transform: uppercase;
+  color: var(--red-color);
 }
 
-#github-profile p{
+#github-profile p {
   font-weight: bold;
   text-transform: capitalize;
   margin-bottom: 0.2rem;
 }
 
-#github-profile .gitHub-repo{
-  margin:0.75rem 0;
+#github-profile .gitHub-repo {
+  margin: 0.75rem 0;
+}
+
+@media only screen and (min-width: 375px) and (max-width: 767px) {
+  #profilePage {
+    display: flex;
+    flex-flow: column;
+  }
+
+  #profilePage .profile-container .profile-head {
+    width: 90%;
+    margin-bottom: 1rem;
+  }
+  #profilePage .profile-container #userInfo,
+  #profilePage .profile-container #profile-info,
+  #profilePage #github-profile {
+    width: 90%;
+  }
+
+  #profilePage .profile-container #profile-info {
+    flex-flow: column nowrap;
+  }
+
+  #profilePage .profile-container #profile-info .education {
+    border-left: none;
+  }
+
+  .posts-container .post-comment .comment-form-container #post {
+    width: 90%;
+  }
+}
+
+
+
+
+@media only screen and (min-width: 767px) and (max-width: 1100px){
+  #profilePage {
+    display: flex;
+    flex-flow: column;
+  }
+
+  #profilePage .profile-container .profile-head {
+    width: 90%;
+    margin-bottom: 1rem;
+  }
+  #profilePage .profile-container #userInfo,
+  #profilePage .profile-container #profile-info,
+  #profilePage #github-profile {
+    width: 90%;
+  }
+
+  #profilePage .profile-container #profile-info {
+    flex-flow: column nowrap;
+  }
+
+  #profilePage .profile-container #profile-info .education {
+    border-left: none;
+  }
+
+  .posts-container .post-comment .comment-form-container #post {
+    width: 90%;
+  }
 }
