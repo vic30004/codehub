@@ -1,7 +1,7 @@
 #profiles{
 height: 100%;
 padding: 3rem 0;
-background: var(--grey-color);
+background: var(--background-green);
 }
 
 
@@ -9,38 +9,63 @@ background: var(--grey-color);
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    max-width: 80%;
+    max-width: 100%;
     margin: 0 auto;
 }
 
 
 
-#profiles .card{
-background: var(--blue-color);
-width: 500px;
-height: 300px;
-margin: 2rem auto;
+#profile  .card{
+    background: linear-gradient(to left top, #f7e151, #f7e151 65%, #eee 55%);width: 400px;
+height: 350px;
+margin: 2rem 1rem;
+padding: 3rem 0;
+border: 1px solid lightgray;
+box-shadow: -10px 10px rgba(0,0,0,.15);
+border-radius: 10px;
+}
+.profile-items{
 display: flex;
-flex-flow: column wrap;
+flex-flow: column nowrap;
 align-items: center;
 justify-content: center;
-padding: 2rem 0;
+height: 100%;
 }
 
 #profiles .card img{
     border-radius: 50%;
+    width: 200px;
+    height: 100px;
 }
 
-#profiles .card .username{
-    padding:1rem 0;
+#profile .card .username{
+    padding:0.5rem 0;
     font-size: 1.5rem;
     font-weight: bolder;
+    text-transform: capitalize;
+}
+#profile .card p{
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
-#profiles .profileBtn{
+
+
+ #profile .card .profileBtn{
     background: var(--aqua);
-    /* padding: 0.5rem 0.75rem; */
+    padding: 0.5rem 0.75rem;
     padding: 15px;
     border-radius: 5px;
-    color: var(--light-color);
+    margin: 1rem auto;
+}
+
+#profile .card .skill-list{
+    display: flex;  
+justify-content: center;
+}
+
+#profile .card .skill-list li{
+    margin:0.2rem 0.5rem;
+    text-transform: uppercase;
 }

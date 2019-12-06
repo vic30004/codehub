@@ -17,7 +17,16 @@ const ProfileItems = ({ profiles }) => {
           ''
         )}
         <p>{status} {company && <span> at {company}</span>}</p>
-        <p className="my-1"> {location && <span> at {location}</span>}</p>
+        <p className="my-1"> {location && <span> based of {location}</span>}</p>
+        {skills.length>0 ? 
+          <ul className='skill-list'> 
+        {skills.slice(0,4).map((skill,i)=>(
+            <li ky={i}>
+               <i className="fas fa-check"></i> {skill}
+            </li>
+        ))}
+        </ul>: ''}
+         
         {profiles.user || user !== null ? (
           <Link to={`/profile/${user._id}`} className='profileBtn'>
             Visit Profile
@@ -25,13 +34,6 @@ const ProfileItems = ({ profiles }) => {
         ) : (
           ''
         )}
-        <ul>
-        {skills.slice(0,4).map((skill,i)=>(
-            <li ky={i}>
-               <i className="fas fa-check"></i> {skill}
-            </li>
-        ))}
-        </ul>
       </div>
     </div>
   );
