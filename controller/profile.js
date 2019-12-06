@@ -246,7 +246,7 @@ exports.addEducation = asyncHandler(async (req, res, next) => {
   const {
     school,
     degree,
-    fieldofstudy,
+    fieldofStudy,
     from,
     to,
     current,
@@ -256,7 +256,7 @@ exports.addEducation = asyncHandler(async (req, res, next) => {
   const newEdu = {
     school,
     degree,
-    fieldofstudy,
+    fieldofStudy,
     from,
     to,
     current,
