@@ -3,7 +3,7 @@
     /* background: var(--background-green); */
     background: linear-gradient(to left top, #daffed, #daffed 65%, #eee 55%);
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     padding: 3rem 1rem;
     font-size: 1.2rem;
     align-items: center;
@@ -50,6 +50,7 @@
     z-index: 1;
     overflow: hidden;
     color:var(--dark-color);
+    padding: 0.5rem 0.75rem;
 }
 
 #quote{
@@ -93,4 +94,13 @@ transition: all .3s ease-in-out;
 }
 .profileBtn:hover:after{
     left:49%;
+}
+
+@media only screen and (min-width: 375px) and (max-width: 767px){
+.dash-button{
+    display: flex;
+    flex-flow: column nowrap;
+
+}
+
 }
