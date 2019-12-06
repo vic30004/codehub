@@ -15,7 +15,7 @@ background: var(--grey-color);
 
 
 
-.card{
+#profiles .card{
 background: var(--blue-color);
 width: 500px;
 height: 300px;
@@ -27,17 +27,17 @@ justify-content: center;
 padding: 2rem 0;
 }
 
-.card img{
+#profiles .card img{
     border-radius: 50%;
 }
 
-.card .username{
+#profiles .card .username{
     padding:1rem 0;
     font-size: 1.5rem;
     font-weight: bolder;
 }
 
-.profileBtn{
+#profiles .profileBtn{
     background: var(--aqua);
     /* padding: 0.5rem 0.75rem; */
     padding: 15px;
