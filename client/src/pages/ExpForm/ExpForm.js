@@ -47,7 +47,7 @@ const ExpForm = (props) => {
         e.preventDefault()
         try {
             addExp(formData)
-            props.history.push(`profile/${user.data._id}`);
+            props.history.push(`/dashboard`);
         } catch (error) {
             console.log(error)
         }

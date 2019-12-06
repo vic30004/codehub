@@ -8,13 +8,17 @@ const ProfileGithub = ({ username }) => {
     getGithub(username);
   }, []);
   return (
-    <div className='github-profile'>
-      <h2>Github Repos</h2>
+    <div id='github-profile'>
+      
 
-      {repos === null
-        ? ''
-        : repos.map(repo => (
-            <div key={repo._id}>
+      {repos.length <=0
+        ? <h1>No Repos</h1>
+        : 
+        <Fragment >
+        <h1>Github Repos</h1>
+        <div>
+        {repos.map(repo => (
+            <div className ='gitHub-repo' key={repo._id}>
               <div>
                 <h4>
                   <a
@@ -35,7 +39,12 @@ const ProfileGithub = ({ username }) => {
                 </ul>
               </div>
             </div>
-          ))}
+          )
+         
+          )}
+           </div>
+           </Fragment>
+        }
     </div>
   );
 };

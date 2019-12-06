@@ -145,7 +145,7 @@ const getProfileById = async (userId) =>{
   const addEdu = async ({
     school,
     degree,
-    fieldofstudy,
+    fieldofStudy,
     from,
     to,
     description
@@ -159,7 +159,7 @@ const getProfileById = async (userId) =>{
     const body = JSON.stringify({
       school,
       degree,
-      fieldofstudy,
+      fieldofStudy,
       from,
       to,
       description
