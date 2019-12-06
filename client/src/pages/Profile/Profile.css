@@ -5,7 +5,7 @@ background: var(--background-green);
 }
 
 
-#profiles .profiles-container{
+ .profiles-container{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -15,7 +15,7 @@ background: var(--background-green);
 
 
 
-#profile  .card{
+#profiles .card{
     background: linear-gradient(to left top, #f7e151, #f7e151 65%, #eee 55%);width: 400px;
 height: 350px;
 margin: 2rem 1rem;
@@ -24,7 +24,7 @@ border: 1px solid lightgray;
 box-shadow: -10px 10px rgba(0,0,0,.15);
 border-radius: 10px;
 }
-.profile-items{
+#profiles .profile-items{
 display: flex;
 flex-flow: column nowrap;
 align-items: center;
@@ -38,13 +38,13 @@ height: 100%;
     height: 100px;
 }
 
-#profile .card .username{
+#profiles .card .username{
     padding:0.5rem 0;
     font-size: 1.5rem;
     font-weight: bolder;
     text-transform: capitalize;
 }
-#profile .card p{
+#profiles .card p{
     text-transform: capitalize;
     font-size: 1.2rem;
     font-weight: bold;
@@ -52,7 +52,7 @@ height: 100%;
 
 
 
- #profile .card .profileBtn{
+#profiles .card .profileBtn{
     background: var(--aqua);
     padding: 0.5rem 0.75rem;
     padding: 15px;
@@ -60,12 +60,12 @@ height: 100%;
     margin: 1rem auto;
 }
 
-#profile .card .skill-list{
+#profiles .card .skill-list{
     display: flex;  
 justify-content: center;
 }
 
-#profile .card .skill-list li{
+#profiles .card .skill-list li{
     margin:0.2rem 0.5rem;
     text-transform: uppercase;
 }
