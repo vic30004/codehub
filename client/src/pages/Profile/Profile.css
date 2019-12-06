@@ -15,7 +15,7 @@ background: var(--background-green);
 
 
 
-.card{
+#profile  .card{
     background: linear-gradient(to left top, #f7e151, #f7e151 65%, #eee 55%);width: 400px;
 height: 350px;
 margin: 2rem 1rem;
@@ -32,19 +32,19 @@ justify-content: center;
 height: 100%;
 }
 
-.card img{
+#profiles .card img{
     border-radius: 50%;
     width: 200px;
     height: 100px;
 }
 
-.card .username{
+#profile .card .username{
     padding:0.5rem 0;
     font-size: 1.5rem;
     font-weight: bolder;
     text-transform: capitalize;
 }
-.card p{
+#profile .card p{
     text-transform: capitalize;
     font-size: 1.2rem;
     font-weight: bold;
@@ -52,7 +52,7 @@ height: 100%;
 
 
 
- .card .profileBtn{
+ #profile .card .profileBtn{
     background: var(--aqua);
     padding: 0.5rem 0.75rem;
     padding: 15px;
@@ -60,12 +60,12 @@ height: 100%;
     margin: 1rem auto;
 }
 
-.card .skill-list{
+#profile .card .skill-list{
     display: flex;  
 justify-content: center;
 }
 
-.card .skill-list li{
+#profile .card .skill-list li{
     margin:0.2rem 0.5rem;
     text-transform: uppercase;
 }
