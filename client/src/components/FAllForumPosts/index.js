@@ -1,7 +1,7 @@
 import React, {useContext,useEffect} from 'react'
 import FEachForumPost from '../FEachForumPost'
 import AuthContext from '../context/auth/AuthContext'
-
+import './style.css'
 
 
 const Forums = ({getForms,posts }) => {
@@ -17,20 +17,24 @@ const Forums = ({getForms,posts }) => {
     },[])
 
     const forum =
-        posts && posts.length > 0 ? posts.map(post => (
+        posts && posts.length > 0 ? 
+        posts.map(post => (
             <FEachForumPost
             posts={post}
             refresh={getForms}
        
             />
          
-
+        
         )) : "no Data";
     
 
     return (
         <>
-        {isAuthenticated ?  forum : 'Please Register to view the forum' }
+        {isAuthenticated ?  forum : <div className='empty-forum-display'>
+            <h1>Please Login To Access Our Forums</h1>
+            <div className="forum-login-btn"> <a href='/login'>Login Here</a></div>
+        </div> }
   
         </>
     )

@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import api from '../../api'
-import Comments from '../FComments'
+import FComments from '../FComments'
 import CommentLabel from '../FCommentLabels'
+import moment from 'moment'
+import './style.css'
+
 
 class FEachForumPost extends Component {
 
@@ -45,26 +48,39 @@ class FEachForumPost extends Component {
         const {_id,avatar,refresh,comments,date,likes,name,post} = this.props.posts
 
       
-        return (<div>
-            <h1><img src={avatar}></img></h1>
-            <h1>Written By : {name} </h1>
-            <h1>The Post is : {post}</h1>
-            <h2>Total Likes : {likes.length}</h2>
-            <h2>Posted On : {date}</h2>
-            <button onClick={() => this.addLike(_id)}>Upvote</button>
+        return (<div className='each-forum-post-wrapper'>
 
-            <hr></hr>
-            <h2>Comments</h2>
+            <div className='forum-user-post-wrapper'>
+
+            <div className='forum-user-info'>
+            <h1><img className ='forum-post-pic'src={avatar}></img></h1>
+            <h3>{name} </h3>
+            </div>
+        
+            <div className='forum-post-info'>
+            <h3 className='forum-post-data'>{post}</h3>
+            <div className='likes-date-like-grid'>
+            <h4>Likes : {likes.length}</h4>
+            <h4>Posted On : {moment(date).format('MM/DD/YYYY')}</h4>
+            <button className='forum-like-btn' onClick={() => this.addLike(_id)}>Upvote</button>
+            </div>
+        
+            </div>
+
+            </div>
+           
+           
+            <h2 className='comment-header'>Comments</h2>
             {comments && comments.length > 0 ?
                 comments.map(({ post,name,date,avatar }) => (
-               <Comments 
+               <FComments 
                commentName={name}
                commentBody={post}
                commentAvatar={avatar}
                commentDate={date}
                id={_id}
                deleteComment={this.deleteComment}
-               />)) : <h5>"No Comments"</h5>}
+               />)) : <h5 className='no-comments-display'>There are no comments for this post. Click below to post!</h5>}
 
             <CommentLabel 
             refresh={refresh}
