@@ -34,6 +34,8 @@ const ProfilePage = ({ profile },props) => {
     instagram,
     education
   } = profile;
+
+  console.log(education)
   console.log(skills);
   useEffect(() => {
     if (localStorage.token) {
@@ -81,48 +83,60 @@ const ProfilePage = ({ profile },props) => {
                 {experience.length>0
                   ? 
                   <Fragment>
-                  <h4>Experience</h4>
+                  <h2>Experience</h2>
                   <div>
                   {experience.map(data => (
                       <Fragment key={data._id}>
-                        <h2>{data.title}</h2>
-                        <ul>
-                          <li>Company:{data.company}</li>
-                          <li>Location:{data.location}</li>
-                          <li>From:{moment(data.from).format('MM/DD/YYYY')}</li>
-                          <li>To:{moment(data.to).format('MM/DD/YYYY')}</li>
-                          <li>Job Description:{data.description}</li>
+                        <ul className="e-list">
+                          <li><span>Title: </span>{data.title}</li>
+                          <li><span>Company: </span>{data.company}</li>
+                          <li><span>Location: </span>{data.location}</li>
+                          <li><span>From: </span>{moment(data.from).format('MM/DD/YYYY')}</li>
+                          <li><span>To: </span>{moment(data.to).format('MM/DD/YYYY')}</li>
+                          <li><span>Job Description: </span>{data.description}</li>
                           
                         </ul>
                       </Fragment>
                     ))}
                     </div>
                     </Fragment>
-                  : <Link to='/experience' className="addE">Add Experience</Link>}
+                  :
+                  <Fragment>
+                  {profile.user._id===user.data._id?<Link to='/experience' className="addE">Add Experience</Link>:<h2>No Experience Yet!</h2>}
+                </Fragment>
+                }
                   </div>
+                  <Fragment>
+                  
+                  
+                  </Fragment>
                 <div className='education'>
                   {education.length>0 ? (
+
                     <Fragment>
                     <h2>Education</h2>
                  <div>
                     {education.map(data => (
                      
                         
-                        <ul>
-                          <li>School:{data.school}</li>
-                          <li>Degree:{data.degree}</li>
-                          <li>Field of Study:{data.fieldofstudy}</li>
-                          <li>From:{moment(data.from).format('MM/DD/YYYY')}</li>
-                          <li>To:{moment(data.to).format('MM/DD/YYYY')}</li>
-                          <li>Description:{data.description}</li>
+                        <ul className="e-list">
+                          <li><span>School: </span>{data.school}</li>
+                          <li><span>Degree: </span>{data.degree}</li>
+                          <li><span>Field of Study: </span>{data.fieldofStudy}</li>
+                          <li><span>From: </span>{moment(data.from).format('MM/DD/YYYY')}</li>
+                          <li><span>To: </span>{moment(data.to).format('MM/DD/YYYY')}</li>
+                          <li><span>Description: </span>{data.description}</li>
                         </ul>
                       
                     ))}
                     </div>
                     </Fragment>
-                  ) : (
-                    <Link to='/education' className="addE">Add Education</Link>
-                  )}
+                  ) : 
+                  <Fragment>
+                    {profile.user._id === user.data._id?<Link to='/education' className="addE">Add Education</Link>:<h2>No Education Yet!</h2>}
+                    </Fragment>
+                    
+                  }
                 </div>
               </div>
             </div>

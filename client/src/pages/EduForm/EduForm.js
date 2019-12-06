@@ -10,7 +10,7 @@ const EduForm = (props) => {
     const [formData,setFormData] = useState({
         school:'',
         degree:'',
-        fieldofstudy:'',
+        fieldofStudy:'',
         from:'',
         to:'',
         description:''
@@ -21,7 +21,7 @@ const EduForm = (props) => {
     const {setAlert,isAuthenticated, errorState,removeAlert} = authContext
     const {addEdu}=profileContext
 
-    const {school,degree,fieldofstudy,from,to,description} = formData
+    const {school,degree,fieldofStudy,from,to,description} = formData
 
     const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -39,7 +39,7 @@ const EduForm = (props) => {
         try {
             addEdu({
                 school,
-                fieldofstudy,
+                fieldofStudy,
                 degree,
                 from: moment(from).format('MM/DD/YYYY'),
                 to: moment(to).format('MM/DD/YYYY'),
@@ -58,7 +58,7 @@ const EduForm = (props) => {
             <h1>Education</h1>
                 <input type="text" name='school' id='school' placeholder="School" value={school} onChange={e => onChange(e)}/>
                 <input type="text" name='degree' value ={degree} onChange={e => onChange(e)} id='degree' placeholder="Degree" />
-                <input type="text" name='fieldofstudy' value={fieldofstudy}id='school' placeholder="Major" onChange={e => onChange(e)} />
+                <input type="text" name='fieldofStudy' value={fieldofStudy}id='fieldofStudy' placeholder="Major" onChange={e => onChange(e)} />
                 <label htmlFor="">From</label>
                 <Calendar onChange={e => fromDate(e)} value={from}/>
                 <label htmlFor="">To</label>
