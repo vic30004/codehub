@@ -1,24 +1,25 @@
-import React,{useEffect,useContext} from "react";
+import React, { useEffect, useContext } from "react";
 import EventPageEventsItem from "../EventPageEventsItem";
 import AuthContext from "../context/auth/AuthContext";
+import "./style.css";
 
 const EventsPageEventsList = ({ events }) => {
   const authContext = useContext(AuthContext);
-  const {isAuthenticated,user,loadUser} =authContext
+  const { isAuthenticated, user, loadUser } = authContext;
 
   useEffect(() => {
     if (localStorage.token) {
       loadUser();
     }
   }, []);
-  
-  console.log(events)
+
+  console.log(events);
   return (
-    <div>
+    <div className="events-page-container">
       <center>
-        <h1>Event List</h1>
+        <h1>Top Trending Tech Events</h1>
       </center>
-      <div class="eventsList">
+      <div className="events-list">
         <EventPageEventsItem events={events} />
       </div>
     </div>
