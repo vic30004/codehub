@@ -64,16 +64,17 @@ class VideoPageApp extends Component {
 
             <div className='video-page-main-wrapper'>
                 <div className='video-page-container'>
+                  
+                    <VideoPageDetail video={this.state.selectedVideo} />
                     <div className='video-search-bar-container'>
                         <VideoPageSearchBar className='search-bar' onSearchTermChange={searchTerm => this.videoSearch(searchTerm)} />
                     </div>
-                    <VideoPageDetail video={this.state.selectedVideo} />
                     <div className='video-page-list-wrapper'>
-                        <div className='video-page-list-container'>
+          
                             <VideoPageList
                                 onVideoSelect={userSelected => this.setState({ selectedVideo: userSelected })}
                                 videos={this.state.videos} />
-                        </div>
+                        
                     </div>
                 </div>
             </div>
