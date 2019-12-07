@@ -3,18 +3,17 @@
     grid-template-columns: 1fr;
     width: 100%;
     height: 100%;
-    background:var(--cyan);
+    /* background:var(--cyan); */
+    background: linear-gradient(to top, var(--aqua), var(--aqua) 85%, var(--cyan) 15%);
     opacity: .9;
+    
 }
 
 .event-container {
-    /* align-self: center;
-    justify-self: center; */
     width: 100%;
     min-width: 300px;
     max-width: 500px;
     height: auto;
-    /* margin: 0 auto; */
     border-radius: 5px;
 }
 
@@ -22,12 +21,9 @@
     width: 30%;
     height: auto;
     background-color:aliceblue;
-    /* align-self: center; */
-    /* justify-self: center; */
     margin-bottom: 50px;
     border-bottom: .5px solid lightgray;
     border-radius: 5px;
-    /* box-shadow: -10px 10px rgba(0,0,0,.15); */
     border-radius: 5px;
 }
 
@@ -36,16 +32,17 @@
     max-height: 300px;
     width: 100%; 
     min-width: 320px;
-    /* background-image: linear-gradient(to right,black, transparent);    */
     border-radius: 5px;
 }
 
 .event-slider-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 30px;
     width: auto;
     padding: 50px;
+    background-color: none;
+    background: linear-gradient(to top, var(--aqua), var(--aqua) 85%, var(--cyan) 15%);
 }
 
 .event-description-wrapper,
@@ -59,7 +56,7 @@
 }
 
 .founder-wrapper {
-    background: linear-gradient(to left top,aliceblue, aliceblue 65%, transparent 45%);
+    background: linear-gradient(to left top,aliceblue, aliceblue 70%, transparent 45%);
     height: 90%;
     border-radius: 5px;
 }
@@ -86,9 +83,36 @@
     width: 90%;
 }
 
+.event-container-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.founder-join {
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.join-h1 {
+    margin-top: 30%;
+    text-align: center;
+    padding: 3rem;
+    font-size: 55px;
+    font-size: 4vw;
+    font-weight: lighter;
+}
+
 @media only screen and (max-width: 768px) {
     .founder-wrapper {
         display: none;
+    }
+    .join-h1 {
+        display: none;
+    }
+    .event-container-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
     }
     .event-slider-wrapper {
         display: grid;
