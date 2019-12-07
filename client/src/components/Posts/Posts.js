@@ -2,6 +2,7 @@ import React, {Fragment,useEffect,useContext} from 'react'
 import PostsContext from '../context/posts/PostsContext'
 import AuthContext from '../context/auth/AuthContext'
 import PostItem from './PostItem'
+import './Posts.css'
 
 const Posts = () => {
 
@@ -19,7 +20,7 @@ const Posts = () => {
     },[])
 
     return loading ? '' : (
-        <Fragment>
+        <Fragment className='userPost'>
         <h1>Posts</h1>
         <p>
         <i className="fas fa-user"></i>Welcome to the Developer Community!

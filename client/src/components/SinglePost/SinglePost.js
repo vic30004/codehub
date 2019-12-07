@@ -3,6 +3,8 @@ import PostsContext from '../context/posts/PostsContext'
 import PostItem from '../Posts/PostItem'
 import CommentForm from './CommentForm'
 import CommentItem from './CommentItem'
+import Spinner from '../Spinner/index'
+import './SingleComment.css'
 const SinglePost = ({match}) => {
 const postsContext = useContext(PostsContext)
 
@@ -13,16 +15,18 @@ useEffect(()=>{
 
 
 
-    return loading || post === null ? '':<Fragment>
-    
+    return loading || post === null ? <Spinner/>:<div id="comments-section">
+    <section id="userPost">
     <PostItem post={post} showActions={false}/>
+    </section>
+    
     <CommentForm postId={post._id}/>
-    <div className="comments">
+    <div id="userPost">
     {post.comments.map(comment =>(
-        <CommentItem key={comment._id} comment={comment} postId={post._id}/>
+        <CommentItem  key={comment._id} comment={comment} postId={post._id}/>
     ))}
     </div>
-    </Fragment>
+    </div>
 }
 
 export default SinglePost

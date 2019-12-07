@@ -1,0 +1,87 @@
+#comments-section{
+    background: var(--background-green);
+
+}
+#userPost{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 1rem 0;
+}
+.post2{
+    border-radius: 5px;
+    padding: 1rem;
+    font-family: var(--main-font);
+    font-size: 1.2rem;
+    background: papayawhip;
+    width:80%;
+    display: flex;
+   align-items: center;
+   margin: 1rem;
+}
+
+#posts-container {
+    text-align: center;
+    font-size: 1.2rem;
+    height: 100%;
+  }
+  
+  #posts-container .post-comment h1 {
+    margin-top: 1rem;
+    font-size: 2rem;
+    padding: 1rem 0;
+  }
+  
+  #posts-container .post-comment .comment-form-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 1rem 0;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  
+  #posts-container .post-comment .comment-form-container #post {
+    border-radius: 5px;
+    padding: 1rem;
+    font-family: var(--main-font);
+    font-size: 1.2rem;
+    border: none;
+    resize: none;
+    width:80%;
+  }
+  
+  #posts-container .post-comment .comment-form-container button {
+    border: none;
+    display: inline;
+    width: 50%;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+  }
+  #posts-container .post-comment .comment-form-container .experience-btn{
+      background: rgb(245, 236, 109);
+  }
+
+  @media only screen and (min-width: 375px) and (max-width: 767px){
+
+    .post2{
+        height: 400px;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .post2 .user-info{
+        width: 100%;
+    }
+    .post2 img{
+        display: block;
+        margin:0 auto;
+    }
+    .post-content .delete{
+        width: 20%;
+    }
+  }
+
+
+  

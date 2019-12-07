@@ -34,9 +34,6 @@ const ProfilePage = ({ profile },props) => {
     instagram,
     education
   } = profile;
-
-  console.log(education)
-  console.log(skills);
   useEffect(() => {
     if (localStorage.token) {
       loadUser();

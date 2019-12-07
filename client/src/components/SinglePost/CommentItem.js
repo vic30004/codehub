@@ -18,25 +18,25 @@ const CommentItem = ({postId, comment}) => {
         }
     },[])
     return (
+        <div className='post2'>
+        <div className="user-info">
         <div>
-            <div>
-                <Link to={`/profile/${comment.user}`}>
-                <img src={avatar} alt=""/>
-                <h4>{name}</h4>
-                </Link>
-            </div>
-            <div>
-                <p>{text}</p>
-                <p>
-                Posted on:{moment(data).format('MM/DD/YYYY')}
-                </p>
-                {!loading && comment.user === user.data._id &&(
-                    <button onClick={e=>deleteComment(postId,_id)} type="button">
+          <Link to={`/profile/${comment.user}`}>
+            <img src={avatar} alt='' />
+          </Link>
+          <h4>{name}</h4>
+        </div>
+        </div>
+        <div className="post-content">
+          <p>{text}</p>
+          <h4>Posted on:{moment(data).format('MM/DD/YYYY')}</h4>
+          {!loading && comment.user === user.data._id &&(
+                    <button className='delete' onClick={e=>deleteComment(postId,_id)} type="button">
                         <i className="fas fa-times"></i>
                     </button>
                 )}
-            </div>
-        </div>
+      </div>
+           </div>   
     )
 }
 

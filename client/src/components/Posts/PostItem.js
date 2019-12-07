@@ -5,6 +5,7 @@ import AuthContext from '../context/auth/AuthContext';
 import PostsContext from '../context/posts/PostsContext';
 import { GET_POSTS } from '../context/types';
 import Alert from '../AlertComponent/Alert';
+import './Posts.css'
 
 const PostItem = ({
   post: { _id, text, user, name, avatar, likes, comments, data },
@@ -20,20 +21,21 @@ const PostItem = ({
       loadUser();
     }
   }, []);
-  console.log(authContext.user.data._id);
   return (
-    <div className='post'>
-      <Alert />
+    <div className='post2'>
+      <Alert/>
+      <div className="user-info">
       <div>
         <Link to={`/profile/${user}`}>
           <img src={avatar} alt='' />
-          <h4>{name}</h4>
         </Link>
+        <h4>{name}</h4>
       </div>
-      <div>
+      </div>
+      <div className="post-content">
         <p>{text}</p>
-        <p>Posted on:{moment(data).format('MM/DD/YYYY')}</p>
-
+        <h4>Posted on:{moment(data).format('MM/DD/YYYY')}</h4>
+    </div>
         {showActions && (
           <Fragment>
             <button
@@ -70,7 +72,6 @@ const PostItem = ({
             )}
           </Fragment>
         )}
-      </div>
     </div>
   );
 };
