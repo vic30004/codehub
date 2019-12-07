@@ -10,7 +10,7 @@ class EventPage extends Component {
     // will hide the app_key
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     const fullURL =
-      "http://api.eventful.com/json/events/search?q=coding&keyword=tech&location=San+Francisco&date=Future&app_key=sg8mTm37KM4qW9Sv";
+      "http://api.eventful.com/json/events/search?q=programming&keyword=tech&location=San+Francisco&date=Future&app_key=sg8mTm37KM4qW9Sv";
 
     fetch(proxyurl + fullURL, {
       method: "GET",
