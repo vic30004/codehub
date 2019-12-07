@@ -17,8 +17,7 @@
   margin-top: 10px;
   line-height: 2.5;
 }
-
-.more-info-btn:before {
+.this.state.events.length .more-info-btn:before {
   position: absolute;
   content: "";
   width: 100%;
@@ -52,14 +51,23 @@
 }
 
 .event-item {
-  box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+  box-shadow: 2px 2px 2px 2px rgba(68, 68, 68, 0.6);
   transition: transform 1s ease;
+  width: 70%;
+  margin: 25px auto;
+  text-align: center;
+  padding: 25px;
 }
 
 .event-item:hover {
   transform: scale(1.03);
 }
 
-img {
-  margin: 10px;
+.start-time {
+  color: rgb(255, 115, 0);
+  font-weight: 700;
+}
+
+.event-address {
+  color: grey;
 }
