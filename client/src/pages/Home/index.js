@@ -21,7 +21,7 @@ const Home = () => {
 
         return(<div className="home-wrapper">
             <HomeSlider />
-            <YouTubeApp />
+            {/* <YouTubeApp />*/}
             {/*<HomeVideos />*/}
             <HomeEvents />
 
