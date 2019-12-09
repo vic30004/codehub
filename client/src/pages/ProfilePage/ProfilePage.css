@@ -168,7 +168,7 @@
 
 .addE {
   background: var(--shadow-color);
-  padding: 0.5rem 0.75rem;
+  padding: 0.3rem 0.5rem;
   color: var(--light-color);
   border: solid 2px var(--dark-color);
   border-radius: 5px;
