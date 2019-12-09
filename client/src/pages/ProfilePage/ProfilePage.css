@@ -53,6 +53,7 @@
 #profilePage .profile-container .experience {
   padding: 1rem;
   text-align: left;
+  width: 50%;
 }
 
 #profilePage .profile-container .education .h2 {
@@ -168,10 +169,12 @@
 
 .addE {
   background: var(--shadow-color);
-  padding: 0.5rem 0.75rem;
+  padding: 0.3rem 0.5rem;
   color: var(--light-color);
   border: solid 2px var(--dark-color);
   border-radius: 5px;
+  display: block;
+    text-align: center;
 }
 
 .e-list {
@@ -244,6 +247,7 @@
 
   #profilePage .profile-container #profile-info .education {
     border-left: none;
+   
   }
 
   .posts-container .post-comment .comment-form-container #post {
