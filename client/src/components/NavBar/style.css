@@ -64,43 +64,28 @@ div.nav-input {
 
 /* media queries */
 
+
 @media only screen and (max-width: 1200px) {
-    .profile-link,
-    .forum-link {
-        display: none;
+   .nav-wrapper{
+       flex-direction: column;
     }
 }
 
 
-@media only screen and (max-width: 992px) {
-    .nav-list-item {
-        display: none;
+@media only screen and (max-width: 595px) {
+    .nav-ul {
+        flex-direction: column;
     }
 }
 
 /* media queries */
-@media only screen and (max-width: 600px) {
-    .nav-hello, 
-    .dashboard-link,
-    .posts {
-        display: none;
-}
+
 .dashboard-ul-wrapper {
     display: grid;
     grid-template-columns: 1fr;
 } 
-/* a, i, span {
-    display: grid;
-    grid-column: 2/3;
-    grid-row:2/3;
-} */
 
 
-}
 
 
-/* .nav-hello,
-.dashboard-link,
-.posts {
-    display: none;
-} */
+

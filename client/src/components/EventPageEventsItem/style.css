@@ -51,7 +51,6 @@
 }
 
 .event-item {
-  box-shadow: 2px 2px 2px 2px rgba(68, 68, 68, 0.6);
   transition: transform 1s ease;
   width: 70%;
   margin: 25px auto;

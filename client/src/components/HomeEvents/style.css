@@ -59,22 +59,26 @@
     background: linear-gradient(to left top,aliceblue, aliceblue 70%, transparent 45%);
     height: 90%;
     border-radius: 5px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
 .join {
     text-align: center;
     padding: 3rem;
-    margin-top: 5%;
+    /* margin-top: 5%; */
     font-size: 55px;
-    font-size: 4vw;
+    /* font-size: 4vw; */
     font-weight: lighter;
 
 }
 
 .invite {
-    font-size: 18px;
-    font-size: 1.5vw;
-    padding: 3rem;
+    font-size: 22px;
+    /* font-size: 1.5vw; */
+    padding: 5rem;
 }
 
 .founder-hr {
@@ -105,10 +109,10 @@
 
 @media only screen and (max-width: 768px) {
     .founder-wrapper {
-        display: none;
+        /* display: none; */
     }
     .join-h1 {
-        display: none;
+        /* display: none; */
     }
     .event-container-wrapper {
         display: grid;
