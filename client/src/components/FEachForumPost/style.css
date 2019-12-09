@@ -47,7 +47,7 @@
 
 .forum-like-btn{
     height: 50px;
-    width: 200px;
+    width: 150px;
     text-align: center;
     background:var(--yellow);
     font-weight: bolder;
@@ -61,6 +61,7 @@
     font-size: 14px;
     border-radius: 5px;
     line-height: 2.5;
+    max-width: 100%;
 }
 
 .forum-like-btn:before{

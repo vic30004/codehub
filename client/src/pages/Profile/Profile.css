@@ -50,6 +50,13 @@ height: 100%;
     font-weight: bold;
 }
 
+.profile-spinner-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+    justify-items: center;
+    
+}
 
 
 #profiles .card .profileBtn{

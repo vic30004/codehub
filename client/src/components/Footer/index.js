@@ -8,66 +8,9 @@ class Footer extends Component {
     render() {
         return (
             <div className='footer-container'>
-                <ul>
-                    <li className='footer-list-item'>
-                    <h4></h4>
-                        <a href={text}></a>
-                    </li>
-                    <li className='footer-list-item'> 
-                        <a href={text}></a>
-                    </li>
-                    <li className='footer-list-item'>
-                        <a href={text}></a>
-                    </li>
-                    <li className='footer-list-item'>
-                        <a href={text}></a>
-                    </li>
-                </ul>
-                <ul>
-                    <li className='footer-list-item'>
-                    <h4></h4>
-                        <a href={text}></a>
-                    </li>
-                    <li className='footer-list-item'>
-                        <a href={text}></a>
-                    </li>
-                    <li className='footer-list-item'>
-                        <a href={text}></a>
-                    </li>
-                    <li className='footer-list-item'>
-                        <a href={text}></a>
-                    </li>
-                </ul>
-                <ul>
-                    <li className='footer-list-item'>
-                    <h4></h4>
-                        <a href={text}></a>
-                    </li>
-                    <li className='footer-list-item'>
-                        <a href={text}></a>
-                    </li>
-                    <li className='footer-list-item'>
-                        <a href={text}></a>
-                    </li>
-                    <li className='footer-list-item'>
-                        <a href={text}></a>
-                    </li>
-                </ul>
-                <ul>
-                    <li className='footer-list-item'>
-                    <h4></h4>
-                        <a href={text}></a>
-                    </li>
-                    <li className='footer-list-item'>
-                        <a href={text}></a>
-                    </li>
-                    <li className='footer-list-item'>
-                        <a href={text}></a>
-                    </li>
-                    <li className='footer-list-item'>
-                        <a href={text}></a>
-                    </li>
-                </ul>
+
+      
+         
                 <div className='footer-aside'>
                 <h4 className='footer-logo'>codeHub</h4>
                     <p className='footer-text'>

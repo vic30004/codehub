@@ -26,7 +26,7 @@ const Profile = () => {
         {profiles.length>0?profiles.map(profile => (
           <ProfileItems profiles={profile} />
         )):<h4>No Profiles Yet</h4>}
-      </div> : <Spinner/>}
+      </div> : <div className="profile-spinner-wrapper"><Spinner/></div>}
     
       
     </div>
