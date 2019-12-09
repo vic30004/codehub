@@ -5,6 +5,7 @@
     background: aliceblue;
     /* background:var(--cyan); */
     align-items: center;
+    align-content: center;
     border-bottom: .5px solid lightgrey;
     /* padding:0.75rem; */
     padding: 15px;
@@ -19,7 +20,7 @@
 }
 
 .nav-list-item {
-    padding: 0px 0px 0px 15px;
+    padding: 0px 0px 0px 0px;
 }
 
 .nav-wrapper .nav-ul{
@@ -34,12 +35,14 @@
 .nav-button {
     border-radius: 5px;
     color: var(--light-color);
+    /* padding:10px; */
     /* background-color: forestgreen; */
     background:var(--dark-color);
     /* background: var(--background-green2); */
     border: none;
     cursor: pointer;
-    padding: 0.5rem 0.75rem;
+    /* padding: 0.5rem 0.75rem; */
+    /* margin-bottom:10px; */
     opacity: .8;    
 }
 

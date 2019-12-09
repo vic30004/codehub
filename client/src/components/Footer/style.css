@@ -1,8 +1,8 @@
 .footer-container {
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
-    min-height: 200px;
-    height: 100%;
+    grid-template-columns: 1fr;
+    height:100px;
+    max-width: 100%;
     width: 100%;
     background-color: whitesmoke;
     justify-content: center;
@@ -18,11 +18,12 @@
 
 .footer-aside {
     width: 65%;
-    height: 65%;
     background-color: white;
     justify-self: center;
     align-self: center;
     padding: 15px;
+    /* margin:0 auto; */
+    max-width: 100%;
     font-size: 12px;
     opacity: .8;
     border: .5px solid lightgray;
@@ -49,12 +50,12 @@
 @media only screen and (max-width: 600px) {
     .footer-container {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        /* grid-template-columns: 1fr 1fr 1fr 1fr; */
         /* grid-template-rows: 2fr; */
     }
     .footer-aside {
-        grid-column: 1/5;
-        width: 85%;
+        /* width: 85%; */
+        max-width: 100%;
         height: auto;
         margin-bottom: 5%;
     }

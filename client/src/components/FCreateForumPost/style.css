@@ -17,6 +17,7 @@
     margin: 0 auto;
     border: none;
     font-size: 14px;
+    max-width: 100%;
     
     border-radius: 5px;
     margin-top: 10px;
@@ -65,5 +66,6 @@
     .textarea-field{
         background-color:ivory;
         color: black;
+        max-width: 100%;
 
     }
