@@ -15,7 +15,7 @@ const EventsPageEventsItem = ({ events }) => {
             width="300px"
           />
         )} */}
-        <img src={images[i]} height="200px" width="300px" />
+        <img className='events-image'src={images[i]} height="200px" width="400px" />
         <p className="start-time">
           Start Time: {event.start_time.substring(0, 10)}
         </p>

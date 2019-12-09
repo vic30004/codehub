@@ -25,9 +25,9 @@ class HomeEvents extends Component {
                 </div>
                 <div className='event-slider-wrapper'>
                 <div className='founder-wrapper'>
-                <h1 className='join'>Create community, grow your network.</h1>
+                <h1 className='join'>Create a community, grow your network.</h1>
                 <hr className='founder-hr'/>
-                <p className='invite'>Invite your team, wrangle feedback, share video files and get it done, faster.</p>
+                <p className='invite'>Invite your team, wrangle feedback, build something incredible, and get it done, faster.</p>
                 </div>
                 <div className='event-container-wrapper'>
                 <div className='event-container'>

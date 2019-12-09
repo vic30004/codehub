@@ -9,3 +9,16 @@
   grid-template-columns: 1fr 1fr;
 }
 
+.events-image{
+  max-width: 100%;
+  box-shadow: -10px 10px rgba(0,0,0,.15);
+  margin-bottom:20px;
+
+}
+
+@media only screen and (max-width: 980px) {
+  .events-list {
+    grid-template-columns: 1fr;
+  }
+}
+
