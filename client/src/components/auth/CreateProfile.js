@@ -91,7 +91,7 @@ const CreateProfile = (props) => {
         <input type="text" name="facebook" value={facebook} id="facebook" onChange={e=>onChange(e)} placeholder="facebook"/>
         <input type="text" name="youtube" value={youtube} id="youtube" onChange={e=>onChange(e)} placeholder="Youtube"/>
         <input type="text" name="instagram" value={instagram} id="instagram" onChange={e=>onChange(e)} placeholder="Instagram"/>
-        <a className="btn-register" onClick={e =>onClick(e)}>Creat Profile</a>
+        <a className="btn-register" onClick={e =>onClick(e)}>Create Profile</a>
         </div>
     </section>
         </div>
