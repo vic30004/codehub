@@ -1,4 +1,4 @@
-# React-Google-Books-Search
+# codeHub
 
 An online community for developers, recruiters, and tech enthusiasts to collaborate and build something special
 
