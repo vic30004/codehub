@@ -17,7 +17,7 @@ const ProfileItems = ({ profiles }) => {
           ''
         )}
         <p>{status} {company && <span> at {company}</span>}</p>
-        <p className="my-1"> {location && <span> based of {location}</span>}</p>
+        <p className="my-1"> {location && <span> based in {location}</span>}</p>
         {skills.length>0 ? 
           <ul className='skill-list'> 
         {skills.slice(0,4).map((skill,i)=>(
