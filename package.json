@@ -24,7 +24,7 @@
   "homepage": "https://github.com/vic30004/codehub#readme",
   "dependencies": {
     "animate.css": "^3.7.2",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "cheerio": "^1.0.0-rc.3",
     "colors": "^1.4.0",
