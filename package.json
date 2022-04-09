@@ -36,7 +36,7 @@
     "gravatar": "^1.8.0",
     "inspirational-quotes": "^1.0.8",
     "jsonwebtoken": "^8.5.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "mongoose": "^5.7.10",
     "morgan": "^1.9.1",
     "react-calendar": "^2.19.2",
