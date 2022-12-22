@@ -35,7 +35,7 @@
     "express-validator": "^6.2.0",
     "gravatar": "^1.8.0",
     "inspirational-quotes": "^1.0.8",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "moment": "^2.24.0",
     "mongoose": "^5.7.10",
     "morgan": "^1.9.1",
